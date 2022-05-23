@@ -1,7 +1,7 @@
 @extends('layouts.front_master')
 
 @section('content')
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');"
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({{ asset('assets/images/bg_2.jpg') }});"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -26,7 +26,8 @@
             <div class="row">
                 <div class="col-md-4 ftco-animate">
                     <div class="block-7">
-                        <div class="img" style="background-image: url(images/pricing-1.jpg);"></div>
+                        <div class="img"
+                            style="background-image: url({{ asset('assets/images/pricing-1.jpg') }});"></div>
                         <div class="text-center p-4">
                             <span class="excerpt d-block">Personal</span>
                             <span class="price"><sup>$</sup> <span class="number">49</span>
@@ -45,7 +46,8 @@
                 </div>
                 <div class="col-md-4 ftco-animate">
                     <div class="block-7">
-                        <div class="img" style="background-image: url(images/pricing-2.jpg);"></div>
+                        <div class="img"
+                            style="background-image: url({{ asset('assets/images/pricing-2.jpg') }});"></div>
                         <div class="text-center p-4">
                             <span class="excerpt d-block">Business</span>
                             <span class="price"><sup>$</sup> <span class="number">79</span>
@@ -64,7 +66,8 @@
                 </div>
                 <div class="col-md-4 ftco-animate">
                     <div class="block-7">
-                        <div class="img" style="background-image: url(images/pricing-3.jpg);"></div>
+                        <div class="img"
+                            style="background-image: url({{ asset('assets/images/pricing-3.jpg') }});"></div>
                         <div class="text-center p-4">
                             <span class="excerpt d-block">Ultimate</span>
                             <span class="price"><sup>$</sup> <span class="number">109</span>
@@ -86,7 +89,7 @@
     </section>
 
     <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb img"
-        style="background-image: url(images/bg_3.jpg);">
+        style="background-image: url({{ asset('assets/images/bg_3.jpg') }});">
         <div class="overlay"></div>
         <div class="container">
             <div class="row d-md-flex justify-content-end">
