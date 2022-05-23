@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [PagesController::class, 'home'])->name('home');
+Route::get('/about', [PagesController::class, 'about_us'])->name('about');
+Route::get('/services', [PagesController::class, 'services'])->name('services');
+Route::get('/blog', [PagesController::class, 'blog'])->name('blog');
+Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
+Route::get('/vet', [PagesController::class, 'veterinarian'])->name('veterinarian');
+Route::get('/gallery', [PagesController::class, 'gallery'])->name('gallery');
+Route::get('/pricing', [PagesController::class, 'pricing'])->name('pricing');
