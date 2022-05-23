@@ -33,4 +33,8 @@ class PagesController extends Controller
     public function contact(){
         return view('pages.contact');
     }
+
+    public function pricing(){
+        return view('pages.pricing');
+    }
 }
