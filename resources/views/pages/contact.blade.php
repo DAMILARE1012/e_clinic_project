@@ -1,7 +1,7 @@
 @extends('layouts.front_master')
 
 @section('content')
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');"
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({{ asset('assets/images/bg_2.jpg') }});"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -112,7 +112,8 @@
                                 </div>
                             </div>
                             <div class="col-md-5 d-flex align-items-stretch">
-                                <div class="info-wrap w-100 p-5 img" style="background-image: url(images/img.jpg);">
+                                <div class="info-wrap w-100 p-5 img"
+                                    style="background-image: url({{ asset('assets/images/img.jpg') }});">
                                 </div>
                             </div>
                         </div>

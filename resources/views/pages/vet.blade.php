@@ -1,7 +1,7 @@
 @extends('layouts.front_master')
 
 @section('content')
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');"
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({{ asset('assets/images/bg_2.jpg') }});"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -22,7 +22,8 @@
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="staff">
                         <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image: url(images/staff-1.jpg);"></div>
+                            <div class="img align-self-stretch"
+                                style="background-image: url({{ asset('assets/images/staff-1.jpg') }});"></div>
                         </div>
                         <div class="text pt-3 px-3 pb-4 text-center">
                             <h3>Lloyd Wilson</h3>
@@ -50,7 +51,8 @@
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="staff">
                         <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image: url(images/staff-2.jpg);"></div>
+                            <div class="img align-self-stretch"
+                                style="background-image: url({{ asset('assets/images/staff-2.jpg') }});"></div>
                         </div>
                         <div class="text pt-3 px-3 pb-4 text-center">
                             <h3>Rachel Parker</h3>
@@ -78,7 +80,8 @@
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="staff">
                         <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image: url(images/staff-3.jpg);"></div>
+                            <div class="img align-self-stretch"
+                                style="background-image: url({{ asset('assets/images/staff-3.jpg') }});"></div>
                         </div>
                         <div class="text pt-3 px-3 pb-4 text-center">
                             <h3>Ian Smith</h3>
@@ -106,7 +109,8 @@
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="staff">
                         <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image: url(images/staff-4.jpg);"></div>
+                            <div class="img align-self-stretch"
+                                style="background-image: url({{ asset('assets/images/staff-4.jpg') }});"></div>
                         </div>
                         <div class="text pt-3 px-3 pb-4 text-center">
                             <h3>Alicia Henderson</h3>
@@ -135,7 +139,8 @@
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="staff">
                         <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image: url(images/staff-5.jpg);"></div>
+                            <div class="img align-self-stretch"
+                                style="background-image: url({{ asset('assets/images/staff-5.jpg') }});"></div>
                         </div>
                         <div class="text pt-3 px-3 pb-4 text-center">
                             <h3>Lloyd Wilson</h3>
@@ -163,7 +168,8 @@
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="staff">
                         <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image: url(images/staff-6.jpg);"></div>
+                            <div class="img align-self-stretch"
+                                style="background-image: url({{ asset('assets/images/staff-6.jpg') }});"></div>
                         </div>
                         <div class="text pt-3 px-3 pb-4 text-center">
                             <h3>Rachel Parker</h3>
@@ -191,7 +197,8 @@
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="staff">
                         <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image: url(images/staff-7.jpg);"></div>
+                            <div class="img align-self-stretch"
+                                style="background-image: url({{ asset('assets/images/staff-7.jpg') }});"></div>
                         </div>
                         <div class="text pt-3 px-3 pb-4 text-center">
                             <h3>Ian Smith</h3>
@@ -219,7 +226,8 @@
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="staff">
                         <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image: url(images/staff-8.jpg);"></div>
+                            <div class="img align-self-stretch"
+                                style="background-image: url({{ asset('assets/images/staff-8.jpg') }});"></div>
                         </div>
                         <div class="text pt-3 px-3 pb-4 text-center">
                             <h3>Fred Henderson</h3>

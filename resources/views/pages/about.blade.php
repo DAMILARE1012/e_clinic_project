@@ -1,8 +1,7 @@
 @extends('layouts.front_master')
 
 @section('content')
-    
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');"
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('assets/images/bg_2.jpg') }}');"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -22,7 +21,7 @@
             <div class="row d-flex no-gutters">
                 <div class="col-md-5 d-flex">
                     <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0"
-                        style="background-image:url(images/about-1.jpg);">
+                        style="background-image:url({{ asset('assets/images/about-1.jpg') }});">
                     </div>
                 </div>
                 <div class="col-md-7 pl-md-5 py-md-5">
@@ -120,15 +119,17 @@
             <div class="row">
                 <div class="col-lg-6 order-md-last">
                     <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0"
-                        style="background-image:url(images/about.jpg);">
+                        style="background-image:url({{ asset('assets/images/about.jpg') }});">
                         <a href="https://vimeo.com/45830194"
                             class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
                             <span class="fa fa-play"></span>
                         </a>
                     </div>
                     <div class="d-flex mt-3">
-                        <div class="img img-2 mr-md-2" style="background-image:url(images/about-2.jpg);"></div>
-                        <div class="img img-2 ml-md-2" style="background-image:url(images/about-3.jpg);"></div>
+                        <div class="img img-2 mr-md-2"
+                            style="background-image:url({{ asset('assets/images/about-2.jpg') }});"></div>
+                        <div class="img img-2 ml-md-2"
+                            style="background-image:url({{ asset('assets/images/about-3.jpg') }});"></div>
                     </div>
                 </div>
 
@@ -240,7 +241,8 @@
         </div>
     </section>
 
-    <section class="ftco-section testimony-section" style="background-image: url('images/bg_2.jpg');">
+    <section class="ftco-section testimony-section"
+        style="background-image: url({{ asset('assets/images/bg_2.jpg') }}');">
         <div class="overlay"></div>
         <div class="container">
             <div class="row justify-content-center pb-5 mb-3">
@@ -259,7 +261,8 @@
                                     <p class="mb-4">Far far away, behind the word mountains, far from the
                                         countries Vokalia and Consonantia, there live the blind texts.</p>
                                     <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(images/person_1.jpg)">
+                                        <div class="user-img"
+                                            style="background-image: url({{ asset('assets/images/person_1.jpg') }})">
                                         </div>
                                         <div class="pl-3">
                                             <p class="name">Roger Scott</p>
@@ -277,7 +280,8 @@
                                     <p class="mb-4">Far far away, behind the word mountains, far from the
                                         countries Vokalia and Consonantia, there live the blind texts.</p>
                                     <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(images/person_2.jpg)">
+                                        <div class="user-img"
+                                            style="background-image: url({{ asset('assets/images/person_2.jpg') }})">
                                         </div>
                                         <div class="pl-3">
                                             <p class="name">Roger Scott</p>
@@ -295,7 +299,8 @@
                                     <p class="mb-4">Far far away, behind the word mountains, far from the
                                         countries Vokalia and Consonantia, there live the blind texts.</p>
                                     <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(images/person_3.jpg)">
+                                        <div class="user-img"
+                                            style="background-image: url({{ asset('assets/images/person_3.jpg') }})">
                                         </div>
                                         <div class="pl-3">
                                             <p class="name">Roger Scott</p>
@@ -313,7 +318,8 @@
                                     <p class="mb-4">Far far away, behind the word mountains, far from the
                                         countries Vokalia and Consonantia, there live the blind texts.</p>
                                     <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(images/person_1.jpg)">
+                                        <div class="user-img"
+                                            style="background-image: url({{ asset('assets/images/person_1.jpg') }})">
                                         </div>
                                         <div class="pl-3">
                                             <p class="name">Roger Scott</p>
@@ -331,7 +337,8 @@
                                     <p class="mb-4">Far far away, behind the word mountains, far from the
                                         countries Vokalia and Consonantia, there live the blind texts.</p>
                                     <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(images/person_2.jpg)">
+                                        <div class="user-img"
+                                            style="background-image: url({{ asset('assets/images/person_2.jpg') }})">
                                         </div>
                                         <div class="pl-3">
                                             <p class="name">Roger Scott</p>
@@ -348,7 +355,7 @@
     </section>
 
     <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb img"
-        style="background-image: url(images/bg_3.jpg);">
+        style="background-image: url({{ asset('assets/images/bg_3.jpg') }});">
         <div class="overlay"></div>
         <div class="container">
             <div class="row d-md-flex justify-content-end">
@@ -418,4 +425,3 @@
 
     @include('partials.footer')
 @endsection
-
