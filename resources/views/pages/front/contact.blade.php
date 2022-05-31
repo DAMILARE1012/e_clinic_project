@@ -125,5 +125,5 @@
 
     <div id="map" class="map"></div>
 
-    @include('partials.footer')
+    @include('partials.front.footer')
 @endsection

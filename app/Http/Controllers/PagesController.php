@@ -45,4 +45,9 @@ class PagesController extends Controller
     {
         return view('pages.front.pricing');
     }
+
+    public function admin_dashboard()
+    {
+        return view('pages.admin.dashboard');
+    }
 }

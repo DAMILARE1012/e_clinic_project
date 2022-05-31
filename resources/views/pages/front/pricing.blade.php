@@ -157,5 +157,5 @@
         </div>
     </section>
 
-    @include('partials.footer')
+    @include('partials.front.footer')
 @endsection

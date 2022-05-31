@@ -22,3 +22,4 @@ Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 Route::get('/vet', [PagesController::class, 'veterinarian'])->name('veterinarian');
 Route::get('/gallery', [PagesController::class, 'gallery'])->name('gallery');
 Route::get('/pricing', [PagesController::class, 'pricing'])->name('pricing');
+Route::get('/admin_dashboard', [PagesController::class, 'admin_dashboard'])->name('admin_dashboard');
