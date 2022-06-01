@@ -1,3 +1,9 @@
+@extends('layouts.admin_master')
+
+@section('content')
+    
+@endsection
+
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
   <head>

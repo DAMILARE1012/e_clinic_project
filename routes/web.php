@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\AdminController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,4 +24,6 @@ Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 Route::get('/vet', [PagesController::class, 'veterinarian'])->name('veterinarian');
 Route::get('/gallery', [PagesController::class, 'gallery'])->name('gallery');
 Route::get('/pricing', [PagesController::class, 'pricing'])->name('pricing');
-Route::get('/admin_dashboard', [PagesController::class, 'admin_dashboard'])->name('admin_dashboard');
+Route::get('/admin_dashboard', [AdminController::class, 'admin_dashboard'])->name('admin_dashboard');
+Route::get('/user_login', [AdminController::class, 'signIn'])->name('signIn');
+Route::get('/user_reg', [AdminController::class, 'signUp'])->name('signUp');
