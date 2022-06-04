@@ -1,4 +1,4 @@
-@extends('layouts.admin_master')
+@extends('layouts.login_sign_up')
 
 @section('content')
 
@@ -9,7 +9,7 @@
                     <div class="card">
                         <div class="card-header bg-primary">
                             <div class="app-brand">
-                                <a href="/index.html">
+                                <a href="{{ route('home') }}">
                                     <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg"
                                         preserveAspectRatio="xMidYMid" width="30" height="33" viewBox="0 0 30 33">
                                         <g fill="none" fill-rule="evenodd">
@@ -17,7 +17,7 @@
                                             <path class="logo-fill-white" fill="#FFF" d="M11 4v25l8 4V0z" />
                                         </g>
                                     </svg>
-                                    <span class="brand-name">Sleek Dashboard</span>
+                                    <span class="brand-name">VIMONET Dashboard</span>
                                 </a>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                                         </div>
                                         <button type="submit" class="btn btn-lg btn-primary btn-block mb-4">Sign Up</button>
                                         <p>Already have an account?
-                                            <a class="text-blue" href="sign-in.html">Sign in</a>
+                                            <a class="text-blue" href="{{ route('signIn') }}">Sign in</a>
                                         </p>
                                     </div>
                                 </div>
@@ -62,11 +62,11 @@
                     </div>
                 </div>
             </div>
-            <div class="copyright pl-0">
+            {{-- <div class="copyright pl-0">
                 <p class="text-center">&copy; 2018 Copyright Sleek Dashboard Bootstrap Template by
                     <a class="text-primary" href="http://www.iamabdus.com/" target="_blank">Abdus</a>.
                 </p>
-            </div>
+            </div> --}}
         </div>
     </body>
 @endsection

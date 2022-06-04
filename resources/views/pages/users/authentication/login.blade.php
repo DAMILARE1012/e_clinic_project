@@ -1,4 +1,4 @@
-@extends('layouts.admin_master')
+@extends('layouts.login_sign_up')
 
 @section('content')
     <body class="bg-light-gray" id="body">
@@ -8,7 +8,7 @@
           <div class="card">
             <div class="card-header bg-primary">
               <div class="app-brand">
-                <a href="/index.html">
+                <a href="{{ route('home') }}">
                   <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="30" height="33"
                     viewBox="0 0 30 33">
                     <g fill="none" fill-rule="evenodd">
@@ -16,7 +16,7 @@
                       <path class="logo-fill-white" fill="#FFF" d="M11 4v25l8 4V0z" />
                     </g>
                   </svg>
-                  <span class="brand-name">Sleek Dashboard</span>
+                  <span class="brand-name">VIMONET</span>
                 </a>
               </div>
             </div>
