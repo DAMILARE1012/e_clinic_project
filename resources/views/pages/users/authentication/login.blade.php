@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    @include('roots.admin._css')
-</head>
-  <body class="bg-light-gray" id="body">
+@extends('layouts.admin_master')
+
+@section('content')
+    <body class="bg-light-gray" id="body">
       <div class="container d-flex flex-column justify-content-between vh-100">
       <div class="row justify-content-center mt-5">
         <div class="col-xl-5 col-lg-6 col-md-10">
@@ -55,11 +53,19 @@
           </div>
         </div>
       </div>
-      <div class="copyright pl-0">
+      {{-- <div class="copyright pl-0">
         <p class="text-center">&copy; 2018 Copyright Sleek Dashboard Bootstrap Template by
           <a class="text-primary" href="http://www.iamabdus.com/" target="_blank">Abdus</a>.
         </p>
-      </div>
+      </div> --}}
     </div>
 </body>
-</html>
+@endsection
+
+{{-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    @include('roots.admin._css')
+</head>
+  
+</html> --}}

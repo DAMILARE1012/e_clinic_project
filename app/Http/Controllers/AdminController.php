@@ -11,13 +11,4 @@ class AdminController extends Controller
         return view('pages.admin.dashboard');
     }
 
-    public function signIn()
-    {
-        return view('pages.admin.authentication.login');
-    }
-
-    public function signUp()
-    {
-        return view('pages.admin.authentication.signup');
-    }
 }
