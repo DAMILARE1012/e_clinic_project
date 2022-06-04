@@ -1,7 +1,11 @@
 <?php
 
 use App\Http\Controllers\PagesController;
-use App\Http\Controllers\AdminController;
+// use App\Http\Controllers\AdminController;
+use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Reception\ReceptionController;
+use App\Http\Controllers\Specialist\SpecialistController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +31,25 @@ Route::get('/pricing', [PagesController::class, 'pricing'])->name('pricing');
 Route::get('/admin_dashboard', [AdminController::class, 'admin_dashboard'])->name('admin_dashboard');
 Route::get('/user_login', [AdminController::class, 'signIn'])->name('signIn');
 Route::get('/user_reg', [AdminController::class, 'signUp'])->name('signUp');
+
+Auth::routes();
+
+Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'User', 'middleware' => ['auth', 'user']], function () 
+{
+    Route::get('dashboard', [UserController::class, 'index'])->name('dashboard');
+});
+
+Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () 
+{
+    Route::get('dashboard', [AdminController::class, 'index'])->name('dashboard');
+});
+
+Route::group(['as' => 'reception.', 'prefix' => 'reception', 'namespace' => 'Reception', 'middleware' => ['auth', 'reception']], function () 
+{
+    Route::get('dashboard', [ReceptionController::class, 'index'])->name('dashboard');
+});
+
+Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'Specialist', 'middleware' => ['auth', 'specialist']], function () 
+{
+    Route::get('dashboard', [SpecialistController::class, 'index'])->name('dashboard');
+});
