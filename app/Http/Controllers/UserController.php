@@ -17,13 +17,13 @@ class UserController extends Controller
         return view('pages.users.authentication.signup');
     }
 
-    public function user_board()
+    public function user_dashboard()
     {
         return view('pages.admin.dashboard');
     }
 
     public function user_profile()
     {
-        return view('pages.users.user_board');
+        return view('pages.users.user_profile');
     }
 }
