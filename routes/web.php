@@ -1,11 +1,12 @@
 <?php
 
 use App\Http\Controllers\PagesController;
-// use App\Http\Controllers\AdminController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Reception\ReceptionController;
 use App\Http\Controllers\Specialist\SpecialistController;
+// use App\Http\Controllers\AdminController;
+// use App\Http\Controllers\UserController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +20,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Admin Controller
+Route::get('/admin_dashboard', [AdminController::class, 'admin_dashboard'])->name('admin_dashboard');
 
+
+// Pages Controller
 Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/about', [PagesController::class, 'about_us'])->name('about');
 Route::get('/services', [PagesController::class, 'services'])->name('services');
@@ -53,3 +58,10 @@ Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'S
 {
     Route::get('dashboard', [SpecialistController::class, 'index'])->name('dashboard');
 });
+
+
+// User Controller 
+Route::get('/user_login', [UserController::class, 'signIn'])->name('signIn');
+Route::get('/user_reg', [UserController::class, 'signUp'])->name('signUp');
+Route::get('/user_dashboard', [UserController::class, 'user_dashboard'])->name('user_dashboard');
+Route::get('/user_profile', [UserController::class, 'user_profile'])->name('user_profile');

@@ -18,7 +18,7 @@ class PagesController extends Controller
 
     public function veterinarian()
     {
-        return view('pages.front.vet');
+        return view('pages.front.specialist_profile');
     }
 
     public function gallery()

@@ -174,12 +174,12 @@
                             <span class="fa fa-play"></span>
                         </a>
                     </div>
-                    <div class="d-flex mt-3">
+                    {{-- <div class="d-flex mt-3">
                         <div class="img img-2 mr-md-2"
                             style="background-image:url({{ asset('assets/images/about-2.jpg') }});"></div>
                         <div class="img img-2 ml-md-2"
                             style="background-image:url({{ asset('assets/images/about-3.jpg') }});"></div>
-                    </div>
+                    </div> --}}
                 </div>
 
                 <div class="col-lg-6">
@@ -403,7 +403,7 @@
         </div>
     </section>
 
-    <section class="ftco-section bg-light">
+    {{-- <section class="ftco-section bg-light">
         <div class="container">
             <div class="row justify-content-center pb-5 mb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
@@ -576,9 +576,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
-    <section class="ftco-section bg-light">
+    {{-- <section class="ftco-section bg-light">
         <div class="container">
             <div class="row justify-content-center pb-5 mb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
@@ -636,7 +636,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb img"
         style="background-image: url({{ asset('assets/images/bg_3.jpg') }});">
