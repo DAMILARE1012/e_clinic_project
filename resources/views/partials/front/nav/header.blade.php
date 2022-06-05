@@ -37,12 +37,14 @@
                 <li class="nav-item active"><a href="{{ route('home') }}" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="{{ route('about') }}" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="{{ route('veterinarian') }}"
-                        class="nav-link">Veterinarian</a></li>
+                        class="nav-link">Profile</a></li>
                 <li class="nav-item"><a href="{{ route('services') }}" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="{{ route('gallery') }}" class="nav-link">Gallery</a></li>
-                <li class="nav-item"><a href="{{ route('pricing') }}" class="nav-link">Pricing</a></li>
-                <li class="nav-item"><a href="{{ route('blog') }}" class="nav-link">Blog</a></li>
+                {{-- <li class="nav-item"><a href="{{ route('gallery') }}" class="nav-link">Gallery</a></li> --}}
+                {{-- <li class="nav-item"><a href="{{ route('pricing') }}" class="nav-link">Pricing</a></li> --}}
+                {{-- <li class="nav-item"><a href="{{ route('blog') }}" class="nav-link">Blog</a></li> --}}
                 <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="{{ route('signUp') }}" class="nav-link"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a></li>
+                <li class="nav-item"><a href="{{ route('signIn') }}" class="nav-link"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
             </ul>
         </div>
     </div>

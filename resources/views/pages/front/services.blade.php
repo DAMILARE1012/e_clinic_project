@@ -16,7 +16,7 @@
         </div>
     </section>
 
-    <section class="ftco-section ftco-no-pt ftco-no-pb">
+    {{-- <section class="ftco-section ftco-no-pt ftco-no-pb">
         <div class="container">
             <div class="row d-flex no-gutters">
                 <div class="col-md-5 d-flex">
@@ -65,7 +65,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="ftco-section bg-light">
         <div class="container">

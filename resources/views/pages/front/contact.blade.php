@@ -123,7 +123,5 @@
         </div>
     </section>
 
-    <div id="map" class="map"></div>
-
     @include('partials.front.footer')
 @endsection
