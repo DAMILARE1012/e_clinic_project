@@ -9,6 +9,6 @@ class ReceptionController extends Controller
 {
     public function index()
     {
-        return view('reception.index');
+        return view('pages.reception.index');
     }
 }
