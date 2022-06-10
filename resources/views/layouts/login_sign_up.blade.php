@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <title> @yield('title', 'e-Clinic Admin Page') </title>
+    <title> @yield('title', 'e-Clinic') </title>
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/favicon.jpg') }}">
 
     <meta charset="UTF-8">
@@ -28,12 +28,10 @@
 
     <div class="wrapper">
 
-        @include('partials.login_signUp.sidebar_footer')
-
+       
 
         <div class="page-wrapper">
             <!-- Header -->
-            @include('partials.login_signUp.header')
 
             @yield('content')
 
