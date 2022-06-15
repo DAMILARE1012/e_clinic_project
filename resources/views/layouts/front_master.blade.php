@@ -12,12 +12,12 @@
     <meta name="author" content="CBN, GIZ, Federal University of Technology Minna">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    @include('roots._css')
+    @include('roots.front._css')
 </head>
 
 <body>
 
-    @include('partials.nav.header')
+    @include('partials.front.nav.header')
 
     <!-- END nav -->
 
@@ -30,7 +30,7 @@
                 stroke="#F96D00" />
         </svg></div>
 
-    @include('roots._javascript')
+    @include('roots.front._javascript')
 
 </body>
 
