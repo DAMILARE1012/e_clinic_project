@@ -20,5 +20,6 @@ class VitalController extends Controller
         ];
 
         return response($response, 201);
+
     }
 }
