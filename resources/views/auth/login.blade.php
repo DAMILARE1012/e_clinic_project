@@ -26,7 +26,7 @@
 	<form action="{{ route('login') }}" method="POST">
     @csrf
 		<div class="form-group">
-			<input id="sign-in-email" type="email" class="form-control" placeholder="Email" name="email">
+			<input id="sign-in-email" type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}">
       
       @error('email')
         <span class="text-danger" role="alert">
