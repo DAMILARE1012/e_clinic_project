@@ -5,8 +5,8 @@ use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Reception\ReceptionController;
 use App\Http\Controllers\Specialist\SpecialistController;
-// use App\Http\Controllers\AdminController;
-// use App\Http\Controllers\UserController;
+
+use App\Http\Controllers\User\ComplaintController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +33,8 @@ Auth::routes();
 Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'User', 'middleware' => ['auth', 'user']], function () 
 {
     Route::get('dashboard', [UserController::class, 'index'])->name('dashboard');
+    Route::get('make-request', [ComplaintController::class, 'createNewComplaint'])->name('make.complaint');
+    Route::post('make-request', [ComplaintController::class, 'storeNewComplaint'])->name('make.complaint');
 });
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () 
