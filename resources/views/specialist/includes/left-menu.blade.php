@@ -12,7 +12,7 @@
           <ul>
             <li class="dropdown">
               <a href="javascript:void(0)" class="dropdown-toggle usertitle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <small>Web Developer</small>
+                <small>{{ Auth::user()->role->name }}</small>
                 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu animated flipInY">
