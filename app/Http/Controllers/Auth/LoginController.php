@@ -38,19 +38,19 @@ class LoginController extends Controller
     public function redirectTo()
     {
         switch(Auth::user()->role_id){
-            case '3':
+            case '2':
             $this->redirectTo = route('admin.dashboard');
             return $this->redirectTo;
                 break;
-            case '0':
+            case '1':
                 $this->redirectTo = route('user.dashboard');
                 return $this->redirectTo;
                 break;
-            case '1':
+            case '3':
                 $this->redirectTo = route('reception.dashboard');
                 return $this->redirectTo;
                 break;
-            case '2':
+            case '4':
                 $this->redirectTo = route('specialist.dashboard');
                 return $this->redirectTo;
                 break;

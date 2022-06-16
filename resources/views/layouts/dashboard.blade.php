@@ -19,14 +19,14 @@
 <!--========== END app navbar -->
 
 <!-- APP ASIDE ==========-->
-@if(auth()->user()->role_id == 0)
+@if(auth()->user()->role_id == 1)
 	@include('user.includes.left-menu')
-@elseif(auth()->user()->role_id == 1)
-	@include('receptionist.includes.left-menu')
 @elseif(auth()->user()->role_id == 2)
-	@include('specialist.includes.left-menu')
-@elseif(auth()->user()->role_id == 3)
 	@include('admin.includes.left-menu')
+@elseif(auth()->user()->role_id == 3)
+	@include('receptionist.includes.left-menu')
+@elseif(auth()->user()->role_id == 4)
+	@include('specialist.includes.left-menu')
 @endif
 <!--========== END app aside -->
 

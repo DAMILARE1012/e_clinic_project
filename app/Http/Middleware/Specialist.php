@@ -17,7 +17,7 @@ class Specialist
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth::check() && Auth::user()->role_id == 2) {
+        if (auth::check() && Auth::user()->role_id == 4) {
             return $next($request);
         }
         else {

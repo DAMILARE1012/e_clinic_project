@@ -17,7 +17,7 @@ class Reception
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth::check() && Auth::user()->role_id == 1) {
+        if (auth::check() && Auth::user()->role_id == 3) {
             return $next($request);
         }
         else {
