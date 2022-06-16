@@ -30,34 +30,9 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo;
+    protected $redirectTo = '/user/dashboard';
 
-    public function redirectTo()
-    {
-        switch(Auth::user()->role_id){
-            case '3':
-            $this->redirectTo = route('admin.dashboard');
-            return $this->redirectTo;
-                break;
-            case '0':
-                $this->redirectTo = route('user.dashboard');
-                return $this->redirectTo;
-                break;
-            case '1':
-                $this->redirectTo = route('reception.dashboard');
-                return $this->redirectTo;
-                break;
-            case '2':
-                $this->redirectTo = route('specialist.dashboard');
-                return $this->redirectTo;
-                break;
-            default:
-                $this->redirectTo = '/login';
-                return $this->redirectTo;
-        }
-         
-        // return $next($request);
-    } 
+    
     public function __construct()
     {
         $this->middleware('guest');
