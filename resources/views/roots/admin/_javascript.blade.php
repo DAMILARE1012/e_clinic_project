@@ -16,3 +16,5 @@
 <script src="{{ asset('admin/libs/bower/moment/moment.js') }}"></script>
 <script src="{{ asset('admin/libs/bower/fullcalendar/dist/fullcalendar.min.js') }}"></script>
 <script src="{{ asset('admin/assets/js/fullcalendar.js') }}"></script>
+
+<script src="{{ mix('/js/app.js') }}"></script>
