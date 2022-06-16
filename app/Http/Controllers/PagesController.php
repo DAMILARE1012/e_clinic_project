@@ -8,7 +8,7 @@ class PagesController extends Controller
 {
     public function home()
     {
-        return view('pages.front.home');
+        return view('welcome');
     }
 
     public function about_us()

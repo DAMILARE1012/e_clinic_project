@@ -1,20 +1,18 @@
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCn8TFXGg17HAUcNpkwtxxyT9Io9B_NcM" defer></script>
-<script src="{{ asset('admin/assets/plugins/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('admin/assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('admin/assets/plugins/toaster/toastr.min.js') }}"></script>
-<script src="{{ asset('admin/assets/plugins/slimscrollbar/jquery.slimscroll.min.js') }}"></script>
-<script src="{{ asset('admin/assets/plugins/charts/Chart.min.js') }}"></script>
-<script src="{{ asset('admin/assets/plugins/ladda/spin.min.js') }}"></script>
-<script src="{{ asset('admin/assets/plugins/ladda/ladda.min.js') }}"></script>
-<script src="{{ asset('admin/assets/plugins/jquery-mask-input/jquery.mask.min.js') }}"></script>
-<script src="{{ asset('admin/assets/plugins/select2/js/select2.min.js') }}"></script>
-<script src="{{ asset('admin/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js') }}"></script>
-<script src="{{ asset('admin/assets/plugins/jvectormap/jquery-jvectormap-world-mill.js') }}"></script>
-<script src="{{ asset('admin/assets/plugins/daterangepicker/moment.min.js') }}"></script>
-<script src="{{ asset('admin/assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
-<script src="{{ asset('admin/assets/plugins/jekyll-search.min.js') }}"></script>
-<script src="{{ asset('admin/assets/js/sleek.js') }}"></script>
-<script src="{{ asset('admin/assets/js/chart.js') }}"></script>
-<script src="{{ asset('admin/assets/js/date-range.js') }}"></script>
-<script src="{{ asset('admin/assets/js/map.js') }}"></script>
-<script src="{{ asset('admin/assets/js/custom.js') }}"></script>
+<!-- build:js {{asset('admin/assets/js/core.min.js') }} -->
+<script src="{{ asset('admin/libs/bower/jquery/dist/jquery.js') }}"></script>
+<script src="{{ asset('admin/libs/bower/jquery-ui/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('admin/libs/bower/jQuery-Storage-API/jquery.storageapi.min.js') }}"></script>
+<script src="{{ asset('admin/libs/bower/bootstrap-sass/assets/javascripts/bootstrap.js') }}"></script>
+<script src="{{ asset('admin/libs/bower/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
+<script src="{{ asset('admin/libs/bower/perfect-scrollbar/js/perfect-scrollbar.jquery.js') }}"></script>
+<script src="{{ asset('admin/libs/bower/PACE/pace.min.js') }}"></script>
+<!-- endbuild -->
+
+<!-- build:js {{asset('admin/assets/js/app.min.js') }} -->
+<script src="{{ asset('admin/assets/js/library.js') }}"></script>
+<script src="{{ asset('admin/assets/js/plugins.js') }}"></script>
+<script src="{{ asset('admin/assets/js/app.js') }}"></script>
+<!-- endbuild -->
+<script src="{{ asset('admin/libs/bower/moment/moment.js') }}"></script>
+<script src="{{ asset('admin/libs/bower/fullcalendar/dist/fullcalendar.min.js') }}"></script>
+<script src="{{ asset('admin/assets/js/fullcalendar.js') }}"></script>

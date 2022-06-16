@@ -9,6 +9,6 @@ class SpecialistController extends Controller
 {
     public function index()
     {
-        return view('pages.specialist.index');
+        return view('specialist.home');
     }
 }

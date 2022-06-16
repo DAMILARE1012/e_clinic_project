@@ -40,7 +40,7 @@ class CreateUsersSeeder extends Seeder
                 'firstname'=>'Specialist',
                 'lastname'=>'User',
                 'email'=>'specialist@example.com',
-                'role_id'=>3,
+                'role_id'=>2,
                 'password'=> bcrypt('123456'),
              ],
         ];

@@ -1,31 +1,15 @@
-
-  <!-- GOOGLE FONTS -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500" rel="stylesheet"/>
-  <link href="https://cdn.materialdesignicons.com/3.0.39/css/materialdesignicons.min.css" rel="stylesheet" />
-
-  <!-- PLUGINS CSS STYLE -->
-  <link href="{{ asset('admin/assets/plugins/toaster/toastr.min.css') }}" rel="stylesheet" />
-  <link href="{{ asset('admin/assets/plugins/nprogress/nprogress.css') }}" rel="stylesheet" />
-  <link href="{{ asset('admin/assets/plugins/flag-icons/css/flag-icon.min.css') }}" rel="stylesheet"/>
-  <link href="{{ asset('admin/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet" />
-  <link href="{{ asset('admin/assets/plugins/ladda/ladda.min.css') }}" rel="stylesheet" />
-  <link href="{{ asset('admin/assets/plugins/select2/css/select2.min.css') }}" rel="stylesheet" />
-  <link href="{{ asset('admin/assets/plugins/daterangepicker/daterangepicker.css') }}" rel="stylesheet" />
-
-  <!-- SLEEK CSS -->
-  <link id="sleek-css" rel="stylesheet" href="{{ asset('admin/assets/css/sleek.css') }}" />
-
-  
-
-  <!-- FAVICON -->
-  <link href="{{ asset('admin/assets/img/favicon.png') }}" rel="shortcut icon" /> 
-
-  <!--
-    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
-  -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <script src="{{ asset('admin/assets/plugins/nprogress/nprogress.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('admin/libs/bower/font-awesome/css/font-awesome.min.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css') }}">
+<!-- build:css ../assets/css/app.min.css -->
+<link rel="stylesheet" href="{{ asset('admin/libs/bower/animate.css') }}/animate.min.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/libs/bower/fullcalendar/dist/fullcalendar.min.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/libs/bower/perfect-scrollbar/css/perfect-scrollbar.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/assets/css/core.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/assets/css/app.css') }}">
+<!-- endbuild -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300">
+<script src="{{ asset('admin/libs/bower/breakpoints.js/dist/breakpoints.min.js') }}"></script>
+<script>
+  Breakpoints();
+</script>
