@@ -8,7 +8,9 @@
 	<link rel="shortcut icon" sizes="196x196" href="{{ asset('admin/assets/images/logo.png') }}">
 	<title>@yield('title', 'e-Clinic Admin Page')</title>
 	
+	
 	@include('roots.admin._css')
+	@stack('styles')
 </head>
 	
 <body class="menubar-left menubar-unfold menubar-light theme-primary">

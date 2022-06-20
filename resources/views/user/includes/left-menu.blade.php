@@ -67,9 +67,8 @@
             <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
           </a>
           <ul class="submenu">
-            <li><a href="{{ route('user.make.complaint') }}"><span class="menu-text">New Request </span></a></li>
-            <li><a href="#"><span class="menu-text">Pending </span></a></li>
-            <li><a href="#"><span class="menu-text">Completed</span></a></li>
+            <li><a href="{{ route('user.make.complaint') }}"><span class="menu-text">New Complaint </span></a></li>
+            <li><a href="{{ route('user.complaints') }}"><span class="menu-text">Complaints </span></a></li>
           </ul>
         </li>
 
