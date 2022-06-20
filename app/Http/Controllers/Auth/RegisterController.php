@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Auth;
+use App\Models\Profile;
 
 class RegisterController extends Controller
 {
@@ -30,9 +31,10 @@ class RegisterController extends Controller
      *
      * @var string
      */
+
     protected $redirectTo = '/user/dashboard';
 
-    
+       
     public function __construct()
     {
         $this->middleware('guest');
@@ -62,11 +64,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'firstname' => $data['firstname'],
             'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $user->profile()->save(new Profile);
+        return $user;
     }
 }

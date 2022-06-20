@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap.css') }}">
 <link rel="stylesheet" href="{{ asset('admin/assets/css/core.css') }}">
 <link rel="stylesheet" href="{{ asset('admin/assets/css/app.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/libs/bower/switchery/dist/switchery.min.css') }}">
 <!-- endbuild -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300">
 <script src="{{ asset('admin/libs/bower/breakpoints.js/dist/breakpoints.min.js') }}"></script>

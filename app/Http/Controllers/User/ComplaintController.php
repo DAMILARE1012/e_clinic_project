@@ -28,7 +28,13 @@ class ComplaintController extends Controller
 
         return redirect()->route('user.dashboard')->with('message', 'Complaint sent successful, A specialist will be assigned to you soon');
 
-
-
     }
+
+    public function allComplaints()
+    {
+        $complaints = Complaint::all();
+        return view('user.requests.index', compact('complaints'));
+    }
+
+    
 }
