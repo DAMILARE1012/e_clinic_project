@@ -24,7 +24,7 @@ class CreateProfilesTable extends Migration
             $table->string('about')->nullable();
             $table->boolean('availability')->default(0);
             $table->tinyInteger('specialization_id')->nullable();
-            $table->boolean('completed');
+            $table->boolean('completed')->default(0);
             $table->timestamps();
         });
     }

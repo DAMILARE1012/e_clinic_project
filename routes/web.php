@@ -33,10 +33,16 @@ Auth::routes();
 Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'User', 'middleware' => ['auth', 'user']], function () 
 {
     Route::get('dashboard', [UserController::class, 'index'])->name('dashboard');
+    
+    // Request routes
     Route::get('make-request', [ComplaintController::class, 'createNewComplaint'])->name('make.complaint');
     Route::post('make-request', [ComplaintController::class, 'storeNewComplaint'])->name('make.complaint');
     Route::get('all-complaints', [ComplaintController::class, 'allComplaints'])->name('complaints');
+    
+    // profile update and medical history
     Route::get('profile-update', [ProfileController::class, 'editProfile'])->name('edit.profile');
+    Route::post('profile-update', [ProfileController::class, 'updateProfile'])->name('update.profile');
+    Route::get('check-medical-history', [ProfileController::class, 'editMedicalHistory'])->name('check.medical.history');
 });
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () 
