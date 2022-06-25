@@ -14,16 +14,22 @@
                 <small>
                     Dear {{ Auth::user()->firstname }}, We would like to know a bit more about you.
                 </small>
+
+                @if(Session::has('message'))
+                    <div class="alert alert-success">
+                        {{ Session::get('message') }}
+                    </div>
+                @endif
             </div>
 
-            <form action="{{ route('user.make.complaint') }}" method="post">
+            <form action="{{ route(auth()->user()->role->name.'.'.'update.profile') }}" method="post">
                 @csrf
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Date Of Birth</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                            @error('dob')
+                            <label for="exampleInputtext1">Date Of Birth</label>
+                            <input name="date_of_birth" value="{{ auth()->user()->profile->dob }}" type="date" class="form-control" id="exampleInputtext1" placeholder="text">
+                            @error('date_of_birth')
                                 <span class="text-danger">
                                     {{ $message }}
                                 </span>
@@ -31,11 +37,11 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Gender</label>
+                            <label for="exampleInputtext1">Gender</label>
                             <select name="gender" class="form-control">
                             <option value="">--Choose--</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
+                                <option value="male" {{ auth()->user()->profile->gender == 'male' ? 'selected': ''}}>Male</option>
+                                <option value="female" {{ auth()->user()->profile->gender == 'female' ? 'selected': ''}}>Female</option>
                             </select>
 
                             @error('gender')
@@ -46,12 +52,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Religion</label>
+                            <label for="exampleInputtext1">Religion</label>
                             <select name="religion" class="form-control">
                                 <option value="">--Choose--</option>
-                                <option value="male">Christianity</option>
-                                <option value="female">Islam</option>
-                                <option value="female">Others</option>
+                                <option value="christianity" {{ auth()->user()->profile->religion == 'christianity' ? 'selected': ''}}>Christianity</option>
+                                <option value="islam" {{ auth()->user()->profile->religion == 'islam' ? 'selected': ''}}>Islam</option>
+                                <option value="others" {{ auth()->user()->profile->religion == 'others' ? 'selected': ''}}>Others</option>
                             </select>
                             @error('gender')
                                 <span class="text-danger">
@@ -61,11 +67,11 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Specialization</label>
-                            <select name="religion" class="form-control">
+                            <label for="exampleInputtext1">Specialization</label>
+                            <select name="specialization" class="form-control">
                                 <option value="">--Choose--</option>
                                 @foreach($specializations as $key => $specialization)
-                                    <option value="">{{ $specialization->name }}</option>
+                                    <option value="{{ $specialization->id }}" {{ auth()->user()->profile->specialization_id == $specialization->id ? 'selected': ''}}>{{ $specialization->name }}</option>
                                 @endforeach
                             </select>
                             @error('gender')
@@ -80,8 +86,8 @@
                     <div class="col-sm-6">
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">City</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="City" name="city">
+                            <label for="exampleInputtext1">City</label>
+                            <input type="text" value="{{ auth()->user()->profile->city }}" class="form-control" id="exampleInputtext1" placeholder="City" name="city">
                             @error('city')
                                 <span class="text-danger">
                                     {{ $message }}
@@ -90,8 +96,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">State</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="State" name="state">
+                            <label for="exampleInputtext1">State</label>
+                            <input type="text" value="{{ auth()->user()->profile->state }}" class="form-control" id="exampleInputtext1" placeholder="State" name="state">
                             @error('state')
                                 <span class="text-danger">
                                     {{ $message }}
@@ -100,8 +106,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">About</label>
-                            <textarea name="about" class="form-control"></textarea>
+                            <label for="exampleInputtext1">About</label>
+                            <textarea name="about" class="form-control">{{ auth()->user()->profile->about}}"</textarea>
                             @error('about')
                                 <span class="text-danger">
                                     {{ $message }}
@@ -114,6 +120,10 @@
                 
 
                 <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                
+                @if(auth()->user()->profile->completed)
+                    <a class="btn btn-info btn-md" href="{{ route(auth()->user()->role->name.'.'.'dashboard') }}">Proceed to dashboard</a>
+                @endif
             </form>
         </div><!-- .widget-body -->
     </div><!-- .widget -->	

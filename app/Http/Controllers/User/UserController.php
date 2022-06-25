@@ -9,10 +9,10 @@ class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('profile.updated');
+        $this->middleware(['profile.updated', 'check.medical.history']);
     }
 
-    public function index()
+    public function index() 
     {
         return view('user.home');
     }
