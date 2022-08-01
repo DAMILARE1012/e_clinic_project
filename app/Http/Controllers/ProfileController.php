@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Specialization;
 use App\Models\Profile;
+use App\Models\MedicalHistory;
 use Carbon;
 
 class ProfileController extends Controller
@@ -52,13 +53,35 @@ class ProfileController extends Controller
         $profile->completed = true;
         $profile->Save();
 
+        $medicalHistory = new MedicalHistory;
+        $medicalHistory->user_id = auth()->id();
+        $medicalHistory->save();
+
         if($profile){
             return redirect()->back()->with('message', 'Profile updated!');
         }
     }
 
+    // Medical History
+
     public function editMedicalHistory()
     {
         return view('user.profiles.edit-medical-history');
     }
+
+    public function storeMedicalHistory(Request $request)
+    {
+        $this->validate($request, [
+            'description' => 'required'
+        ]);
+
+        $history = MedicalHistory::where('user_id', auth()->id())->first();
+        $history->description = $request->description;
+        $history->completed = true;
+        $history->save();
+
+        return redirect()->back()->with('message', 'Medical History updated!');
+    }
+
+
 }
