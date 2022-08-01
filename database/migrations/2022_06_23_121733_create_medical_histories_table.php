@@ -16,6 +16,7 @@ class CreateMedicalHistoriesTable extends Migration
         Schema::create('medical_histories', function (Blueprint $table) {
             $table->id();
             $table->tinyInteger('user_id');
+            $table->text('description')->nullable();
             $table->boolean('completed')->default(false);
             $table->timestamps();
         });

@@ -43,6 +43,7 @@ Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'User', 'middl
     Route::get('profile-update', [ProfileController::class, 'editProfile'])->name('edit.profile');
     Route::post('profile-update', [ProfileController::class, 'updateProfile'])->name('update.profile');
     Route::get('check-medical-history', [ProfileController::class, 'editMedicalHistory'])->name('check.medical.history');
+    Route::post('check-medical-history', [ProfileController::class, 'storeMedicalHistory'])->name('check.medical.history');
 });
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () 
