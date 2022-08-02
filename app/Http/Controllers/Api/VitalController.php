@@ -8,18 +8,29 @@ use App\Models\User;
 
 class VitalController extends Controller
 {
-    public function vitals(Request $request)
+    public function vitals($id=null)
     {
+        
+        $user = User::where('id', $id)->first();  
+        
+        if($user){
 
-        $user = User::where('email', 'w3ZCuBo0GM@gmail.com')->first();        
-        $token = $user->createToken('Wearable devices')->plainTextToken;
+            $token = $user->createToken('Wearable devices')->plainTextToken;
 
-        $response = [
-            'user' => $user,
-            'token' => $token,
-        ];
+            $response = [
+                // 'user' => $user,
+                'vitals' => $user->vitals,
+                'token' => $token,
+            ];
 
-        return response($response, 201);
+            return response($response, 201); 
+        
+        }else{
+
+            return response("User not found", 401);
+        }
+        
+        
 
     }
 }

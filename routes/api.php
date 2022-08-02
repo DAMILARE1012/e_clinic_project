@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('vitals', [VitalController::class, 'vitals']);
+Route::get('vitals/{id}', [VitalController::class, 'vitals']);
 
 Route::middleware(['auth:sanctum'])->group(function(){
     
