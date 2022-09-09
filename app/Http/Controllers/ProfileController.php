@@ -36,7 +36,7 @@ class ProfileController extends Controller
             'date_of_birth' => 'required|before:'.$before,
             'gender' => 'required|string',
             'religion' => 'required|string',
-            'specialization' => 'required|string',
+            'specialization' => 'string',
             'city' => 'required|string',
             'state' => 'required|string',
             'about' => 'string',
@@ -46,7 +46,6 @@ class ProfileController extends Controller
         $profile->dob = $request->date_of_birth;
         $profile->gender = $request->gender;
         $profile->religion = $request->religion;
-        $profile->specialization_id = $request->specialization;
         $profile->city = $request->city;
         $profile->state = $request->state;
         $profile->about = $request->about;

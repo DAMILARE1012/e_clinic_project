@@ -58,4 +58,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(MedicalHistory::class);
     }
+
+    public function vitals()
+    {
+        return $this->hasOne(Vital::class);
+    }
 }
