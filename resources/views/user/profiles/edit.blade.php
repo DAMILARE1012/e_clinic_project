@@ -66,21 +66,6 @@
                             @enderror
                         </div>
 
-                        <div class="form-group">
-                            <label for="exampleInputtext1">Specialization</label>
-                            <select name="specialization" class="form-control">
-                                <option value="">--Choose--</option>
-                                @foreach($specializations as $key => $specialization)
-                                    <option value="{{ $specialization->id }}" {{ auth()->user()->profile->specialization_id == $specialization->id ? 'selected': ''}}>{{ $specialization->name }}</option>
-                                @endforeach
-                            </select>
-                            @error('gender')
-                                <span class="text-danger">
-                                    {{ $message }}
-                                </span>
-                            @enderror
-                        </div>
-
                     </div>
                     
                     <div class="col-sm-6">

@@ -18,9 +18,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('vitals/{id}', [VitalController::class, 'vitals']);
 
 Route::middleware(['auth:sanctum'])->group(function(){
-    
+    Route::get('vitals', [VitalController::class, 'vitals']);
 });
 
+Route::get('get-vitals/{deviceid}', [VitalController::class, 'getVitals']);
+Route::Post('get-access-token', [VitalController::class, 'getToken']);
+Route::Post('update-vitals', [VitalController::class, 'updateVitals']);
