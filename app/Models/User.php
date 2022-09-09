@@ -44,8 +44,23 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+
     public function role()
     {
         return $this->belongsTo(Role::class);
+    }
+
+    public function medicalHistory()
+    {
+        return $this->hasOne(MedicalHistory::class);
+    }
+
+    public function vitals()
+    {
+        return $this->hasOne(Vital::class);
     }
 }

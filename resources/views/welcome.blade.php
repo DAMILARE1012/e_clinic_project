@@ -12,10 +12,8 @@
                         <div class="content double-items">
 
                             <div class="col-md-7 col-sm-6">
-                                <h1 data-animation="animated slideInRight">Best care for your Good health</h1>
-                                <p data-animation="animated slideInUp">
-                                    The ourselves suffering the sincerity. Inhabit her manners adapted age certain. Debating offended at branched striking be subjects.
-                                </p>
+                                <h1 data-animation="animated slideInRight">Best care from the comfort of your home</h1>
+                                
                                 <a data-animation="animated slideInUp" class="btn btn-light effect btn-md" href="#">View Details</a>
                             </div>
 

@@ -79,9 +79,15 @@
                         <a href="{{ route('login') }}">Contact</a>
                     </li>
                     
-                    <li>
-                        <a href="{{ route('login') }}">Login</a>
-                    </li>
+                    @if(Auth::check())
+                        <li>
+                            <a href="{{ Auth::user()->role->name }}/dashboard">Home</a>
+                        </li>
+                    @else
+                        <li>
+                            <a href="{{ route('login') }}">Login</a>
+                        </li>
+                    @endif
 
                     <li>
                         <a href="{{ route('register') }}">Register</a>

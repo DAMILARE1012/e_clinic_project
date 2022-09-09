@@ -53,6 +53,13 @@
     <div class="menubar-scroll-inner">
       <ul class="app-menu">
 
+        <li>
+          <a href="{{ route('user.dashboard') }}">
+            <i class="menu-icon fa fa-bars zmdi-hc-lg"></i>
+            <span class="menu-text">Dashboard</span>
+          </a>
+        </li>
+
         <li class="has-submenu">
           <a href="javascript:void(0)" class="submenu-toggle">
             <i class="menu-icon fa fa-users zmdi-hc-lg"></i>
@@ -60,8 +67,8 @@
             <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
           </a>
           <ul class="submenu">
-            <li><a href="#"><span class="menu-text">Pending </span></a></li>
-            <li><a href="#"><span class="menu-text">Completed</span></a></li>
+            <li><a href="{{ route('user.make.complaint') }}"><span class="menu-text">New Complaint </span></a></li>
+            <li><a href="{{ route('user.complaints') }}"><span class="menu-text">Complaints </span></a></li>
           </ul>
         </li>
 

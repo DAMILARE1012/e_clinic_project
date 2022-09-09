@@ -16,8 +16,11 @@ class CreateVitalsTable extends Migration
         Schema::create('vitals', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('temperature');
-            $table->string('blood_pressure');
+            $table->string('device_id');
+            $table->string('temperature')->nullable();
+            $table->string('blood_pressure')->nullable();
+            $table->string('heart_rate');
+            $table->string('battery_level')->nullable();
             $table->timestamps();
         });
     }

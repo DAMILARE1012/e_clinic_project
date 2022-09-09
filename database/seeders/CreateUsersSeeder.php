@@ -15,14 +15,6 @@ class CreateUsersSeeder extends Seeder
     public function run()
     {
         $users = [
-
-            [
-                'firstname'=>'User',
-                'lastname'=>'User',
-                'email'=>'user@example.com',
-                'role_id'=>1,
-                'password'=> bcrypt('123456'),
-            ],
             
             [
                'firstname'=>'Admin',
