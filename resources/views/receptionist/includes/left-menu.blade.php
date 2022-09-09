@@ -69,6 +69,15 @@
         <li class="menu-separator"><hr></li>
 
         <li>
+          <a href="{{ route ('reception.doctor') }} ">
+            <i class="menu-icon fa fa-cogs zmdi-hc-lg"></i>
+            <span class="menu-text">Specialists</span>
+          </a>
+        </li>
+
+        <li class="menu-separator"><hr></li>
+
+        <li>
           <a href="#">
             <i class="menu-icon fa fa-cogs zmdi-hc-lg"></i>
             <span class="menu-text">Account Setting</span>

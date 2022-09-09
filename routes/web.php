@@ -4,6 +4,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Reception\ReceptionController;
+use App\Http\Controllers\Reception\DoctorController;
 use App\Http\Controllers\Specialist\SpecialistController;
 use App\Http\Controllers\User\ComplaintController;
 use App\Http\Controllers\ProfileController;
@@ -54,6 +55,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
 Route::group(['as' => 'reception.', 'prefix' => 'reception', 'namespace' => 'Reception', 'middleware' => ['auth', 'reception', 'profile.updated']], function () 
 {
     Route::get('dashboard', [ReceptionController::class, 'index'])->name('dashboard');
+    Route::get('doctor', [DoctorController::class, 'index'])->name('doctor');
 });
 
 Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'Specialist', 'middleware' => ['auth', 'specialist', 'profile.updated']], function () 
