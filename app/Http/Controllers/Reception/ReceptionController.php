@@ -11,4 +11,10 @@ class ReceptionController extends Controller
     {
         return view('receptionist.home');
     }
+
+    public function specialist()
+    {
+        $specialists = User::where('role_id', 4)->get();
+        return view('receptionist.specialist', compact('specialists'));
+    }
 }

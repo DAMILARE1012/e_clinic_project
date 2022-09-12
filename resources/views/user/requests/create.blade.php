@@ -18,6 +18,8 @@
 
             <form action="{{ route('user.make.complaint') }}" method="post">
                 @csrf
+
+                
                 <div class="form-group">
                     <label for="exampleInputEmail1">Description of Problem</label>
                     <textarea class="form-control" name="description"></textarea>

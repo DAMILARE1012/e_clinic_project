@@ -75,9 +75,9 @@
         <li class="menu-separator"><hr></li>
 
         <li>
-          <a href="#">
+          <a href="{{ route('specialist.profile') }} ">
             <i class="menu-icon fa fa-cogs zmdi-hc-lg"></i>
-            <span class="menu-text">Account Setting</span>
+            <span class="menu-text">Profile</span>
           </a>
         </li>
 
