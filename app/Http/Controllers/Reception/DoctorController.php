@@ -8,5 +8,10 @@ use App\Models\User;
 
 class DoctorController extends Controller
 {
-    
+
+    public function index()
+    {
+        $doctors = User::where('role_id', 4)->get();
+        return view('receptionist.doctor', compact('doctors'));
+    }
 }
