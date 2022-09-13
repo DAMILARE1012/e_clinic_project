@@ -13,14 +13,14 @@ class ProfileController extends Controller
 {
     public function editProfile()
     {
-        $role = auth()->user()->role;
+        $role = auth()->user()->role_id;
         $specializations = Specialization::all();
         
-        if ($role = 1) {
+        if ($role == 1) {
             return view('user.profiles.edit', compact('specializations'));
-        }elseif($role = 3){
+        }elseif($role == 3){
             return view('receptionist.profiles.edit', compact('specializations'));
-        }elseif($role = 4){
+        }elseif($role == 4){
             return view('specialist.profiles.edit', compact('specializations'));
         }
     }
@@ -65,17 +65,27 @@ class ProfileController extends Controller
 
     public function editMedicalHistory()
     {
-        return view('user.profiles.edit-medical-history');
+        $history = MedicalHistory::where('user_id', auth()->id())->firstOrFail();
+        return view('user.profiles.edit-medical-history', compact ('history'));
     }
 
     public function storeMedicalHistory(Request $request)
     {
-        $this->validate($request, [
-            'description' => 'required'
-        ]);
+        // $this->validate($request, [
+        //     'description' => 'required',
+            
+        // ]);
 
         $history = MedicalHistory::where('user_id', auth()->id())->first();
-        $history->description = $request->description;
+        $history->chronic_illness = $request->chronic_illness;
+        $history->no_children = $request->no_children;
+        $history->no_delivery = $request->no_delivery;
+        $history->no_pregnacy = $request->no_pregnacy;
+        $history->last_menst_period = $request->last_menst_period;
+        $history->past_B_transfusion = $request->past_B_transfusion;
+        $history->drug_history = $request->drug_history;
+        $history->past_surgry = $request->past_surgry;
+        $history->past_hospital = $request->past_hospital;
         $history->completed = true;
         $history->save();
 

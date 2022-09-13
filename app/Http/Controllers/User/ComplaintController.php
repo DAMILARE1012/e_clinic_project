@@ -25,6 +25,15 @@ class ComplaintController extends Controller
         Complaint::create([
             'patient_id' => Auth::id(),
             'description' =>  $request->description,
+            'chronic_illness' => $request->chronic_illness,
+            'past_hospital' => $request->past_hospital,
+            'past_surgry' =>  $request->past_surgry,
+            'past_B_transfusion' => $request->past_B_transfusion,
+            'drug_history' => $request->drug_history,
+            'last_menst_period' =>  $request->last_menst_period,
+            'no_pregnacy' => $request->no_pregnacy,
+            'no_delivery' => $request->no_delivery,
+            'no_children' => $request->no_children,
 
         ]);
 
