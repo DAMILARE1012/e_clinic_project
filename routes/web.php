@@ -62,3 +62,4 @@ Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'S
 {
     Route::get('dashboard', [SpecialistController::class, 'index'])->name('dashboard');
 });
+

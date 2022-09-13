@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             CreateUsersSeeder::class,
             RolesTableSeeder::class,
             SpecializationsTableSeeder::class,
+            QuestionnaireTableSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
     }
