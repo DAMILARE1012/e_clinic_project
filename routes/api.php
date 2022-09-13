@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\VitalController;
+use App\Http\Controllers\User\ComplaintController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,3 +27,8 @@ Route::middleware(['auth:sanctum'])->group(function(){
 Route::get('get-vitals/{deviceid}', [VitalController::class, 'getVitals']);
 Route::Post('get-access-token', [VitalController::class, 'getToken']);
 Route::Post('update-vitals', [VitalController::class, 'updateVitals']);
+
+
+Route::get('questionnaires', [ComplaintController::class, 'getPsyQuestions']);
+Route::get('get-user', [ComplaintController::class, 'getCurrentUser']);
+Route::post('make-request', [ComplaintController::class, 'submitRequest']);

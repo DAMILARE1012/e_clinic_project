@@ -64,3 +64,4 @@ Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'S
     Route::get('profile', [ProfileController::class, 'editProfile'])->name('profile');
     Route::post('profile-update', [ProfileController::class, 'updateProfile'])->name('update.profile');
 });
+

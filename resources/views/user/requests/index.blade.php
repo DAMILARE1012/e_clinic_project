@@ -5,7 +5,7 @@
 <div class="col-md-12">
     <div class="widget">
         <header class="widget-header">
-            <h4 class="widget-title">Default DataTable</h4>
+            <h4 class="widget-title">Complaints</h4>
         </header><!-- .widget-header -->
         <hr class="widget-separator">
         <div class="widget-body">
@@ -17,6 +17,7 @@
                             <th>Complaints</th>
                             <th>Status</th>
                             <th>Date Logged</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -25,12 +26,13 @@
                             <th>Complaints</th>
                             <th>Status</th>
                             <th>Date Logged</th>
+                            <th>Action</th>
                         </tr>
                     </tfoot>
                     <tbody>
                     @foreach($complaints as $key => $complaint)
                         <tr>
-                            <td>{{ $key++ }}</td>
+                            <td>{{ $key+1 }}</td>
                             <td>{{ $complaint->description }}</td>
                             <td>
                                 @if($complaint->status)
@@ -39,7 +41,10 @@
                                     <span class="text-warning">Pending</span>
                                 @endif
                             </td>
-                            <td>{{ $complaint->created_at->diffForHumans() }}
+                            <td>{{ $complaint->created_at->diffForHumans() }}</td>
+                            <td>
+                                <a href="">View details</a>
+                            </td>
                         </tr>
                         @endforeach
                         
