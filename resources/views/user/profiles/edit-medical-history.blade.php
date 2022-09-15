@@ -52,16 +52,19 @@
                                     </span>
                                 @enderror
                             </div>
-    
+
                             <div class="form-group">
                                 <label for="exampleInputtext1">History of Past Surgeries</label>
-                                <input name="past_surgry" value="{{ $history->past_surgry }} " type="text" class="form-control" id="exampleInputtext1" placeholder="text">
+                                <textarea name="past_surgry" class="form-control">
+                                    {{ $history->past_surgry }}
+                                </textarea>
                                 @error('past_surgry')
                                     <span class="text-danger">
                                         {{ $message }}
                                     </span>
                                 @enderror
                             </div>
+    
                             <div class="form-group">
                                 <label for="exampleInputtext1">Drug History (regular routine medication)</label>
                                 <textarea name="drug_history" class="form-control">
@@ -106,8 +109,9 @@
                           
                         </div>
                     </div>
+                    @if($profile->gender == 'Female')
                     <hr>
-                    <h6 class="widget-title" align='center'>OBSTETRIC AND GYNAECOLOGICAL HISTORY (FEMALE)</h6>
+                    <h6 class="widget-title" align='center'>OBSTETRIC AND GYNAECOLOGICAL HISTORY</h6>
                     <br>
                     <div class="row">
                         <div class="col-sm-6">
@@ -123,20 +127,37 @@
 
                             <div class="form-group">
                                 <label for="exampleInputtext1">Number of Deliveries</label>
-                                <input type="text" value="{{ $history->no_delivery }}" class="form-control" id="exampleInputtext1" placeholder="Number of Deliveries" name="no_delivery">
+                                <select name="no_delivery" class="form-control">
+                                <option value="">--Choose--</option>
+                                    <option value="0" {{ $history->no_delivery == '0' ? 'selected': ''}}>0</option>
+                                    <option value="1" {{ $history->no_delivery == '1' ? 'selected': ''}}>1</option>
+                                    <option value="2" {{ $history->no_delivery == '2' ? 'selected': ''}}>2</option>
+                                    <option value="3" {{ $history->no_delivery == '3' ? 'selected': ''}}>3</option>
+                                    <option value="4" {{ $history->no_delivery == '4' ? 'selected': ''}}>4</option>
+                                    <option value="5" {{ $history->no_delivery == '5' ? 'selected': ''}}>5</option>
+                                </select>
+    
                                 @error('no_delivery')
                                     <span class="text-danger">
                                         {{ $message }}
                                     </span>
                                 @enderror
                             </div>
-    
-    
+
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="exampleInputtext1">Number of Pregnancies</label>
-                                <input type="text" value="{{ $history->no_pregnacy }}" class="form-control" id="exampleInputtext1" placeholder="Number of Pregnancies" name="no_pregnacy">
+                                <select name="no_pregnacy" class="form-control">
+                                <option value="">--Choose--</option>
+                                    <option value="0" {{ $history->no_pregnacy == '0' ? 'selected': ''}}>0</option>
+                                    <option value="1" {{ $history->no_pregnacy == '1' ? 'selected': ''}}>1</option>
+                                    <option value="2" {{ $history->no_pregnacy == '2' ? 'selected': ''}}>2</option>
+                                    <option value="3" {{ $history->no_pregnacy == '3' ? 'selected': ''}}>3</option>
+                                    <option value="4" {{ $history->no_pregnacy == '4' ? 'selected': ''}}>4</option>
+                                    <option value="5" {{ $history->no_pregnacy == '5' ? 'selected': ''}}>5</option>
+                                </select>
+    
                                 @error('no_pregnacy')
                                     <span class="text-danger">
                                         {{ $message }}
@@ -145,14 +166,22 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputtext1">Number of Children Alive</label>
-                                <input type="text" value="{{ $history->no_children }}" class="form-control" id="exampleInputtext1" placeholder="Number of Children Alive" name="no_children">
-                                @error('no_children')
+                                <select name="no_children" class="form-control">
+                                <option value="">--Choose--</option>
+                                    <option value="0" {{ $history->no_children == '0' ? 'selected': ''}}>0</option>
+                                    <option value="1" {{ $history->no_children == '1' ? 'selected': ''}}>1</option>
+                                    <option value="2" {{ $history->no_children == '2' ? 'selected': ''}}>2</option>
+                                    <option value="3" {{ $history->no_children == '3' ? 'selected': ''}}>3</option>
+                                    <option value="4" {{ $history->no_children == '4' ? 'selected': ''}}>4</option>
+                                    <option value="5" {{ $history->no_children == '5' ? 'selected': ''}}>5</option>
+                                </select>
+    
+                                @error('no_pregnacy')
                                     <span class="text-danger">
                                         {{ $message }}
                                     </span>
                                 @enderror
                             </div>
-    
                         </div>  
 
                     </div>
@@ -174,7 +203,7 @@
 
                     </div>
                 </div> -->
-                
+                @endif
 
                 <button type="submit" class="btn btn-primary btn-md">Submit</button>
                 

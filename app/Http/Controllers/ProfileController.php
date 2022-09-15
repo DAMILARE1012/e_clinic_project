@@ -65,8 +65,9 @@ class ProfileController extends Controller
 
     public function editMedicalHistory()
     {
+        $profile = Profile::where('user_id', auth()->user()->profile->user_id)->first();
         $history = MedicalHistory::where('user_id', auth()->id())->firstOrFail();
-        return view('user.profiles.edit-medical-history', compact ('history'));
+        return view('user.profiles.edit-medical-history', compact ('history', 'profile'));
     }
 
     public function storeMedicalHistory(Request $request)
