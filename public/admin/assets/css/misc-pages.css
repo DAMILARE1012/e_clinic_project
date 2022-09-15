@@ -1,5 +1,5 @@
 body.simple-page {
-  background-color: #A14486;
+  background-color: #0cb8b6;
   padding-top: 8%; }
 
 .simple-page-wrap {
@@ -61,8 +61,8 @@ body.simple-page {
   #_404_form .form-control {
     height: 40px; }
   #_404_form .input-group-addon {
-    background: #A14486;
-    border: #A14486;
+    background: #0cb8b6;
+    border: #0cb8b6;
     color: #fff; }
 
 #unlock-user {
@@ -109,7 +109,7 @@ body.simple-page {
   display: block;
   margin: 0 auto;
   background-color: #fff;
-  color: #A14486;
+  color: #0cb8b6;
   border-radius: 3px;
   width: 120px; }
 
