@@ -5428,6 +5428,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   description: _this2.description
                 }).then(function (response) {
                   console.log(response.data);
+                  window.location.href = '/user/make-request';
                 })["catch"](function (error) {
                   if (error.response.status === 422) {
                     _this2.hasError = true;
