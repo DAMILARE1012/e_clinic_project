@@ -63,4 +63,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Vital::class);
     }
+
+    public function specialization()
+    {
+        return $this->hasOne(Specialization::class);
+    }
 }

@@ -4,27 +4,33 @@
 			<div class="col-md-12">
 				<div class="widget">
 					<header class="widget-header">
-						<h4 class="widget-title">Basic Example</h4>
+						<h4 class="widget-title">Get Matched With A Specialist</h4>
 					</header><!-- .widget-header -->
 					<hr class="widget-separator">
 					<div class="widget-body">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Who would you like to? {{ specialist }}</label>
+                                    <label for="exampleInputEmail1">Who would you like to see?</label>
                                     <select v-model="specialist" class="form-control">
-                                        <option value="doctor">Doctor</option>
-                                        <option value="psychiatrist">Psychiatrist</option>
+                                        <option v-for="specialization in specializations" :value="specialization.id">{{ specialization.name }}</option>
                                     </select>
                                 </div>
 
-                                <div v-if="specialist == 'psychiatrist'">
+                                <div v-for="question in questions.generalQuestions" class="checkbox checkbox-default">
+                                    <input type="checkbox" :value="question.id" v-model="checkedQuestions" :id="
+                                        question.id"/>
+                                    <label for="custome-checkbox1">{{ question.question }}</label>
+                                </div>
+
+                                <div v-if="specialist == 2">
                                     <div class="m-b-lg">
-                                        <small v-if="specialist == 'psychiatrist'" class="text-info">
+                                        <small v-if="specialist == 2" class="text-info">
                                             Please fill this questionnaire.
                                         </small>
                                     </div>
-                                    <div v-for="question in questions" class="checkbox checkbox-default">
+
+                                    <div v-for="question in questions.psyQuestions" class="checkbox checkbox-default">
                                         <input type="checkbox" :value="question.id" v-model="checkedQuestions" :id="
                                             question.id"/>
                                         <label for="custome-checkbox1">{{ question.question }}</label>
@@ -43,7 +49,6 @@
                                 </div>
                                 <button class="btn btn-primary btn-md" @click="submitRequest()">Submit</button>
                             </div>
-
                                 
 						</div>
 					</div><!-- .widget-body -->
@@ -59,17 +64,19 @@
     
     export default {
         
-        props: ['user'],
+        props: ['user', 'specializations'],
         data(){
 
             return {
+
                 specialist: '',
                 questions: '',
                 checkedQuestions: [],
                 description: '',
                 hasError: false,
                 errors: {},
-                
+                specialistGender: '',
+                      
             }
             
         },

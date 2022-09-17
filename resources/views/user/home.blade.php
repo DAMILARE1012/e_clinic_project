@@ -12,6 +12,12 @@
                             {{ Session::get('message') }}
                         </div>
                     @endif
+
+                    @if($todayRequests)
+                        <div class="alert alert-info">
+                            You have a pending request, You will be assigned to a specialist shortly. <a href="#" class="text-bold">view request detail</a>
+                        </div>  
+                    @endif
                     <div>
                         <a href="{{ route('user.make.complaint') }}" class="btn btn-primary">Make A New Request</a>
                     </div>
