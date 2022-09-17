@@ -41,9 +41,9 @@
                                     <span class="text-warning">Pending</span>
                                 @endif
                             </td>
-                            <td>{{ $complaint->created_at->diffForHumans() }}</td>
+                            <td>{{ $complaint->created_at->toDayDateTimeString() }}</td>
                             <td>
-                                <a href="">View details</a>
+                                <a href="{{ route('reception.complaints.detail', ['id' => $complaint->id]) }}">View details</a>
                             </td>
                         </tr>
                         @endforeach

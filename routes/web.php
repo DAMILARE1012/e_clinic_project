@@ -52,10 +52,14 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
     Route::get('dashboard', [AdminController::class, 'index'])->name('dashboard');
 });
 
-Route::group(['as' => 'reception.', 'prefix' => 'reception', 'namespace' => 'Reception', 'middleware' => ['auth', 'reception', 'profile.updated']], function () 
+Route::group(['as' => 'reception.', 'prefix' => 'reception', 'namespace' => 'Reception', 'middleware' => ['auth', 'reception']], function () 
 {
     Route::get('dashboard', [ReceptionController::class, 'index'])->name('dashboard');
     Route::get('doctor', [DoctorController::class, 'index'])->name('doctor');
+    Route::get('complaints', [ReceptionController::class, 'complaints'])->name('complaints');
+    Route::get('complaint/{id}', [ReceptionController::class, 'complaintDetail'])->name('complaints.detail');
+
+    Route::post('assign', [ReceptionController::class, 'assignSpecialist'])->name('assign.specialist');
 });
 
 Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'Specialist', 'middleware' => ['auth', 'specialist', 'profile.updated']], function () 

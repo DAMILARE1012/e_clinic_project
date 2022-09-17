@@ -8,12 +8,19 @@ use App\Models\Complaint;
 use Auth;
 use App\Models\Questionnaire;
 use App\Models\ComplaintQuestionnaire;
+use App\Models\Specialization;
+use Carbon\Carbon;
 
 class ComplaintController extends Controller
 {
     public function createNewComplaint()
     {
-        return view('user.requests.create');
+        $todayRequests = Complaint::where('user_id', Auth::id())->whereDate('created_at', Carbon::today())->first();
+        $specializations = Specialization::all();
+        if($todayRequests){
+            return redirect()->back()->with('message', "You already have a pending request");
+        }
+        return view('user.requests.create', compact('specializations'));
     }
 
     public function storeNewComplaint(Request $request)
@@ -43,13 +50,20 @@ class ComplaintController extends Controller
 
     public function allComplaints()
     {
-        $complaints = Complaint::all();
+        $complaints = Complaint::where('user_id', auth()->id())->get();
         return view('user.requests.index', compact('complaints'));
     }
 
     public function getPsyQuestions()
     {
-        $questions = Questionnaire::where('category', 'psychiatrist')->get();
+        $psyQuestions = Questionnaire::where('category', 'psychiatrist')->get();
+        $generalQuestions = Questionnaire::where('category', 'general')->get();
+
+        $questions = [
+            'psyQuestions' => $psyQuestions,
+            'generalQuestions' => $generalQuestions,
+        ];
+
         return response($questions, 200);
     }
 
@@ -65,6 +79,7 @@ class ComplaintController extends Controller
 
         $complaint = new Complaint;
         $complaint->user_id = $request->user_id;
+        $complaint->specialization_id = $request->specialist;
         $complaint->description = $request->description;
         $complaint->save();
 
@@ -76,7 +91,6 @@ class ComplaintController extends Controller
                 ]);
     
                 $questionnaire->save();
-    
             }
 
             return response("data-saved", 201);

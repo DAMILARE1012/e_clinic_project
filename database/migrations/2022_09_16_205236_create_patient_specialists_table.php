@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateComplaintsTable extends Migration
+class CreatePatientSpecialistsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateComplaintsTable extends Migration
      */
     public function up()
     {
-        Schema::create('complaints', function (Blueprint $table) {
+        Schema::create('patient_specialists', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('user_id');
-            $table->text('description');    
-            $table->tinyInteger('specialization_id');
-            $table->boolean('status')->default(0);
+            $table->tinyInteger('patient_id');
+            $table->tinyInteger('specialist_id');
+            $table->tinyInteger('complaint_id');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateComplaintsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('complaints');
+        Schema::dropIfExists('patient_specialists');
     }
 }

@@ -92,7 +92,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputtext1">About</label>
-                            <textarea name="about" class="form-control">{{ auth()->user()->profile->about}}"</textarea>
+                            <textarea name="about" class="form-control">{{ auth()->user()->profile->about}}</textarea>
                             @error('about')
                                 <span class="text-danger">
                                     {{ $message }}

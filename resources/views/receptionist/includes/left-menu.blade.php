@@ -60,7 +60,7 @@
             <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
           </a>
           <ul class="submenu">
-          <li><a href="#"><span class="menu-text">All </span></a></li>
+          <li><a href="{{ route('reception.complaints') }}"><span class="menu-text">All </span></a></li>
             <li><a href="#"><span class="menu-text">Pending </span></a></li>
             <li><a href="#"><span class="menu-text">Completed</span></a></li>
           </ul>

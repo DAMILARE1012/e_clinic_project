@@ -103,6 +103,38 @@ class QuestionnaireTableSeeder extends Seeder
                 'question'=>'study related issues',
             ],
 
+            [
+                'category' => 'general',
+                'question'=>'I prefer a male specialist',
+            ],
+
+            [
+                'category' => 'general',
+                'question'=>'I prefer a female specialist',
+            ],
+
+            [
+                'category' => 'psychiatrist',
+                'question'=>'I prefer a faith based therapist?',
+            ],
+
+            [
+                'category' => 'psychiatrist',
+                'question'=>'I prefer an older therapist?',
+            ],
+
+            [
+                'category' => 'psychiatrist',
+                'question'=>'I prefer a LGBTQ therapist?',
+            ],
+
+            [
+                'category' => 'psychiatrist',
+                'question'=>'I prefer a therapist of color?',
+            ],
+
+
+
         ];
 
         foreach ($questions as $key => $question) {

@@ -5366,8 +5366,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['user'],
+  props: ['user', 'specializations'],
   data: function data() {
     return {
       specialist: '',
@@ -5375,7 +5380,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       checkedQuestions: [],
       description: '',
       hasError: false,
-      errors: {}
+      errors: {},
+      specialistGender: ''
     };
   },
   methods: {
@@ -28184,180 +28190,243 @@ var render = function () {
           _vm._v(" "),
           _c("div", { staticClass: "widget-body" }, [
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "exampleInputEmail1" } }, [
-                    _vm._v("Who would you like to? " + _vm._s(_vm.specialist)),
+              _c(
+                "div",
+                { staticClass: "col-md-6" },
+                [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "exampleInputEmail1" } }, [
+                      _vm._v("Who would you like to see?"),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.specialist,
+                            expression: "specialist",
+                          },
+                        ],
+                        staticClass: "form-control",
+                        on: {
+                          change: function ($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function (o) {
+                                return o.selected
+                              })
+                              .map(function (o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.specialist = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          },
+                        },
+                      },
+                      _vm._l(_vm.specializations, function (specialization) {
+                        return _c(
+                          "option",
+                          { domProps: { value: specialization.id } },
+                          [_vm._v(_vm._s(specialization.name))]
+                        )
+                      }),
+                      0
+                    ),
                   ]),
                   _vm._v(" "),
-                  _c(
-                    "select",
-                    {
+                  _vm._l(_vm.questions.generalQuestions, function (question) {
+                    return _c(
+                      "div",
+                      { staticClass: "checkbox checkbox-default" },
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.checkedQuestions,
+                              expression: "checkedQuestions",
+                            },
+                          ],
+                          attrs: { type: "checkbox", id: question.id },
+                          domProps: {
+                            value: question.id,
+                            checked: Array.isArray(_vm.checkedQuestions)
+                              ? _vm._i(_vm.checkedQuestions, question.id) > -1
+                              : _vm.checkedQuestions,
+                          },
+                          on: {
+                            change: function ($event) {
+                              var $$a = _vm.checkedQuestions,
+                                $$el = $event.target,
+                                $$c = $$el.checked ? true : false
+                              if (Array.isArray($$a)) {
+                                var $$v = question.id,
+                                  $$i = _vm._i($$a, $$v)
+                                if ($$el.checked) {
+                                  $$i < 0 &&
+                                    (_vm.checkedQuestions = $$a.concat([$$v]))
+                                } else {
+                                  $$i > -1 &&
+                                    (_vm.checkedQuestions = $$a
+                                      .slice(0, $$i)
+                                      .concat($$a.slice($$i + 1)))
+                                }
+                              } else {
+                                _vm.checkedQuestions = $$c
+                              }
+                            },
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("label", { attrs: { for: "custome-checkbox1" } }, [
+                          _vm._v(_vm._s(question.question)),
+                        ]),
+                      ]
+                    )
+                  }),
+                  _vm._v(" "),
+                  _vm.specialist == 2
+                    ? _c(
+                        "div",
+                        [
+                          _c("div", { staticClass: "m-b-lg" }, [
+                            _vm.specialist == 2
+                              ? _c("small", { staticClass: "text-info" }, [
+                                  _vm._v(
+                                    "\n                                            Please fill this questionnaire.\n                                        "
+                                  ),
+                                ])
+                              : _vm._e(),
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(
+                            _vm.questions.psyQuestions,
+                            function (question) {
+                              return _c(
+                                "div",
+                                { staticClass: "checkbox checkbox-default" },
+                                [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.checkedQuestions,
+                                        expression: "checkedQuestions",
+                                      },
+                                    ],
+                                    attrs: {
+                                      type: "checkbox",
+                                      id: question.id,
+                                    },
+                                    domProps: {
+                                      value: question.id,
+                                      checked: Array.isArray(
+                                        _vm.checkedQuestions
+                                      )
+                                        ? _vm._i(
+                                            _vm.checkedQuestions,
+                                            question.id
+                                          ) > -1
+                                        : _vm.checkedQuestions,
+                                    },
+                                    on: {
+                                      change: function ($event) {
+                                        var $$a = _vm.checkedQuestions,
+                                          $$el = $event.target,
+                                          $$c = $$el.checked ? true : false
+                                        if (Array.isArray($$a)) {
+                                          var $$v = question.id,
+                                            $$i = _vm._i($$a, $$v)
+                                          if ($$el.checked) {
+                                            $$i < 0 &&
+                                              (_vm.checkedQuestions =
+                                                $$a.concat([$$v]))
+                                          } else {
+                                            $$i > -1 &&
+                                              (_vm.checkedQuestions = $$a
+                                                .slice(0, $$i)
+                                                .concat($$a.slice($$i + 1)))
+                                          }
+                                        } else {
+                                          _vm.checkedQuestions = $$c
+                                        }
+                                      },
+                                    },
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "label",
+                                    { attrs: { for: "custome-checkbox1" } },
+                                    [_vm._v(_vm._s(question.question))]
+                                  ),
+                                ]
+                              )
+                            }
+                          ),
+                        ],
+                        2
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "exampleInputEmail1" } }, [
+                      _vm._v("Please describe how you feel?"),
+                    ]),
+                    _vm._v(" "),
+                    _c("textarea", {
                       directives: [
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.specialist,
-                          expression: "specialist",
+                          value: _vm.description,
+                          expression: "description",
                         },
                       ],
                       staticClass: "form-control",
+                      domProps: { value: _vm.description },
                       on: {
-                        change: function ($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function (o) {
-                              return o.selected
-                            })
-                            .map(function (o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.specialist = $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.description = $event.target.value
+                        },
+                      },
+                    }),
+                  ]),
+                  _vm._v(" "),
+                  _vm.hasError == true
+                    ? _c(
+                        "div",
+                        { staticClass: "alert alert-danger" },
+                        _vm._l(_vm.errors, function (error) {
+                          return _c("li", [_vm._v(_vm._s(error[0]))])
+                        }),
+                        0
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary btn-md",
+                      on: {
+                        click: function ($event) {
+                          return _vm.submitRequest()
                         },
                       },
                     },
-                    [
-                      _c("option", { attrs: { value: "doctor" } }, [
-                        _vm._v("Doctor"),
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "psychiatrist" } }, [
-                        _vm._v("Psychiatrist"),
-                      ]),
-                    ]
+                    [_vm._v("Submit")]
                   ),
-                ]),
-                _vm._v(" "),
-                _vm.specialist == "psychiatrist"
-                  ? _c(
-                      "div",
-                      [
-                        _c("div", { staticClass: "m-b-lg" }, [
-                          _vm.specialist == "psychiatrist"
-                            ? _c("small", { staticClass: "text-info" }, [
-                                _vm._v(
-                                  "\n                                            Please fill this questionnaire.\n                                        "
-                                ),
-                              ])
-                            : _vm._e(),
-                        ]),
-                        _vm._v(" "),
-                        _vm._l(_vm.questions, function (question) {
-                          return _c(
-                            "div",
-                            { staticClass: "checkbox checkbox-default" },
-                            [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.checkedQuestions,
-                                    expression: "checkedQuestions",
-                                  },
-                                ],
-                                attrs: { type: "checkbox", id: question.id },
-                                domProps: {
-                                  value: question.id,
-                                  checked: Array.isArray(_vm.checkedQuestions)
-                                    ? _vm._i(
-                                        _vm.checkedQuestions,
-                                        question.id
-                                      ) > -1
-                                    : _vm.checkedQuestions,
-                                },
-                                on: {
-                                  change: function ($event) {
-                                    var $$a = _vm.checkedQuestions,
-                                      $$el = $event.target,
-                                      $$c = $$el.checked ? true : false
-                                    if (Array.isArray($$a)) {
-                                      var $$v = question.id,
-                                        $$i = _vm._i($$a, $$v)
-                                      if ($$el.checked) {
-                                        $$i < 0 &&
-                                          (_vm.checkedQuestions = $$a.concat([
-                                            $$v,
-                                          ]))
-                                      } else {
-                                        $$i > -1 &&
-                                          (_vm.checkedQuestions = $$a
-                                            .slice(0, $$i)
-                                            .concat($$a.slice($$i + 1)))
-                                      }
-                                    } else {
-                                      _vm.checkedQuestions = $$c
-                                    }
-                                  },
-                                },
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "label",
-                                { attrs: { for: "custome-checkbox1" } },
-                                [_vm._v(_vm._s(question.question))]
-                              ),
-                            ]
-                          )
-                        }),
-                      ],
-                      2
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "exampleInputEmail1" } }, [
-                    _vm._v("Please describe how you feel?"),
-                  ]),
-                  _vm._v(" "),
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.description,
-                        expression: "description",
-                      },
-                    ],
-                    staticClass: "form-control",
-                    domProps: { value: _vm.description },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.description = $event.target.value
-                      },
-                    },
-                  }),
-                ]),
-                _vm._v(" "),
-                _vm.hasError == true
-                  ? _c(
-                      "div",
-                      { staticClass: "alert alert-danger" },
-                      _vm._l(_vm.errors, function (error) {
-                        return _c("li", [_vm._v(_vm._s(error[0]))])
-                      }),
-                      0
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary btn-md",
-                    on: {
-                      click: function ($event) {
-                        return _vm.submitRequest()
-                      },
-                    },
-                  },
-                  [_vm._v("Submit")]
-                ),
-              ]),
+                ],
+                2
+              ),
             ]),
           ]),
         ]),
@@ -28371,7 +28440,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("header", { staticClass: "widget-header" }, [
-      _c("h4", { staticClass: "widget-title" }, [_vm._v("Basic Example")]),
+      _c("h4", { staticClass: "widget-title" }, [
+        _vm._v("Get Matched With A Specialist"),
+      ]),
     ])
   },
 ]
