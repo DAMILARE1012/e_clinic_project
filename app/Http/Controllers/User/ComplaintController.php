@@ -50,7 +50,7 @@ class ComplaintController extends Controller
 
     public function allComplaints()
     {
-        $complaints = Complaint::where('user_id', auth()->id())->get();
+        $complaints = Complaint::where('user_id', auth()->id())->orderBy('created_at', 'DESC')->get();
         return view('user.requests.index', compact('complaints'));
     }
 
