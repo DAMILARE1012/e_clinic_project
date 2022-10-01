@@ -33,8 +33,16 @@ class CreateUsersSeeder extends Seeder
             
             [
                 'firstname'=>'Specialist',
-                'lastname'=>'User',
-                'email'=>'specialist@example.com',
+                'lastname'=>'Psychiatrist',
+                'email'=>'psychiatrist@example.com',
+                'role_id'=>4,
+                'password'=> bcrypt('123456'),
+             ],
+
+             [
+                'firstname'=>'Specialist',
+                'lastname'=>'Doctor',
+                'email'=>'doctor@example.com',
                 'role_id'=>4,
                 'password'=> bcrypt('123456'),
              ],

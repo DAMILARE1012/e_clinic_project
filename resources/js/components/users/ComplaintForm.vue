@@ -99,7 +99,7 @@
                 })
                 .then((response)=>{
                     console.log(response.data);
-                    window.location.href = '/user/make-request';
+                    window.location.href = '/user/dashboard';
                 })
                 .catch((error)=>{
                     if (error.response.status === 422) {

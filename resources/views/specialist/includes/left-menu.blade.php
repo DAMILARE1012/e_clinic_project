@@ -54,7 +54,7 @@
       <ul class="app-menu">
 
       <li>
-        <a href="#">
+        <a href="{{ route('specialist.assigned.patients') }}">
           <i class="menu-icon fa fa-book zmdi-hc-lg"></i>
           <span class="menu-text">My Patients</span>
         </a>

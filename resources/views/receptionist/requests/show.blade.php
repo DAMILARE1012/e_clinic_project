@@ -35,7 +35,7 @@
                         <ol>
                             <li class="list-group-item primary">Questionnaire/Preferences</li>
                             @foreach($complaint->questionnaire as $questionnaire)
-                                @foreach($questionnaire->question($questionnaire->id) as $question)
+                                @foreach($questionnaire->question($questionnaire->questionnaire_id) as $question)
                                     <li class="list-group-item">{{ $question->question }}</li>
                                 @endforeach
                             @endforeach
@@ -80,13 +80,12 @@
                     <h5 class="font-weight-bold">Assign Patient to Specialist</h5>
                     @if(!$existAssign)
                     <form method="POST" action="{{ route('reception.assign.specialist') }}">
-                        
                         @csrf
                         <div class="form-group">
                             <select class="form-control" name="specialist">
                                 <option>--Select Specialist--</option>
                                 @foreach($specializations as $specialist)
-                                    <option value="{{ $specialist->id }}">{{ $specialist->user->firstname }} {{ $specialist->user->lastname }} - {{ $specialist->user->specialization->name }}</option>
+                                    <option value="{{ $specialist->user->id }}">{{ $specialist->user->firstname }} {{ $specialist->user->lastname }} - {{ $specialist->user->specialization->name }}</option>
                                 @endforeach
                             </select>
                         </div>

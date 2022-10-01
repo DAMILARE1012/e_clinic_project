@@ -62,10 +62,13 @@ Route::group(['as' => 'reception.', 'prefix' => 'reception', 'namespace' => 'Rec
     Route::post('assign', [ReceptionController::class, 'assignSpecialist'])->name('assign.specialist');
 });
 
-Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'Specialist', 'middleware' => ['auth', 'specialist', 'profile.updated']], function () 
+Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'Specialist', 'middleware' => ['auth', 'specialist']], function () 
 {
     Route::get('dashboard', [SpecialistController::class, 'index'])->name('dashboard');
     Route::get('profile', [ProfileController::class, 'editProfile'])->name('profile');
     Route::post('profile-update', [ProfileController::class, 'updateProfile'])->name('update.profile');
+
+    // Assigned patients route
+    Route::get('assigned-patients', [SpecialistController::class, 'getAssignedPatients'])->name('assigned.patients');
 });
 

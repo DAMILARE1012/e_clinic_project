@@ -84,7 +84,7 @@
 
 <!-- Start Top Entry
 ============================================= -->
-<div class="top-entry-area default-padding-bottom border-less text-center">
+<div class="top-entry-area border-less text-center">
     <div class="container">
         <div class="row">
             <div class="item-box">
@@ -94,7 +94,7 @@
                         <i class="flaticon-ambulance-1"></i>
                         <h4>Emergency Case</h4>
                         <p>
-                            Moment he at on wonder at season little. Six garden result summer set family esteem nay estate. End admiration mrs unreserved
+                            If you need urgent attention, don't use this platform, please head to a hospital closest to you.
                         </p>
                         <a class="btn btn-theme border btn-sm" href="#">Read More</a>
                     </div>
@@ -137,66 +137,6 @@
     </div>
 </div>
 <!-- End Top Entry -->
-
-<!-- Start Appoinment
-============================================= -->
-<div class="appoinment-area default-padding bg-cover" style="background-image: url({{ asset('front/assets/img/2440x1578.png') }});">
-    <div class="container">
-        <div class="row">
-            <!-- Start Appoinment Form -->
-            <div class="col-md-6 col-md-offset-6 appoinment">
-                <div class="appoinment-box">
-                    <div class="appointment-schedule">
-                        <h5>Appointment schedule</h5>
-                        <ul>
-                            <li>Sat - Tue <span>8:00 - 15:30</span></li>
-                            <li>Wed - Fri <span>10:00 - 16:30</span></li>
-                        </ul>
-                    </div>
-                    <div class="heading">
-                        <h2>Make an Appointment</h2>
-                    </div>
-                    <form action="#">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input class="form-control" id="name" name="name" placeholder="Name" type="text">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <select>
-                                        <option value="1">Male</option>
-                                        <option value="2">Female</option>
-                                        <option value="3">Child</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <select>
-                                        <option value="1">Department</option>
-                                        <option value="2">Medecine</option>
-                                        <option value="4">Dental Care</option>
-                                        <option value="5">Traumatology</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <button type="submit" name="submit" id="submit">
-                                    Submit Query <i class="fa fa-paper-plane"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- End Appoinment Form -->
-        </div>
-    </div>
-</div>
-
-<!-- End Appoinment -->
 
 <!-- Start Services 
 ============================================= -->
