@@ -18,6 +18,7 @@ class CreateComplaintsTable extends Migration
             $table->tinyInteger('user_id');
             $table->text('description');    
             $table->tinyInteger('specialization_id');
+            $table->boolean('assigned')->default(0);
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

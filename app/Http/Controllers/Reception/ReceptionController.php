@@ -25,6 +25,7 @@ class ReceptionController extends Controller
     public function complaints()
     {
         $complaints = Complaint::orderBy('created_at', 'DESC')->get();
+        
         return view('receptionist.requests.index', compact('complaints'));
     }
 
@@ -57,7 +58,7 @@ class ReceptionController extends Controller
             if ($assigned) {
                 
                 $complaint = Complaint::where('id', $assigned->complaint_id)->first();
-                $complaint->status = 1;
+                $complaint->assigned = 1;
                 $complaint->save();
 
                 return redirect()->route('reception.complaints')->with('message', 'Patient assigned successfully');

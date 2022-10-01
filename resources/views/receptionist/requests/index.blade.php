@@ -9,6 +9,13 @@
         </header><!-- .widget-header -->
         <hr class="widget-separator">
         <div class="widget-body">
+        @if(Session::has('message'))
+            <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                {{ Session::get('message') }}
+            </div>
+        @endif
+
             <div class="table-responsive">
                 <table id="default-datatable" data-plugin="DataTable" class="table table-striped" cellspacing="0" width="100%">
                     <thead>
@@ -35,7 +42,7 @@
                             <td>{{ $key+1 }}</td>
                             <td>{{ $complaint->description }}</td>
                             <td>
-                                @if($complaint->status)
+                                @if($complaint->assigned)
                                     <span class="text-success">Assigned</span>
                                 @else
                                     <span class="text-warning">Pending</span>
