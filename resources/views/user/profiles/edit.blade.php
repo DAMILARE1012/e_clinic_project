@@ -28,7 +28,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputtext1">Date Of Birth</label>
-                            <input name="date_of_birth" value="{{ auth()->user()->profile->dob }}" type="date" class="form-control" id="exampleInputtext1" placeholder="text">
+                            <input name="date_of_birth" value="{{ auth()->user()->profile->date_of_birth }}" type="date" class="form-control" id="exampleInputtext1" placeholder="text">
                             @error('date_of_birth')
                                 <span class="text-danger">
                                     {{ $message }}

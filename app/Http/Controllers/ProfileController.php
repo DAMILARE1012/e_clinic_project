@@ -43,7 +43,7 @@ class ProfileController extends Controller
         ]);
 
         $profile = Profile::where('user_id', auth()->user()->profile->user_id)->first();
-        $profile->dob = $request->date_of_birth;
+        $profile->date_of_birth = $request->date_of_birth;
         $profile->gender = $request->gender;
         $profile->religion = $request->religion;
         $profile->city = $request->city;
@@ -87,6 +87,7 @@ class ProfileController extends Controller
         $history->drug_history = $request->drug_history;
         $history->past_surgry = $request->past_surgry;
         $history->past_hospital = $request->past_hospital;
+        $history->no_miscarrage = $request->no_miscarrage;
         $history->completed = true;
         $history->save();
 
