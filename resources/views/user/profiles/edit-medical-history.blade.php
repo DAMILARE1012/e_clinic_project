@@ -44,6 +44,7 @@
                                     <option value="Diabetes Mellitus" {{ $history->chronic_illness == 'Diabetes Mellitus' ? 'selected': ''}}>Diabetes Mellitus</option>
                                     <option value="Peptic Ulcer Disease" {{ $history->chronic_illness == 'Peptic Ulcer Disease' ? 'selected': ''}}>Peptic Ulcer Disease</option>
                                     <option value="Asthma" {{ $history->chronic_illness == 'Asthma' ? 'selected': ''}}>Asthma</option>
+                                    <option value="Others" {{ $history->chronic_illness == 'Others' ? 'selected': ''}}>Others</option>
                                 </select>
     
                                 @error('chronic_illness')
@@ -54,17 +55,20 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputtext1">History of Past Surgeries</label>
-                                <textarea name="past_surgry" class="form-control">
-                                    {{ $history->past_surgry }}
-                                </textarea>
+                                <label for="exampleInputtext1">Had a Surgery?</label>
+                                <select name="past_surgry" class="form-control">
+                                <option value="">--Choose--</option>
+                                    <option value="Yes" {{ $history->past_surgry == 'Yes' ? 'selected': ''}}>Yes</option>
+                                    <option value="No" {{ $history->past_surgry == 'No' ? 'selected': ''}}>No</option>
+                                </select>
+    
                                 @error('past_surgry')
                                     <span class="text-danger">
                                         {{ $message }}
                                     </span>
                                 @enderror
                             </div>
-    
+
                             <div class="form-group">
                                 <label for="exampleInputtext1">Drug History (regular routine medication)</label>
                                 <textarea name="drug_history" class="form-control">
@@ -80,33 +84,38 @@
                         </div>
                         
                         <div class="col-sm-6">
-    
                             <div class="form-group">
-                                <label for="exampleInputtext1">History of Past Hospitalizations</label>
-                                <textarea name="past_hospital" class="form-control">
-                                    {{ $history->past_hospital }}
-                                </textarea>
+                                <label for="exampleInputtext1">Previously Hospitalized?</label>
+                                <select name="past_hospital" class="form-control">
+                                <option value="">--Choose--</option>
+                                    <option value="Yes" {{ $history->past_hospital == 'Yes' ? 'selected': ''}}>Yes</option>
+                                    <option value="No" {{ $history->past_hospital == 'No' ? 'selected': ''}}>No</option>
+                                    
+                                </select>
+    
                                 @error('past_hospital')
                                     <span class="text-danger">
                                         {{ $message }}
                                     </span>
                                 @enderror
                             </div>
-                            
+
                             <div class="form-group">
-                                <label for="exampleInputtext1">History of Past Blood Transfusions</label>
-                                <textarea name="past_B_transfusion" class="form-control">
-                                    {{ $history->past_B_transfusion }}
-                                </textarea>
+                                <label for="exampleInputtext1">Had Blood Transfusions?</label>
+                                <select name="past_B_transfusion" class="form-control">
+                                <option value="">--Choose--</option>
+                                    <option value="Yes" {{ $history->past_B_transfusion == 'Yes' ? 'selected': ''}}>Yes</option>
+                                    <option value="No" {{ $history->past_B_transfusion == 'No' ? 'selected': ''}}>No</option>
+                                    
+                                </select>
+    
                                 @error('past_B_transfusion')
                                     <span class="text-danger">
                                         {{ $message }}
                                     </span>
                                 @enderror
                             </div>
-                            
 
-                          
                         </div>
                     </div>
                     @if($profile->gender == 'Female')
@@ -135,6 +144,11 @@
                                     <option value="3" {{ $history->no_delivery == '3' ? 'selected': ''}}>3</option>
                                     <option value="4" {{ $history->no_delivery == '4' ? 'selected': ''}}>4</option>
                                     <option value="5" {{ $history->no_delivery == '5' ? 'selected': ''}}>5</option>
+                                    <option value="6" {{ $history->no_delivery == '6' ? 'selected': ''}}>6</option>
+                                    <option value="7" {{ $history->no_delivery == '7' ? 'selected': ''}}>7</option>
+                                    <option value="8" {{ $history->no_delivery == '8' ? 'selected': ''}}>8</option>
+                                    <option value="9" {{ $history->no_delivery == '9' ? 'selected': ''}}>9</option>
+                                    <option value="10" {{ $history->no_delivery == '10' ? 'selected': ''}}>10</option>
                                 </select>
     
                                 @error('no_delivery')
@@ -156,6 +170,11 @@
                                     <option value="3" {{ $history->no_pregnacy == '3' ? 'selected': ''}}>3</option>
                                     <option value="4" {{ $history->no_pregnacy == '4' ? 'selected': ''}}>4</option>
                                     <option value="5" {{ $history->no_pregnacy == '5' ? 'selected': ''}}>5</option>
+                                    <option value="6" {{ $history->no_pregnacy == '6' ? 'selected': ''}}>6</option>
+                                    <option value="7" {{ $history->no_pregnacy == '7' ? 'selected': ''}}>7</option>
+                                    <option value="8" {{ $history->no_pregnacy == '8' ? 'selected': ''}}>8</option>
+                                    <option value="9" {{ $history->no_pregnacy == '9' ? 'selected': ''}}>9</option>
+                                    <option value="10" {{ $history->no_pregnacy == '10' ? 'selected': ''}}>10</option>
                                 </select>
     
                                 @error('no_pregnacy')
@@ -174,6 +193,11 @@
                                     <option value="3" {{ $history->no_children == '3' ? 'selected': ''}}>3</option>
                                     <option value="4" {{ $history->no_children == '4' ? 'selected': ''}}>4</option>
                                     <option value="5" {{ $history->no_children == '5' ? 'selected': ''}}>5</option>
+                                    <option value="6" {{ $history->no_children == '6' ? 'selected': ''}}>6</option>
+                                    <option value="7" {{ $history->no_children == '7' ? 'selected': ''}}>7</option>
+                                    <option value="8" {{ $history->no_children == '8' ? 'selected': ''}}>8</option>
+                                    <option value="9" {{ $history->no_children == '9' ? 'selected': ''}}>9</option>
+                                    <option value="10" {{ $history->no_children == '10' ? 'selected': ''}}>10</option>
                                 </select>
     
                                 @error('no_pregnacy')
@@ -182,6 +206,32 @@
                                     </span>
                                 @enderror
                             </div>
+                        </div> 
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="exampleInputtext1">Number of Miscarrage</label>
+                                <select name="no_miscarrage" class="form-control">
+                                <option value="">--Choose--</option>
+                                    <option value="0" {{ $history->no_miscarrage == '0' ? 'selected': ''}}>0</option>
+                                    <option value="1" {{ $history->no_miscarrage == '1' ? 'selected': ''}}>1</option>
+                                    <option value="2" {{ $history->no_miscarrage == '2' ? 'selected': ''}}>2</option>
+                                    <option value="3" {{ $history->no_miscarrage == '3' ? 'selected': ''}}>3</option>
+                                    <option value="4" {{ $history->no_miscarrage == '4' ? 'selected': ''}}>4</option>
+                                    <option value="5" {{ $history->no_miscarrage == '5' ? 'selected': ''}}>5</option>
+                                    <option value="6" {{ $history->no_miscarrage == '6' ? 'selected': ''}}>6</option>
+                                    <option value="7" {{ $history->no_miscarrage == '7' ? 'selected': ''}}>7</option>
+                                    <option value="8" {{ $history->no_miscarrage == '8' ? 'selected': ''}}>8</option>
+                                    <option value="9" {{ $history->no_miscarrage == '9' ? 'selected': ''}}>9</option>
+                                    <option value="10" {{ $history->no_miscarrage == '10' ? 'selected': ''}}>10</option>
+                                </select>
+    
+                                @error('no_pregnacy')
+                                    <span class="text-danger">
+                                        {{ $message }}
+                                    </span>
+                                @enderror
+                            </div>
+                           
                         </div>  
 
                     </div>
