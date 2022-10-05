@@ -70,5 +70,9 @@ Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'S
 
     // Assigned patients route
     Route::get('assigned-patients', [SpecialistController::class, 'getAssignedPatients'])->name('assigned.patients');
+    Route::get('assigned-patient-detail/{id}', [SpecialistController::class, 'assignedDetail'])->name('assigned.detail');
+
+    Route::post('suggest-appointment', [SpecialistController::class, 'suggestAppointment'])->name('suggest.appointment');
+    
 });
 
