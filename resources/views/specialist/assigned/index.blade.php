@@ -46,7 +46,7 @@
                             </td>
                             <td>{{ $complaint->complaints->created_at->toFormattedDateString() }}</td>
                             <td>
-                                <a href="">View details</a>
+                                <a href="{{ route('specialist.assigned.detail', ['id' => $complaint->id]) }}">View details</a>
                             </td>
                         </tr>
                         @endforeach
