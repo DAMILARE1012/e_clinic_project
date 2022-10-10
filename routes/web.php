@@ -45,6 +45,10 @@ Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'User', 'middl
     Route::post('profile-update', [ProfileController::class, 'updateProfile'])->name('update.profile');
     Route::get('check-medical-history', [ProfileController::class, 'editMedicalHistory'])->name('check.medical.history');
     Route::post('check-medical-history', [ProfileController::class, 'storeMedicalHistory'])->name('check.medical.history');
+
+    // Appointments Route
+    Route::get('select-appointment/{id}', [ComplaintController::class, 'selectAppointment'])->name('choose.appointment');
+    Route::get('confirm-appointment/{id}', [ComplaintController::class, 'confirmAppointment'])->name('confirm.appointment');
 });
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () 
@@ -72,6 +76,7 @@ Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'S
     Route::get('assigned-patients', [SpecialistController::class, 'getAssignedPatients'])->name('assigned.patients');
     Route::get('assigned-patient-detail/{id}', [SpecialistController::class, 'assignedDetail'])->name('assigned.detail');
 
+    Route::get('my-appointments', [SpecialistController::class, 'myAppointments'])->name('appointments');
     Route::post('suggest-appointment', [SpecialistController::class, 'suggestAppointment'])->name('suggest.appointment');
     
 });

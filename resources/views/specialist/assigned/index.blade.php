@@ -10,14 +10,15 @@
         <hr class="widget-separator">
         <div class="widget-body">
             <div class="table-responsive">
-                <table id="default-datatable" data-plugin="DataTable" class="table table-striped" cellspacing="0" width="100%">
+                <table id="default-datatable" data-plugin="DataTable" class="table table-hovered" cellspacing="0" width="100%">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Patient</th>
                             <th>Description</th>
-                            <th>Status</th>
+                            <!-- <th>Status</th> -->
                             <th>Date Assigned</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -26,8 +27,9 @@
                             <th>#</th>
                             <th>Patient</th>
                             <th>Description</th>
-                            <th>Status</th>
+                            <!-- <th>Status</th> -->
                             <th>Date Assigned</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </tfoot>
@@ -35,18 +37,31 @@
                     @foreach($assigned as $key => $complaint)
                         <tr>
                             <td>{{ $key+1 }}</td>
-                            <td>{{ $complaint->patients->firstname }}</td>
+                            <td>{{ $complaint->patients->firstname }} {{ $complaint->patients->lastname }}</td>
                             <td>{{ $complaint->complaints->description }}</td>
-                            <td>
+                            <!-- <td>
                                 @if($complaint->complaints->status)
                                     <span class="text-success">Attended</span>
                                 @else
                                     <span class="text-warning">Not attended</span>
                                 @endif
-                            </td>
+                            </td> -->
                             <td>{{ $complaint->complaints->created_at->toFormattedDateString() }}</td>
                             <td>
-                                <a href="{{ route('specialist.assigned.detail', ['id' => $complaint->id]) }}">View details</a>
+                                @if($complaint->complaints->appointments->count() > 0 && !$complaint->complaints->status)
+                                    <span class="text-success">Session suggested</span>
+                                @elseif($complaint->complaints->status && $complaint->complaints->appointments->count() > 0)
+
+                                    <span class="text-success">Completed</span>
+                                    
+                                @endif
+                            </td>
+                            <td>
+                                @if(!$complaint->complaints->appointments->count() > 0)
+                                    <a href="{{ route('specialist.assigned.detail', ['id' => $complaint->id]) }}">Schedule Session</a>
+                                @else
+                                    <span class="text-info"> Awaiting Session Confirmation from Patient </span>
+                                @endif
                             </td>
                         </tr>
                         @endforeach

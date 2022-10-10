@@ -10,6 +10,7 @@ use App\Models\Questionnaire;
 use App\Models\ComplaintQuestionnaire;
 use App\Models\Specialization;
 use Carbon\Carbon;
+use App\Models\Appointment;
 
 class ComplaintController extends Controller
 {
@@ -97,7 +98,23 @@ class ComplaintController extends Controller
         }else{
             return response("Error creating complain", 400);
         }
+    }
 
+    public function selectAppointment($id)
+    {
+        $complaints = Complaint::find($id);
+        $appointments = $complaints->appointments;
+
+        return view('user.appointments.select-appointment', compact('appointments'));
+    }
+
+    public function confirmAppointment($id)
+    {
+        $appointment = Appointment::find($id);
+        $appointment->selected = 1;
+        $appointment->save();
+
+        return redirect()->route('user.complaints')->with('message', 'Appointment time confirmed, please make sure to be online that time, A specialist will attend to you');
 
     }
 

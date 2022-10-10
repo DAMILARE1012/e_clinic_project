@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Profile;
+use App\Models\MedicalHistory;
 
 class CreateUsersSeeder extends Seeder
 {
@@ -16,6 +18,14 @@ class CreateUsersSeeder extends Seeder
     {
         $users = [
             
+            [
+                'firstname'=>'User',
+                'lastname'=>'User',
+                'email'=>'user@example.com',
+                'role_id'=>1,
+                'password'=> bcrypt('123456'),
+            ],
+
             [
                'firstname'=>'Admin',
                'lastname'=>'User',
@@ -51,5 +61,22 @@ class CreateUsersSeeder extends Seeder
         foreach ($users as $key => $user) {
             User::create($user);
         }
+
+        $profile = new Profile;
+        $profile->user_id = 1;
+        $profile->date_of_birth = date('y-m-d');
+        $profile->gender = "male";
+        $profile->religion = 'Christianity';
+        $profile->city = "Minna";
+        $profile->state = "Kwara";
+        $profile->about = "this is about me";
+        $profile->completed = 1;
+        $profile->save();
+
+        $medicalHistory = new MedicalHistory;
+        $medicalHistory->user_id = 1;
+        $medicalHistory->save();
+
+
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\PatientSpecialist;
 use App\Models\Complaint;
 use App\Models\Appointment;
-
+use \Carbon\Carbon;
 class SpecialistController extends Controller
 {
     public function index()
@@ -69,14 +69,29 @@ class SpecialistController extends Controller
 
        
 
-        # send email
+        # send email to users
+        
         #add request to database
         Appointment::insert($slots);
 
-        dd('success');
         #return redirect back
-
         return redirect()->route('specialist.assigned.patients')->with('message', 'Time slot suggestion sent to patient');
         
+    }
+
+    public function myAppointments()
+    {
+        $assigned = PatientSpecialist::where('specialist_id', auth()->id())->get();
+        $complaints = [];
+        foreach($assigned as $complaint){
+            $complaints[] = $complaint->complaints->id;
+        }
+
+        $thisMonth = Carbon::now();
+       
+        $thisMonth->format('F'); // Return month string
+        $appointments = Appointment::whereIn('complaint_id', $complaints)->whereMonth('date', $thisMonth->month)->where('selected', 1)->get();
+
+        return view('specialist.assigned.appointments', compact('appointments', 'thisMonth'));
     }
 }

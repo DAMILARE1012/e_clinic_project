@@ -53,23 +53,18 @@
     <div class="menubar-scroll-inner">
       <ul class="app-menu">
 
-      <li>
-        <a href="{{ route('specialist.assigned.patients') }}">
-          <i class="menu-icon fa fa-book zmdi-hc-lg"></i>
-          <span class="menu-text">My Patients</span>
-        </a>
-      </li>
-
-        <li class="has-submenu">
-          <a href="javascript:void(0)" class="submenu-toggle">
-            <i class="menu-icon fa fa-users zmdi-hc-lg"></i>
-            <span class="menu-text">Requests</span>
-            <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
+        <li>
+          <a href="{{ route('specialist.assigned.patients') }}">
+            <i class="menu-icon fa fa-book zmdi-hc-lg"></i>
+            <span class="menu-text">My Patients</span>
           </a>
-          <ul class="submenu">
-            <li><a href="#"><span class="menu-text">Pending </span></a></li>
-            <li><a href="#"><span class="menu-text">Completed</span></a></li>
-          </ul>
+        </li>
+
+        <li>
+          <a href="{{ route('specialist.appointments') }}">
+            <i class="menu-icon fa fa-calendar zmdi-hc-lg"></i>
+            <span class="menu-text">My Appointments</span>
+          </a>
         </li>
 
         <li class="menu-separator"><hr></li>
