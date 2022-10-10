@@ -5371,6 +5371,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['user', 'specializations'],
   data: function data() {
@@ -5381,7 +5383,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       description: '',
       hasError: false,
       errors: {},
-      specialistGender: ''
+      specialistGender: '',
+      success: false
     };
   },
   methods: {
@@ -5428,7 +5431,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   description: _this2.description
                 }).then(function (response) {
                   console.log(response.data);
-                  window.location.href = '/user/dashboard';
+                  _this2.success = true;
                 })["catch"](function (error) {
                   if (error.response.status === 422) {
                     _this2.hasError = true;
@@ -28413,18 +28416,39 @@ var render = function () {
                       )
                     : _vm._e(),
                   _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-primary btn-md",
-                      on: {
-                        click: function ($event) {
-                          return _vm.submitRequest()
+                  _vm.success == true
+                    ? _c("div", { staticClass: "alert alert-success" }, [
+                        _vm._v(
+                          "Complaint sent successful, A specialist will be assigned to you soon"
+                        ),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.success == false
+                    ? _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-primary btn-md",
+                          on: {
+                            click: function ($event) {
+                              return _vm.submitRequest()
+                            },
+                          },
                         },
-                      },
-                    },
-                    [_vm._v("Submit")]
-                  ),
+                        [_vm._v("Submit")]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.success == true
+                    ? _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-info btn-md",
+                          attrs: { href: "/user/dashboard" },
+                        },
+                        [_vm._v("Back To Dashboard")]
+                      )
+                    : _vm._e(),
                 ],
                 2
               ),
