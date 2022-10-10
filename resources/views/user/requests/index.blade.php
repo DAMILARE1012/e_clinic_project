@@ -9,6 +9,17 @@
         </header><!-- .widget-header -->
         <hr class="widget-separator">
         <div class="widget-body">
+
+            <div class="row">
+                
+                @if(Session::has('message'))
+                    <div class="alert alert-info">
+                        {{ Session::get('message') }}
+                    </div>
+                @endif
+                
+            </div>
+            
             <div class="table-responsive">
                 <table id="default-datatable" data-plugin="DataTable" class="table table-striped" cellspacing="0" width="100%">
                     <thead>
@@ -35,15 +46,21 @@
                             <td>{{ $key+1 }}</td>
                             <td>{{ $complaint->description }}</td>
                             <td>
-                                @if($complaint->assigned)
+                                @if($complaint->assigned && !$complaint->appointments->count() > 0)
                                     <span class="text-success">Assigned</span>
+                                @elseif($complaint->appointments->count() > 0)
+                                    <span class="text-info">Session Scheduled </span>
                                 @else
-                                    <span class="text-warning">Pending</span>
+                                <span class="text-warning">Pending </span>
                                 @endif
                             </td>
                             <td>{{ $complaint->created_at->diffForHumans() }}</td>
                             <td>
-                                <a href="">View details</a>
+                                @if(!$complaint->appointments->count() > 0)
+                                    <a href="{{ route('user.choose.appointment', ['id' => $complaint->id]) }}">View details</a>
+                                @else
+                                    <a href="#" class="btn btn-primary btn-xs"> Start Session</a>
+                                @endif
                             </td>
                         </tr>
                     @endforeach

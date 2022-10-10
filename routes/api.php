@@ -24,6 +24,7 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::get('vitals', [VitalController::class, 'vitals']);
 });
 
+// Routes for Weareables
 Route::get('get-vitals/{deviceid}', [VitalController::class, 'getVitals']);
 Route::Post('get-access-token', [VitalController::class, 'getToken']);
 Route::Post('update-vitals', [VitalController::class, 'updateVitals']);

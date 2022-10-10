@@ -26,4 +26,9 @@ class Complaint extends Model
         return $this->belongsTo(Specialization::class);
     }
 
+    function appointments()
+    {
+        return $this->hasMany(Appointment::class);
+    }
+
 }

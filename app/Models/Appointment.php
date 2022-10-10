@@ -11,19 +11,17 @@ class Appointment extends Model
 
     protected $dates = [
         'start_time',
-        'finish_time'
+        'finish_time',
+        'date'
     ];
 
     protected $fillable = [
-        'start_time_1',
-        'finish_time_1',
-        'start_time_2',
-        'finish_time_2',
-        'start_time_3',
-        'finish_time_3'
+        'start_time',
+        'finish_time',
+        'date'
     ];
 
-    public function complaints()
+    public function complaint()
     {
         return $this->belongsTo(Complaint::class);
     }

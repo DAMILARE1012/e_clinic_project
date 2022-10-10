@@ -40,8 +40,8 @@
                             <label for="exampleInputtext1">Gender</label>
                             <select name="gender" class="form-control">
                             <option value="">--Choose--</option>
-                                <option value="Male" {{ auth()->user()->profile->gender == 'male' ? 'selected': ''}}>Male</option>
-                                <option value="Female" {{ auth()->user()->profile->gender == 'female' ? 'selected': ''}}>Female</option>
+                                <option value="Male" {{ auth()->user()->profile->gender == 'Male' ? 'selected': ''}}>Male</option>
+                                <option value="Female" {{ auth()->user()->profile->gender == 'Female' ? 'selected': ''}}>Female</option>
                             </select>
 
                             @error('gender')

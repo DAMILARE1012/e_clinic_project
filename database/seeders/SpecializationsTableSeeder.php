@@ -17,7 +17,7 @@ class SpecializationsTableSeeder extends Seeder
         $names = [
 
             [
-                'user_id' => 3,
+                'user_id' => 5,
                 'name' => 'Doctor',
             ],
 
