@@ -72,6 +72,7 @@ class RegisterController extends Controller
         ]);
 
         $user->profile()->create(['user_id' => $user->id]);
+        
         return $user;
     }
 }

@@ -8,6 +8,9 @@ use App\Models\PatientSpecialist;
 use App\Models\Complaint;
 use App\Models\Appointment;
 use \Carbon\Carbon;
+use App\Models\Chatroom;
+
+
 class SpecialistController extends Controller
 {
     public function index()
@@ -72,7 +75,7 @@ class SpecialistController extends Controller
         # send email to users
         
         #add request to database
-        Appointment::insert($slots);
+        $appointments = Appointment::insert($slots);
 
         #return redirect back
         return redirect()->route('specialist.assigned.patients')->with('message', 'Time slot suggestion sent to patient');

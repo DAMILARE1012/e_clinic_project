@@ -56,10 +56,15 @@
                             </td>
                             <td>{{ $complaint->created_at->diffForHumans() }}</td>
                             <td>
-                                @if(!$complaint->appointments->count() > 0)
+                                
+                                @if(!$complaint->appointments->where('selected', 1)->first())
                                     <a href="{{ route('user.choose.appointment', ['id' => $complaint->id]) }}">View details</a>
                                 @else
-                                    <a href="#" class="btn btn-primary btn-xs"> Start Session</a>
+
+                                @php
+                                    $appointment = $complaint->appointments->where('selected', 1)->first();
+                                @endphp
+                                    <a href="{{ route('chat.room', ['roomId' => $appointment->chatRoom->id]) }}" class="btn btn-primary btn-xs"> Start Session</a>
                                 @endif
                             </td>
                         </tr>

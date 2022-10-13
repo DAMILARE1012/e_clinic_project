@@ -47,7 +47,9 @@
                                 <div v-if="hasError == true" class="alert alert-danger">
                                     <li v-for="error in errors">{{ error[0] }}</li>
                                 </div>
-                                <button class="btn btn-primary btn-md" @click="submitRequest()">Submit</button>
+                                <div v-if="success==true" class="alert alert-success">Complaint sent successful, A specialist will be assigned to you soon</div>
+                                <button class="btn btn-primary btn-md" @click="submitRequest()" v-if="success==false">Submit</button>
+                                <a v-if="success==true" href="/user/dashboard" class="btn btn-info btn-md">Back To Dashboard</a>
                             </div>
                                 
 						</div>
@@ -76,6 +78,7 @@
                 hasError: false,
                 errors: {},
                 specialistGender: '',
+                success: false,
                       
             }
             
@@ -99,7 +102,7 @@
                 })
                 .then((response)=>{
                     console.log(response.data);
-                    window.location.href = '/user/dashboard';
+                    this.success = true;
                 })
                 .catch((error)=>{
                     if (error.response.status === 422) {

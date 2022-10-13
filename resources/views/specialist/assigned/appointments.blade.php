@@ -41,7 +41,7 @@
                                     <td>{{ $appointment->start_time->format('g:i A') }}</td>
                                     <td>{{ $appointment->finish_time->format('g:i A') }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-xs btn-primary">Start Session</a>
+                                        <a href="{{ route('chat.room', ['roomId' => $appointment->chatRoom->id]) }}" class="btn btn-xs btn-primary">Start Session</a>
                                     </td>
                                 </tr>
                                 
