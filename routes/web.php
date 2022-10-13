@@ -8,6 +8,7 @@ use App\Http\Controllers\Reception\DoctorController;
 use App\Http\Controllers\Specialist\SpecialistController;
 use App\Http\Controllers\User\ComplaintController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AppointmentController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +50,8 @@ Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'User', 'middl
     // Appointments Route
     Route::get('select-appointment/{id}', [ComplaintController::class, 'selectAppointment'])->name('choose.appointment');
     Route::get('confirm-appointment/{id}', [ComplaintController::class, 'confirmAppointment'])->name('confirm.appointment');
+
+    
 });
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () 
@@ -79,5 +82,10 @@ Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'S
     Route::get('my-appointments', [SpecialistController::class, 'myAppointments'])->name('appointments');
     Route::post('suggest-appointment', [SpecialistController::class, 'suggestAppointment'])->name('suggest.appointment');
     
+    
 });
 
+// ChatRoom 
+Route::get('chat-room/{roomId}', [AppointmentController::class, 'chatRoom'])->name('chat.room');
+Route::get('chat-room/{roomId}/messages', [AppointmentController::class, 'messages']);
+Route::post('chat-room/{roomId}/message', [AppointmentController::class, 'newMessage']);

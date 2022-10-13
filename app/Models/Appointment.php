@@ -25,4 +25,9 @@ class Appointment extends Model
     {
         return $this->belongsTo(Complaint::class);
     }
+
+    public function chatRoom()
+    {
+        return $this->hasOne(ChatRoom::class);
+    }
 }

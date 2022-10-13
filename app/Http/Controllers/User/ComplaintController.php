@@ -11,6 +11,7 @@ use App\Models\ComplaintQuestionnaire;
 use App\Models\Specialization;
 use Carbon\Carbon;
 use App\Models\Appointment;
+use App\Models\ChatRoom;
 
 class ComplaintController extends Controller
 {
@@ -112,7 +113,18 @@ class ComplaintController extends Controller
         $appointment->selected = 1;
         $appointment->save();
 
-        return redirect()->route('user.complaints')->with('message', 'Appointment time confirmed, please make sure to be online that time, A specialist will attend to you');
+        if($appointment){
+
+            $chatRoom = new ChatRoom;
+            $chatRoom->appointment_id = $appointment->id;
+            $chatRoom->name = $appointment->complaint->user->firstname.'/'.$appointment->date;
+            $chatRoom->save();
+        }
+        
+
+        return redirect()->route('user.complaints')->with([
+            'message' => 'Appointment time confirmed, please make sure to be online that time, A specialist will attend to you',
+        ]);
 
     }
 

@@ -21,12 +21,17 @@ window.Vue = require('vue').default;
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('complaint-form', require('./components/users/ComplaintForm.vue').default);
-
+Vue.component('message-container', require('./components/chats/MessageContainer.vue').default);
+Vue.component('message-item', require('./components/chats/MessageItem.vue').default);
+Vue.component('input-message', require('./components/chats/InputMessage.vue').default);
+Vue.component('container', require('./components/chats/Container.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+
 
 const app = new Vue({
     el: '#app',
