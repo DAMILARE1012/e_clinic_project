@@ -44,6 +44,9 @@ Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'User', 'middl
     // profile update and medical history
     Route::get('profile-update', [ProfileController::class, 'editProfile'])->name('edit.profile');
     Route::post('profile-update', [ProfileController::class, 'updateProfile'])->name('update.profile');
+    Route::get('profile', [ProfileController::class, 'editProfileA'])->name('edit.profileA');
+    Route::post('update-profile', [ProfileController::class, 'updateProfileA'])->name('update.profileA');
+    Route::get('medical-history', [ProfileController::class, 'MedicalHistory'])->name('medical.history');
     Route::get('check-medical-history', [ProfileController::class, 'editMedicalHistory'])->name('check.medical.history');
     Route::post('check-medical-history', [ProfileController::class, 'storeMedicalHistory'])->name('check.medical.history');
 
@@ -67,6 +70,9 @@ Route::group(['as' => 'reception.', 'prefix' => 'reception', 'namespace' => 'Rec
     Route::get('complaint/{id}', [ReceptionController::class, 'complaintDetail'])->name('complaints.detail');
 
     Route::post('assign', [ReceptionController::class, 'assignSpecialist'])->name('assign.specialist');
+    //profile
+    Route::get('profile', [ProfileController::class, 'editProfileA'])->name('edit.profileA');
+    Route::post('update-profile', [ProfileController::class, 'updateProfileA'])->name('update.profileA');
 });
 
 Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'Specialist', 'middleware' => ['auth', 'specialist']], function () 
@@ -74,13 +80,17 @@ Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'S
     Route::get('dashboard', [SpecialistController::class, 'index'])->name('dashboard');
     Route::get('profile', [ProfileController::class, 'editProfile'])->name('profile');
     Route::post('profile-update', [ProfileController::class, 'updateProfile'])->name('update.profile');
-
+    
     // Assigned patients route
     Route::get('assigned-patients', [SpecialistController::class, 'getAssignedPatients'])->name('assigned.patients');
     Route::get('assigned-patient-detail/{id}', [SpecialistController::class, 'assignedDetail'])->name('assigned.detail');
 
     Route::get('my-appointments', [SpecialistController::class, 'myAppointments'])->name('appointments');
     Route::post('suggest-appointment', [SpecialistController::class, 'suggestAppointment'])->name('suggest.appointment');
+
+    //profile
+    Route::get('profile', [ProfileController::class, 'editProfileA'])->name('edit.profileA');
+    Route::post('update-profile', [ProfileController::class, 'updateProfileA'])->name('update.profileA');
     
     
 });
