@@ -73,6 +73,39 @@ class CreateUsersSeeder extends Seeder
         $profile->completed = 1;
         $profile->save();
 
+        $profile = new Profile;
+        $profile->user_id = 3;
+        $profile->date_of_birth = date('y-m-d');
+        $profile->gender = "female";
+        $profile->religion = 'Christianity';
+        $profile->city = "Abuja";
+        $profile->state = "Abuja";
+        $profile->about = "this is about me";
+        $profile->completed = 1;
+        $profile->save();
+
+        $profile = new Profile;
+        $profile->user_id = 4;
+        $profile->date_of_birth = date('y-m-d');
+        $profile->gender = "male";
+        $profile->religion = 'Christianity';
+        $profile->city = "Ilorin";
+        $profile->state = "Kwara";
+        $profile->about = "this is about me";
+        $profile->completed = 1;
+        $profile->save();
+
+        $profile = new Profile;
+        $profile->user_id = 5;
+        $profile->date_of_birth = date('y-m-d');
+        $profile->gender = "female";
+        $profile->religion = 'Christianity';
+        $profile->city = "Ikeja";
+        $profile->state = "Lagos";
+        $profile->about = "this is about me";
+        $profile->completed = 1;
+        $profile->save();
+
         $medicalHistory = new MedicalHistory;
         $medicalHistory->user_id = 1;
         $medicalHistory->save();

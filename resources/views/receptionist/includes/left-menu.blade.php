@@ -68,18 +68,23 @@
 
         <li>
           <a href="{{ route ('reception.doctor') }} ">
-            <i class="menu-icon fa fa-cogs zmdi-hc-lg"></i>
+            <i class="zmdi zmdi-accounts-alt zmdi-hc-lg"></i>
             <span class="menu-text">Specialists</span>
           </a>
         </li>
 
         <li class="menu-separator"><hr></li>
 
-        <li>
-          <a href="#">
+        <li class="has-submenu">
+          <a href="javascript:void(0)" class="submenu-toggle">
             <i class="menu-icon fa fa-cogs zmdi-hc-lg"></i>
-            <span class="menu-text">Account Setting</span>
+            <span class="menu-text">Profile</span>
+            <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
           </a>
+          <ul class="submenu">
+            <li><a href="{{ route('reception.edit.profileA') }}"><span class="menu-text">My Profile</span></a></li>
+            
+          </ul>
         </li>
 
       </ul><!-- .app-menu -->

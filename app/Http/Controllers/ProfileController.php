@@ -35,8 +35,10 @@ class ProfileController extends Controller
         
         if ($role == 1) {
             return view('user.profiles.profile-edit', compact('specializations'));
+
         }elseif($role == 3){
             return view('receptionist.profiles.profile-edit', compact('specializations'));
+
         }elseif($role == 4){
             return view('specialist.profiles.profile-edit', compact('specializations'));
         }

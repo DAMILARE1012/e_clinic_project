@@ -70,6 +70,9 @@ Route::group(['as' => 'reception.', 'prefix' => 'reception', 'namespace' => 'Rec
     //profile
     Route::get('profile', [ProfileController::class, 'editProfileA'])->name('edit.profileA');
     Route::post('update-profile', [ProfileController::class, 'updateProfileA'])->name('update.profileA');
+
+    Route::get('profile-update', [ProfileController::class, 'editProfile'])->name('edit.profile');
+    Route::post('profile-update', [ProfileController::class, 'updateProfile'])->name('update.profile');
 });
 
 Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'Specialist', 'middleware' => ['auth', 'specialist']], function () 
