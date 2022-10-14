@@ -25,7 +25,7 @@ class RolesTableSeeder extends Seeder
             ],
 
             [
-               'name' => 'receptionist'
+               'name' => 'reception'
             ],
             
             [
