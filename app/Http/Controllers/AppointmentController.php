@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ChatRoom;
 use App\Models\Message;
+use App\Events\NewChatMessage;
 
 class AppointmentController extends Controller
 {
@@ -38,6 +39,8 @@ class AppointmentController extends Controller
         $message->chatroom_id = $roomId;
         $message->message = $request->message;
         $message->save();
+
+        broadcast(new newChatMessage($message))->toOthers();
 
         return $message;
     }

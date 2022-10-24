@@ -5377,7 +5377,28 @@ __webpack_require__.r(__webpack_exports__);
       messages: []
     };
   },
+  watch: {
+    currentRoom: function currentRoom(val, oldVal) {
+      if (oldVal.id) {
+        this.disconnect(oldVal);
+      }
+
+      this.connect();
+    }
+  },
   methods: {
+    connect: function connect() {
+      if (this.currentRoom.id) {
+        var vm = this;
+        this.getMessages();
+        window.Echo["private"]("chat." + this.currentRoom.id).listen('.message.new', function (e) {
+          vm.getMessages();
+        });
+      }
+    },
+    disconnect: function disconnect(room) {
+      window.Echo.leave("chat." + room.id);
+    },
     getRooms: function getRooms() {
       var _this = this;
 
@@ -5391,8 +5412,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     setRoom: function setRoom(room) {
       this.currentRoom = room;
-      this.getMessages();
-      console.log(room);
     },
     getMessages: function getMessages() {
       var _this2 = this;
