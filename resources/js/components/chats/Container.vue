@@ -1,47 +1,71 @@
 <template>
-    <div>
-        <message-container :messages="messages" />
-        <input-message
-         v-on:messageSent="getMessages()"
-         :roomid="roomid" />
+    <div class="container">
+        <ChatRoomSelection 
+            v-if="currentRoom.id"
+            :rooms="chatRooms"
+            :currentRoom="currentRoom"
+            v-on:roomChanged="setRoom($event)"/>
 
+        <MessageContainer
+            :messages="messages" />
+        <InputMessage 
+            :room="currentRoom" 
+            v-on:messageSent="getMessages()" />
     </div>
 </template>
 
 <script>
-export default {
-    props: ['roomid'],
-    data: function(){
+import MessageContainer from "./MessageContainer.vue";
+import InputMessage from "./InputMessage.vue";
+import axios from "axios";
+import ChatRoomSelection from "./ChatRoomSelection.vue";
+    export default {
+    
+    components: {
+    MessageContainer,
+    InputMessage,
+    ChatRoomSelection
+},
+
+    data: function (){
         return {
+            chatRooms: [],
+            currentRoom: [],
             messages: [],
         }
     },
-    methods: {
 
-        connect(){
-            if(this.roomid){
-                let vm = this;
-                this.getMessages();
-                window.Echo.private("chat."+this.roomid)
-                .listen('.message.new', e=> {
-                    vm.getMessages();
-                });  
-            }
-            
+    methods: {
+        getRooms(){
+            axios.get('/chat/rooms')
+            .then(response => {
+                this.chatRooms = response.data;
+                this.setRoom(response.data[0]);
+            })
+            .catch(error => {
+                console.log(error);
+            });
         },
-        getMessages(){
-            axios.get(this.roomid+'/messages')
+
+        setRoom(room){
+            this.currentRoom = room;
+            this.getMessages();
+            console.log(room);
+        },
+
+        getMessages() {
+            axios.get('/chat/room/'+ this.currentRoom.id + '/messages')
             .then(response => {
                 this.messages = response.data;
-                console.log(response);
-            }).catch(error => {
-                console.log(error);
             })
+            .catch(error => {
+                console.log(error);
+            });
         }
     },
 
-    mounted(){
-        
+    created(){
+        this.getRooms();
     }
 }
 </script>

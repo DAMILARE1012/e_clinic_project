@@ -9,9 +9,9 @@ class Message extends Model
 {
     use HasFactory;
 
-    public function chatRoom()
+    public function room()
     {
-        return $this->hasOne(Message::class);
+        return $this->hasOne(ChatRoom::class);
     }
 
     public function user()

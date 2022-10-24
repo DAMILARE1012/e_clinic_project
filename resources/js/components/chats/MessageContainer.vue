@@ -1,15 +1,17 @@
 <template>
     <div>
         <div v-for="(message, index) in messages" :key="index">
-            <message-item :message="message"/>
+            <MessageItem :message="message"/>
         </div>
     </div>
 </template>
 
 <script>
-import axios from 'axios';
-
-export default {
-    props: ['messages'],
+import MessageItem from './MessageItem.vue';
+    export default {
+    props: ["messages"],
+    mounted() {
+    },
+    components: { MessageItem }
 }
 </script>

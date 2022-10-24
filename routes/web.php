@@ -10,6 +10,8 @@ use App\Http\Controllers\User\ComplaintController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AppointmentController;
 
+use App\Events\NewChatRoomMessage;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -86,6 +88,8 @@ Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'S
 });
 
 // ChatRoom 
-Route::get('chat-room/{roomId}', [AppointmentController::class, 'chatRoom'])->name('chat.room');
-Route::get('chat-room/{roomId}/messages', [AppointmentController::class, 'messages']);
-Route::post('chat-room/{roomId}/message', [AppointmentController::class, 'newMessage']);
+Route::get('chat', [AppointmentController::class, 'chat'])->middleware('auth');
+
+Route::get('chat/rooms', [AppointmentController::class, 'chatRoom'])->middleware('auth');;
+Route::get('chat/room/{roomId}/messages', [AppointmentController::class, 'messages'])->middleware('auth');;
+Route::post('chat/room/{roomId}/message', [AppointmentController::class, 'newMessage'])->middleware('auth');;

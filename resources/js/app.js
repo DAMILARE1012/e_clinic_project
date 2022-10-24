@@ -24,6 +24,7 @@ Vue.component('complaint-form', require('./components/users/ComplaintForm.vue').
 Vue.component('message-container', require('./components/chats/MessageContainer.vue').default);
 Vue.component('message-item', require('./components/chats/MessageItem.vue').default);
 Vue.component('input-message', require('./components/chats/InputMessage.vue').default);
+Vue.component('chat-room-selector', require('./components/chats/ChatRoomSelection.vue').default);
 Vue.component('container', require('./components/chats/Container.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
