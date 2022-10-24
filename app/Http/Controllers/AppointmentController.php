@@ -9,30 +9,39 @@ use App\Events\NewChatMessage;
 
 class AppointmentController extends Controller
 {
-    public function chatRoom($id)
+    public function chat()
     {
 
-        $chatRoom = ChatRoom::find($id);
-        return view('chats.room', compact('chatRoom'));
+        return view('chats.room');
 
     }
 
-    public function messages(Request $request, $chatRoom){
-        return Message::where('chatroom_id', $chatRoom)
+    public function chatRoom()
+    {
+
+        // $chatRoom = ChatRoom::find($id);
+        // return view('chats.room', compact('chatRoom'));
+        return ChatRoom::all();
+
+    }
+
+    public function messages(Request $request, $roomId){
+        return Message::where('chatroom_id', $roomId)
             ->with('user')
             ->orderBy('created_at', 'ASC')
             ->get(); 
     }
 
-    public function newMessage(Request $request, $chatRoom)
+    public function newMessage(Request $request, $roomId)
     {
         $message = new Message;
         $message->user_id = auth()->id();
-        $message->chatroom_id = $chatRoom;
+        $message->chatroom_id = $roomId;
         $message->message = $request->message;
         $message->save();
 
-        broadcast(new NewChatMessage($message))->toOthers();
+        broadcast(new newChatMessage($message))->toOthers();
+
         return $message;
     }
     
