@@ -15,14 +15,18 @@
 
             <table class="table">
                 <tr>
-                    <th>History of Chronic Illnesses</th>
-                    <th>Had a Surgery</th>
-                    <th>Previously Hospitalized</th>
-                    <th>Had Blood Transfusions</th>
+                    <th>Chronic Illnesses</th>
+                    <th>Surgery</th>
+                    <th>Blood type</th>
+                    <th>Donated Organ</th>
+                    <th> Hospitalized</th>
+                    <th>Blood Transfusions</th>
                 </tr>
                 <tr>
-                    <td>{{ $history->chronic_illness }}</td>
+                    <td>{{ $history->chronic_illness }}</td>'
                     <td>{{ $history->past_surgry }}</td>
+                    <td>{{ $history->blood_type }}</td>
+                    <td>{{ $history->organ_donor }}</td>
                     <td>{{ $history->past_hospital }}</td>
                     <td>{{ $history->past_B_transfusion }}</td>
                 </tr>
@@ -32,15 +36,23 @@
                 
                 <header class="widget-header">
 
-                    <p class="m-b-lg docs"> <strong>Medical and Surgical History</strong> </p>
+                    
 
                 <div class="col-md-6 border">
-                    
+                    <p class="m-b-lg docs"> <strong>Medical and Surgical History</strong> </p>
                     
                     <br>
                     <span class="border-top">{{ $history->drug_history }}</span>
                     
                 </div>
+
+                <div class="col-md-6 border">
+                    <p class="m-b-lg docs"> <strong>Allergies & Reactions</strong> </p>                   
+                    
+                    <br>
+                    <span class="border-top">{{ $history->allergies }}</span>
+                    
+                </div>                          
             </div>
 				
 		</div><!-- END column -->

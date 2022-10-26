@@ -70,6 +70,27 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="exampleInputtext1">Blood type</label>
+                                <select name="blood_type" class="form-control">
+                                <option value="">--Choose--</option>
+                                    <option value="A+" {{ $history->blood_type == 'A+' ? 'selected': ''}}>A+</option>
+                                    <option value="A- " {{ $history->blood_type == 'A-' ? 'selected': ''}}>A-</option>
+                                    <option value="B+ " {{ $history->blood_type == 'B+' ? 'selected': ''}}>B+</option>
+                                    <option value="B- " {{ $history->blood_type == 'B-' ? 'selected': ''}}>B-</option>
+                                    <option value="AB+ " {{ $history->blood_type == 'AB+' ? 'selected': ''}}>AB+</option>
+                                    <option value="AB- " {{ $history->blood_type == 'AB-' ? 'selected': ''}}>AB-</option>
+                                    <option value="O+" {{ $history->blood_type == 'O+' ? 'selected': ''}}>O+</option>
+                                    <option value="O- " {{ $history->blood_type == 'O-' ? 'selected': ''}}>O-</option>
+                                </select>
+    
+                                @error('blood_type')
+                                    <span class="text-danger">
+                                        {{ $message }}
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
                                 <label for="exampleInputtext1">Drug History (regular routine medication)</label>
                                 <textarea name="drug_history" class="form-control">
                                     {{ $history->drug_history }}
@@ -110,6 +131,34 @@
                                 </select>
     
                                 @error('past_B_transfusion')
+                                    <span class="text-danger">
+                                        {{ $message }}
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputtext1">Donated Organ?</label>
+                                <select name="organ_donor" class="form-control">
+                                <option value="">--Choose--</option>
+                                    <option value="Yes" {{ $history->organ_donor == 'Yes' ? 'selected': ''}}>Yes</option>
+                                    <option value="No" {{ $history->organ_donor == 'No' ? 'selected': ''}}>No</option>
+                                    
+                                </select>
+    
+                                @error('organ_donor')
+                                    <span class="text-danger">
+                                        {{ $message }}
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputtext1">Allergies & Reactions</label>
+                                <textarea name="allergies" class="form-control">
+                                    {{ $history->allergies }}
+                                </textarea>
+                                @error('allergies')
                                     <span class="text-danger">
                                         {{ $message }}
                                     </span>
@@ -157,6 +206,7 @@
                                     </span>
                                 @enderror
                             </div>
+                            
 
                         </div>
                         <div class="col-sm-6">
