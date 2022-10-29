@@ -24,7 +24,7 @@
                             <li class="list-group-item">Tag no: #</li>
                             <li class="list-group-item">Patient: {{ $complaint->user->firstname }} {{ $complaint->user->lastname }}</li>
                             <li class="list-group-item">Gender: {{$complaint->user->profile->gender }}</li>
-                            <li class="list-group-item">Date of Birth: {{ $complaint->user->profile->dob }}</li>
+                            <li class="list-group-item">Date of Birth: {{ $complaint->user->profile->date_of_birth }}</li>
                             <li class="list-group-item">Religion: {{ $complaint->user->profile->religion }}</li>
                             <li class="list-group-item">City: {{ $complaint->user->profile->city }}</li>
                             <li class="list-group-item">State: {{ $complaint->user->profile->state }}</li>
@@ -64,8 +64,13 @@
                             <li class="list-group-item">Past Sugery: {{ $complaint->user->medicalHistory->past_surgry }}</li>
                             <li class="list-group-item">Drug History: {{ $complaint->user->medicalHistory->drug_history }}</li>
                             <li class="list-group-item">Past Hospital: {{ $complaint->user->medicalHistory->past_hospital }}</li>
+                            <li class="list-group-item">Allergies & Reactions: {{ $complaint->user->medicalHistory->allergies }}</li>
+                            <li class="list-group-item">Blood type: {{ $complaint->user->medicalHistory->blood_type }}</li>
+                            <li class="list-group-item">Donated Organ: {{ $complaint->user->medicalHistory->organ_donor }}</li>
+                            @if($complaint->user->profile->gender == 'Female')
                             <li class="list-group-item">Number of Pregnancy: {{ $complaint->user->medicalHistory->no_pregnancy }}</li>
                             <li class="list-group-item">Last Menstral Period: {{ $complaint->user->medicalHistory->last_menst_period }}</li>
+                            @endif
                         </div>
                     </div>
                     

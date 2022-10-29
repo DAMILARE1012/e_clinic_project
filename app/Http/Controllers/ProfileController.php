@@ -74,6 +74,9 @@ class ProfileController extends Controller
             'religion' => 'required|string',
             'specialization' => 'string',
             'city' => 'required|string',
+            'contacts'=>'required|string',
+            'height' => 'required|string',
+            'weight' => 'required',
             'state' => 'required|string',
             'about' => 'string',
         ]);
@@ -86,6 +89,9 @@ class ProfileController extends Controller
         $profile->religion = $request->religion;
         $profile->city = $request->city;
         $profile->state = $request->state;
+        $profile->contacts = $request->contacts;
+        $profile->height = $request->height;
+        $profile->weight = $request->weight;
         $profile->about = $request->about;
         $profile->completed = true;
         $user_profile->firstname = $request->firstname;
@@ -110,6 +116,9 @@ class ProfileController extends Controller
             'religion' => 'required|string',
             'specialization' => 'string',
             'city' => 'required|string',
+            'contacts'=>'required|string',
+            'height' => 'required|string',
+            'weight' => 'required',
             'state' => 'required|string',
             'about' => 'string',
         ]);
@@ -120,6 +129,10 @@ class ProfileController extends Controller
         $profile->religion = $request->religion;
         $profile->city = $request->city;
         $profile->state = $request->state;
+        $profile->contacts = $request->contacts;
+        $profile->height = $request->height;
+        $profile->weight = $request->weight;
+        $profile->about = $request->about;
         $profile->about = $request->about;
         $profile->completed = true;
         $profile->Save();
@@ -166,6 +179,9 @@ class ProfileController extends Controller
         $history->drug_history = $request->drug_history;
         $history->past_surgry = $request->past_surgry;
         $history->past_hospital = $request->past_hospital;
+        $history->organ_donor = $request->organ_donor;
+        $history->allergies = $request->allergies;
+        $history->blood_type = $request->blood_type;
         $history->no_miscarrage = $request->no_miscarrage;
         $history->completed = true;
         $history->save();

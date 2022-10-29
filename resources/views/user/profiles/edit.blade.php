@@ -26,6 +26,7 @@
                 @csrf
                 <div class="row">
                     <div class="col-sm-6">
+
                         <div class="form-group">
                             <label for="exampleInputtext1">Date Of Birth</label>
                             <input name="date_of_birth" value="{{ auth()->user()->profile->date_of_birth }}" type="date" class="form-control" id="exampleInputtext1" placeholder="text">
@@ -37,14 +38,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputtext1">Gender</label>
-                            <select name="gender" class="form-control">
-                            <option value="">--Choose--</option>
-                                <option value="Male" {{ auth()->user()->profile->gender == 'Male' ? 'selected': ''}}>Male</option>
-                                <option value="Female" {{ auth()->user()->profile->gender == 'Female' ? 'selected': ''}}>Female</option>
-                            </select>
+                            <label for="exampleInputtext1">Weight (kg)</label>
+                            <input type="text" value="{{ auth()->user()->profile->weight }}" class="form-control" id="exampleInputtext1" placeholder="70kg" name="weight">
+                        </div>
 
-                            @error('gender')
+                        <div class="form-group">
+                            <label for="exampleInputtext1">City</label>
+                            <input type="text" value="{{ auth()->user()->profile->city }}" class="form-control" id="exampleInputtext1" placeholder="City" name="city">
+                            @error('city')
                                 <span class="text-danger">
                                     {{ $message }}
                                 </span>
@@ -66,18 +67,39 @@
                             @enderror
                         </div>
 
-                    </div>
-                    
-                    <div class="col-sm-6">
-
                         <div class="form-group">
-                            <label for="exampleInputtext1">City</label>
-                            <input type="text" value="{{ auth()->user()->profile->city }}" class="form-control" id="exampleInputtext1" placeholder="City" name="city">
-                            @error('city')
+                            <label for="exampleInputtext1">About</label>
+                            <textarea name="about" class="form-control">{{ auth()->user()->profile->about}}</textarea>
+                            @error('about')
                                 <span class="text-danger">
                                     {{ $message }}
                                 </span>
                             @enderror
+                        </div>
+
+                    </div>
+                    
+                    <div class="col-sm-6">
+
+                        
+                        <div class="form-group">
+                            <label for="exampleInputtext1">Gender</label>
+                            <select name="gender" class="form-control">
+                            <option value="">--Choose--</option>
+                                <option value="Male" {{ auth()->user()->profile->gender == 'Male' ? 'selected': ''}}>Male</option>
+                                <option value="Female" {{ auth()->user()->profile->gender == 'Female' ? 'selected': ''}}>Female</option>
+                            </select>
+
+                            @error('gender')
+                                <span class="text-danger">
+                                    {{ $message }}
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputtext1">Height (cm)</label>
+                            <input type="text" value="{{ auth()->user()->profile->height }}" class="form-control" id="exampleInputtext1" placeholder="1.35cm" name="height">
                         </div>
 
                         <div class="form-group">
@@ -91,14 +113,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputtext1">About</label>
-                            <textarea name="about" class="form-control">{{ auth()->user()->profile->about}}</textarea>
-                            @error('about')
-                                <span class="text-danger">
-                                    {{ $message }}
-                                </span>
-                            @enderror
+                            <label for="exampleInputtext1">Emergency contacts</label>
+                            <input type="text" value="{{ auth()->user()->profile->contacts }}" class="form-control" id="exampleInputtext1" placeholder="+23480********" name="contacts">
+                           
                         </div>
+
+                        
 
                     </div>
                 </div>

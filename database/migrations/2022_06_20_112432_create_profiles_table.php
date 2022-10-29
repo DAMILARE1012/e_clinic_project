@@ -22,6 +22,9 @@ class CreateProfilesTable extends Migration
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('about')->nullable();
+            $table->string('height')->nullable();
+            $table->string('weight')->nullable();
+            $table->string('contacts')->nullable();
             $table->boolean('availability')->default(0);
             $table->tinyInteger('specialization_id')->nullable();
             $table->boolean('completed')->default(0);
