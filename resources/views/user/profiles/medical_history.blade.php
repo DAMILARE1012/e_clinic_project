@@ -31,6 +31,26 @@
                     <td>{{ $history->past_B_transfusion }}</td>
                 </tr>
             </table>
+       
+            @if($history->user->profile->gender == 'Female')
+            <table class="table">
+                <tr>
+                    <th>Last Menstrual Period</th>
+                    <th>Number of Pregnancies</th>
+                    <th>Number of Deliveries</th>
+                    <th>Number of Children Alive</th>
+                    <th>Number of Miscarrage</th>
+                 
+                </tr>
+                <tr>
+                    <td>{{ $history->last_menst_period }}</td>'
+                    <td>{{ $history->no_pregnacy }}</td>
+                    <td>{{ $history->no_delivery }}</td>
+                    <td>{{ $history->no_children }}</td>
+                    <td>{{ $history->no_miscarrage }}</td>
+                </tr>
+            </table>
+            @endif
             <div class="row">
                 <hr>
                 
