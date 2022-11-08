@@ -1,17 +1,19 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <input 
-                    type="text" 
-                    class="form-control" 
-                    v-model="message" 
-                    @keyup.enter="sendMessage()" 
-                    placeholder="say something...">
-            </div>
-        
+    
+    <div class="form-inline message-input">
+        <div class="form-group">
+            <input 
+                type="text" 
+                class="form-control" 
+                v-model="message" 
+                @keyup.enter="sendMessage()" 
+                placeholder="say something...">
+
+            <button @click="sendMessage()" class="btn primary">Send</button>
         </div>
     </div>
+        
+    
 </template>
 
 <script>
@@ -51,3 +53,14 @@
         }
     }
 </script>
+
+<style>
+    .message-input{
+        padding: 16px;
+        background-color: rgb(12,184,182);
+    }
+
+    .primary{
+        border-color: #f0f0f0;
+    }
+</style>

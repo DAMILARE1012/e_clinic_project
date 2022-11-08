@@ -9,10 +9,10 @@ use App\Events\NewChatMessage;
 
 class AppointmentController extends Controller
 {
-    public function chat()
+    public function chat($roomId)
     {
-
-        return view('chats.room');
+        $chatRoom = ChatRoom::find($roomId);
+        return view('chats.room', compact('chatRoom'));
 
     }
 
@@ -28,7 +28,7 @@ class AppointmentController extends Controller
     public function messages(Request $request, $roomId){
         return Message::where('chatroom_id', $roomId)
             ->with('user')
-            ->orderBy('created_at', 'ASC')
+            ->orderBy('created_at', 'DESC')
             ->get(); 
     }
 

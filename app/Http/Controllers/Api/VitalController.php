@@ -25,7 +25,7 @@ class VitalController extends Controller
             return response($token, 201);
 
         }else{
-            return "User not found";
+            return "Device not found";
         }
     }
 
@@ -90,7 +90,7 @@ class VitalController extends Controller
 
             $vitals->save();
 
-            return response('vitals update', 201);
+            return response('vitals update', $vitals, 201);
             
         } else {
 
