@@ -1,16 +1,7 @@
 <template>
-    <div class="container">
-        <ChatRoomSelection 
-            v-if="currentRoom.id"
-            :rooms="chatRooms"
-            :currentRoom="currentRoom"
-            v-on:roomChanged="setRoom($event)"/>
-
-        <MessageContainer
-            :messages="messages" />
-        <InputMessage 
-            :room="currentRoom" 
-            v-on:messageSent="getMessages()" />
+    <div class="message-container">
+        <MessageContainer :messages="messages" />
+        <InputMessage :room="currentRoom" v-on:messageSent="getMessages()" />
     </div>
 </template>
 
@@ -21,26 +12,19 @@ import axios from "axios";
 import ChatRoomSelection from "./ChatRoomSelection.vue";
     export default {
     
+    props: ['chatroom'],
+
     components: {
     MessageContainer,
     InputMessage,
     ChatRoomSelection
-},
+    },
 
     data: function (){
         return {
             chatRooms: [],
             currentRoom: [],
             messages: [],
-        }
-    },
-
-    watch: {
-        currentRoom(val, oldVal){
-            if(oldVal.id){
-                this.disconnect(oldVal)
-            }
-            this.connect();
         }
     },
 
@@ -59,19 +43,9 @@ import ChatRoomSelection from "./ChatRoomSelection.vue";
             window.Echo.leave("chat." +room.id)
         },
 
-        getRooms(){
-            axios.get('/chat/rooms')
-            .then(response => {
-                this.chatRooms = response.data;
-                this.setRoom(response.data[0]);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        },
-
         setRoom(room){
             this.currentRoom = room;
+            this.connect();
         },
 
         getMessages() {
@@ -86,7 +60,13 @@ import ChatRoomSelection from "./ChatRoomSelection.vue";
     },
 
     created(){
-        this.getRooms();
+        this.setRoom(this.chatroom);
     }
 }
 </script>
+
+<style>
+    .message-container{
+        padding-bottom: 10px;
+    }
+</style>

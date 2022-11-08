@@ -88,7 +88,7 @@ Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'S
 });
 
 // ChatRoom 
-Route::get('chat', [AppointmentController::class, 'chat'])->middleware('auth');
+Route::get('chat/{roomId}', [AppointmentController::class, 'chat'])->middleware('auth')->name('chat.room');
 
 Route::get('chat/rooms', [AppointmentController::class, 'chatRoom'])->middleware('auth');;
 Route::get('chat/room/{roomId}/messages', [AppointmentController::class, 'messages'])->middleware('auth');;

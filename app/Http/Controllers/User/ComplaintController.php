@@ -114,10 +114,10 @@ class ComplaintController extends Controller
         $appointment->save();
 
         if($appointment){
-
+            
             $chatRoom = new ChatRoom;
             $chatRoom->appointment_id = $appointment->id;
-            $chatRoom->name = $appointment->complaint->user->firstname.'/'.$appointment->date;
+            $chatRoom->name = $appointment->complaint->user->id.'.'.now()->day.'.'.now()->month.'.'.now()->year;
             $chatRoom->save();
         }
         
