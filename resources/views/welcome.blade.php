@@ -18,7 +18,7 @@
                             </div>
 
                             <div class="col-md-5 col-sm-6 thumb">
-                                <img src="{{ asset('front/assets/img/banner.jpg') }}" alt="Thumb">
+                                <img src="{{ asset('front/assets/img/banner.png') }}" alt="Thumb">
                             </div>
 
                         </div>
