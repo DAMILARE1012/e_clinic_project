@@ -6,14 +6,13 @@
     <div class="col-md-12">
     <div class="widget">
         <header class="widget-header">
-            <h4 class="widget-title">Update Profile</h4>
+            <h4 class="widget-title">Profile</h4>
         </header><!-- .widget-header -->
         <hr class="widget-separator">
         <div class="widget-body">
             <div class="m-b-lg">
-                <small>
-                    Dear {{ Auth::user()->firstname }}, We would like to know a bit more about you.
-                </small>
+                
+                
 
                 @if(Session::has('message'))
                     <div class="alert alert-success">
@@ -26,7 +25,6 @@
                 @csrf
                 <div class="row">
                     <div class="col-sm-6">
-
                         <div class="form-group">
                             <label for="exampleInputtext1">Date Of Birth</label>
                             <input name="date_of_birth" value="{{ auth()->user()->profile->date_of_birth }}" type="date" class="form-control" id="exampleInputtext1" placeholder="text">
@@ -38,14 +36,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputtext1">Weight (kg)</label>
-                            <input type="text" value="{{ auth()->user()->profile->weight }}" class="form-control" id="exampleInputtext1" placeholder="70kg" name="weight">
-                        </div>
+                            <label for="exampleInputtext1">Gender</label>
+                            <select name="gender" class="form-control">
+                            <option value="">--Choose--</option>
+                                <option value="male" {{ auth()->user()->profile->gender == 'male' ? 'selected': ''}}>Male</option>
+                                <option value="female" {{ auth()->user()->profile->gender == 'female' ? 'selected': ''}}>Female</option>
+                            </select>
 
-                        <div class="form-group">
-                            <label for="exampleInputtext1">City</label>
-                            <input type="text" value="{{ auth()->user()->profile->city }}" class="form-control" id="exampleInputtext1" placeholder="City" name="city">
-                            @error('city')
+                            @error('gender')
                                 <span class="text-danger">
                                     {{ $message }}
                                 </span>
@@ -67,39 +65,18 @@
                             @enderror
                         </div>
 
-                        <div class="form-group">
-                            <label for="exampleInputtext1">About</label>
-                            <textarea name="about" class="form-control">{{ auth()->user()->profile->about}}</textarea>
-                            @error('about')
-                                <span class="text-danger">
-                                    {{ $message }}
-                                </span>
-                            @enderror
-                        </div>
-
                     </div>
                     
                     <div class="col-sm-6">
 
-                        
                         <div class="form-group">
-                            <label for="exampleInputtext1">Gender</label>
-                            <select name="gender" class="form-control">
-                            <option value="">--Choose--</option>
-                                <option value="Male" {{ auth()->user()->profile->gender == 'Male' ? 'selected': ''}}>Male</option>
-                                <option value="Female" {{ auth()->user()->profile->gender == 'Female' ? 'selected': ''}}>Female</option>
-                            </select>
-
-                            @error('gender')
+                            <label for="exampleInputtext1">City</label>
+                            <input type="text" value="{{ auth()->user()->profile->city }}" class="form-control" id="exampleInputtext1" placeholder="City" name="city">
+                            @error('city')
                                 <span class="text-danger">
                                     {{ $message }}
                                 </span>
                             @enderror
-                        </div>
-
-                        <div class="form-group">
-                            <label for="exampleInputtext1">Height (cm)</label>
-                            <input type="text" value="{{ auth()->user()->profile->height }}" class="form-control" id="exampleInputtext1" placeholder="1.35cm" name="height">
                         </div>
 
                         <div class="form-group">
@@ -113,12 +90,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputtext1">Emergency contacts</label>
-                            <input type="text" value="{{ auth()->user()->profile->contacts }}" class="form-control" id="exampleInputtext1" placeholder="+23480********" name="contacts">
-                           
+                            <label for="exampleInputtext1">About</label>
+                            <textarea name="about" class="form-control">{{ auth()->user()->profile->about}}"</textarea>
+                            @error('about')
+                                <span class="text-danger">
+                                    {{ $message }}
+                                </span>
+                            @enderror
                         </div>
-
-                        
 
                     </div>
                 </div>
@@ -126,9 +105,7 @@
 
                 <button type="submit" class="btn btn-primary btn-md">Submit</button>
                 
-                @if(auth()->user()->profile->completed)
-                    <a class="btn btn-info btn-md" href="{{ route(auth()->user()->role->name.'.'.'dashboard') }}">Proceed to dashboard</a>
-                @endif
+                
             </form>
         </div><!-- .widget-body -->
     </div><!-- .widget -->	

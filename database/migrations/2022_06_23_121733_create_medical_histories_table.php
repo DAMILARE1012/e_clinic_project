@@ -26,7 +26,11 @@ class CreateMedicalHistoriesTable extends Migration
             $table->string('no_pregnacy')->nullable();
             $table->string('no_delivery')->nullable();
             $table->string('no_children')->nullable();
-            $table->string('no_miscarrage')->nullable();
+            $table->string('no_miscarrage')->nullable();       
+            $table->string('allergies')->nullable();
+            $table->string('organ_donor')->nullable();
+            $table->string('blood_type')->nullable();
+            
             $table->boolean('completed')->default(false);
             $table->timestamps();
         });

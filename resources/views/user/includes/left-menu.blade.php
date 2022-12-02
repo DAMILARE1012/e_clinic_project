@@ -73,13 +73,24 @@
         </li>
 
         <li class="menu-separator"><hr></li>
+        <li class="has-submenu">
+          <a href="javascript:void(0)" class="submenu-toggle">
+            <i class="menu-icon fa fa-cogs zmdi-hc-lg"></i>
+            <span class="menu-text">Profile</span>
+            <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="{{ route('user.edit.profileA') }}"><span class="menu-text">My Profile</span></a></li>
+            <li><a href="{{ route('user.medical.history') }} "><span class="menu-text">Medical History </span></a></li>
+          </ul>
+        </li>
 
-        <li>
+        <!-- <li>
           <a href="#">
             <i class="menu-icon fa fa-cogs zmdi-hc-lg"></i>
             <span class="menu-text">Account Setting</span>
           </a>
-        </li>
+        </li> -->
 
       </ul><!-- .app-menu -->
     </div><!-- .menubar-scroll-inner -->

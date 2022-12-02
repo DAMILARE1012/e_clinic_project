@@ -18,7 +18,7 @@
                             </div>
 
                             <div class="col-md-5 col-sm-6 thumb">
-                                <img src="{{ asset('front/assets/img/banner.jpg') }}" alt="Thumb">
+                                <img src="{{ asset('front/assets/img/banner.png') }}" alt="Thumb">
                             </div>
 
                         </div>
@@ -96,7 +96,7 @@
                         <p>
                             If you need urgent attention, don't use this platform, please head to a hospital closest to you.
                         </p>
-                        <a class="btn btn-theme border btn-sm" href="#">Read More</a>
+                        <!-- <a class="btn btn-theme border btn-sm" href="#">Read More</a> -->
                     </div>
                 </div>
                 <!-- End Single Item -->
@@ -123,12 +123,12 @@
                 <!-- Single Item -->
                 <div class="col-md-4 single-item">
                     <div class="item">
-                        <i class="flaticon-lung-cancer"></i>
-                        <h4>Cancer Care</h4>
+                        <i class="flaticon-doctor-1"></i>
+                        <h4>Options</h4>
                         <p>
-                            Moment he at on wonder at season little. Six garden result summer set family esteem nay estate. End admiration mrs unreserved
+                            Choose one Option to Book appointment with a consultant or Consult a doctor online
                         </p>
-                        <a class="btn btn-theme border btn-sm" href="#">Read More</a>
+                        <!-- <a class="btn btn-theme border btn-sm" href="#">Read More</a> -->
                     </div>
                 </div>
                 <!-- End Single Item -->
@@ -503,7 +503,7 @@
 
 <!-- Start Fun Factor
 ============================================= -->
-<div class="fun-fact-area default-padding shadow light text-center bg-fixed text-light" style="background-image: url({{ asset('front/assets/img/2440x1578.png') }});">
+<div class="fun-fact-area default-padding shadow light text-center bg-fixed text-light" style="background-image: url({{ asset('front/assets/img/2440x1578.png') }})">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-6 item">

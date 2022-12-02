@@ -37,7 +37,8 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="/">
-                    <!-- <img src="{{ asset('assets/logo_dark.png') }}" style="height: 184px;" class="logo" alt="Logo"> -->
+                    <img src="{{ asset('front/assets/img/logo.png') }}" class="logo" alt="Logo">
+                    <!-- <b>VIMONET</b> -->
                 </a>
             </div>
             <!-- End Header Navigation -->
