@@ -13,7 +13,12 @@ class PagesController extends Controller
 
     public function about_us()
     {
-        return view('pages.front.about');
+        return view('about_us');
+    }
+
+    public function contact()
+    {
+        return view('contact');
     }
 
     public function veterinarian()
@@ -36,11 +41,7 @@ class PagesController extends Controller
         return view('pages.front.blog');
     }
 
-    public function contact()
-    {
-        return view('pages.front.contact');
-    }
-
+    
     public function pricing()
     {
         return view('pages.front.pricing');

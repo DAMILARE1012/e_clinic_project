@@ -30,6 +30,8 @@ use Illuminate\Support\Facades\Route;
 
 // Pages Controller
 Route::get('/', [PagesController::class, 'home'])->name('home');
+Route::get('/about_us', [PagesController::class, 'about_us'])->name('about_us');
+Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 
 
 Auth::routes();
