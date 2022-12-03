@@ -63,8 +63,8 @@
             <div class="row">
                 <div class="about-items">
                     <div class="col-md-6 info">
-                        <h4>Has been working since 2000</h4>
-                        <h2>A Great Place to Work. A Great Place to Receive Care. Leading Medicine.</h2>
+                        <!-- <h4>Has been working since 2000</h4> -->
+                        <h2>A Great Place to Receive online Care. Leading Medicine.</h2>
                         <p>
                             However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. Ourselves for determine attending how led gentleman sincerity. Valley afford uneasy joy she thrown though bed set. In me forming general prudent on country carried. Behaved an or suppose justice. Seemed whence how son rather easily and change missed.
                         </p>
@@ -87,11 +87,15 @@
                         <ul class="nav nav-pills">
                             <li class="active">
                                 <a data-toggle="tab" href="#tab1" aria-expanded="true">
-                                    <i class="fas fa-notes-medical"></i> Consultation
+                                    <i class="fa fa-star"></i> Our Vision
                                 </a>
                             </li>
                             <li>
-                                
+                                <li>
+                                    <a data-toggle="tab" href="#tab2" aria-expanded="false">
+                                        <i class="fa fa-plus-circle"></i> Our Mission
+                                    </a>
+                                </li>
                             </li>
                             <li>
                                 <a data-toggle="tab" href="#tab3" aria-expanded="false">
@@ -105,14 +109,12 @@
                             <!-- Single Item -->
                             <div id="tab1" class="tab-pane fade active in">
                                 <div class="info title">
-                                    <h3>Consulted by experienced doctors</h3>
+                                    <h3>Vimonet's Vision </h3>
                                     <p>
-                                        Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed. 
+                                        To significantly improve the management and delivery of quality healthcare services via telemedicine during and after the COVID-19 pandemic in Nigeria.  
                                     </p>
-                                    <p>
-                                        Placing assured be if removed it besides on. Far shed each high read are men over day. Afraid we praise lively he suffer family estate is. Ample order up in of in ready. Timed blind had now those ought set often which. Or snug dull he show more true wish. No at many deny away miss evil. On in so indeed spirit an mother. Amounted old strictly but marianne admitted. People former is remove remain we praise
-                                    </p>
-                                    <a data-animation="animated slideInUp" class="btn btn-theme border btn-md" href="#">Make Appoinment</a>
+                                    
+                                    <a data-animation="animated slideInUp" class="btn btn-theme border btn-md" href="#">Register with us</a>
                                 </div>
                             </div>
                             <!-- End Single Item -->
@@ -120,11 +122,13 @@
                             <!-- Single Item -->
                             <div id="tab2" class="tab-pane fade">
                                 <div class="info title">
-                                    <h3>Our location</h3>
+                                    <h3>Vimonet's Mission</h3>
                                     <p>
-                                        Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed. 
+                                        To deliver a functional mobile software, a sensor unit, a complete server unit comprising both software and hardware accessories, as well as communication modules to aid health care delivery. </p>
+                                        <p>To provide a robust  e-clinic services employable for use by health experts, patients, and specific government agencies such as the Nigeria Centre for Disease Control (NCDC). </p>
+                                        <p>To engage the services of medical personnel beyond our shores to provide medical and psychological needs of Nigerians. 
                                     </p>
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14767.262289338461!2d70.79414485000001!3d22.284975!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1424308883981"></iframe>
+                                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14767.262289338461!2d70.79414485000001!3d22.284975!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1424308883981"></iframe> -->
                                 </div>
                             </div>
                             <!-- End Single Item -->

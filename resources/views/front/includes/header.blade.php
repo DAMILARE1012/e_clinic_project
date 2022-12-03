@@ -72,11 +72,11 @@
                     </li> -->
                     
                     <li>
-                        <a href="{{ route('login') }}">About</a>
+                        <a href="{{ route('about_us') }}">About</a>
                     </li>
 
                     <li>
-                        <a href="{{ route('login') }}">Contact</a>
+                        <a href="{{ route('contact') }}">Contact</a>
                     </li>
                     
                     @if(Auth::check())
