@@ -14,7 +14,7 @@
                             <div class="col-md-7 col-sm-6">
                                 <h1 data-animation="animated slideInRight">Best care from the comfort of your home</h1>
                                 
-                                <a data-animation="animated slideInUp" class="btn btn-light effect btn-md" href="#">View Details</a>
+                                <a data-animation="animated slideInUp" class="btn btn-light effect btn-md" href="{{ route('register') }}">Register</a>
                             </div>
 
                             <div class="col-md-5 col-sm-6 thumb">
@@ -287,11 +287,11 @@
                 <!-- Single Item -->
                 <div class="single-item">
                     <div class="col-md-5">
-                        <div class="thumb">
+                        <!-- <div class="thumb">
                             <img src="{{ asset('front/assets/img/800x800.png') }}" alt="">
-                        </div>
+                        </div> -->
                     </div>
-                    <div class="col-md-7">
+                    <!-- <div class="col-md-7">
                         <div class="info">
                             <div class="doctor">
                                 <h4>Dr. Jessica Ronal</h4>
@@ -309,18 +309,46 @@
                                 <li>Focus on the good things that you like</li>
                             </ul>
                         </div>
+                    </div> -->
+                </div>
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <div class="single-item">
+                    <div class="col-md-5">
+                        <!-- <div class="thumb">
+                            <img src="{{ asset('front/assets/img/800x800.png') }}" alt="">
+                        </div> -->
+                    </div>
+                    <div class="col-md-7">
+                        <!-- <div class="info">
+                            <div class="doctor">
+                                <h4>Dr. Jessica Ronal</h4>
+                                <h5>MPH, Medicine, Surgery</h5>
+                            </div>
+                            <h3>How to live a healthy lifestyle?</h3>
+                            <p>
+                                Frequently partiality possession resolution at or appearance unaffected he me. Engaged its was evident pleased husband. Ye goodness felicity do disposal dwelling no. First am plate jokes to began of cause an scale. Subjects he prospect elegance followed no overcame possible it on. 
+                            </p>
+                            <h4>Follow the instructions</h4>
+                            <ul>
+                                <li>Dont just worry about the things you cannot help.</li>
+                                <li>Eat Healthy, work better, do gardening.</li>
+                                <li>Some relationships can kill you. Avoid them at the most.</li>
+                                <li>Focus on the good things that you like</li>
+                            </ul>
+                        </div> -->
                     </div>
                 </div>
                 <!-- End Single Item -->
                 <!-- Single Item -->
                 <div class="single-item">
                     <div class="col-md-5">
-                        <div class="thumb">
+                        <!-- <div class="thumb">
                             <img src="{{ asset('front/assets/img/800x800.png') }}" alt="">
-                        </div>
+                        </div> -->
                     </div>
                     <div class="col-md-7">
-                        <div class="info">
+                        <!-- <div class="info">
                             <div class="doctor">
                                 <h4>Dr. Jessica Ronal</h4>
                                 <h5>MPH, Medicine, Surgery</h5>
@@ -336,35 +364,7 @@
                                 <li>Some relationships can kill you. Avoid them at the most.</li>
                                 <li>Focus on the good things that you like</li>
                             </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
-                <div class="single-item">
-                    <div class="col-md-5">
-                        <div class="thumb">
-                            <img src="{{ asset('front/assets/img/800x800.png') }}" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="info">
-                            <div class="doctor">
-                                <h4>Dr. Jessica Ronal</h4>
-                                <h5>MPH, Medicine, Surgery</h5>
-                            </div>
-                            <h3>How to live a healthy lifestyle?</h3>
-                            <p>
-                                Frequently partiality possession resolution at or appearance unaffected he me. Engaged its was evident pleased husband. Ye goodness felicity do disposal dwelling no. First am plate jokes to began of cause an scale. Subjects he prospect elegance followed no overcame possible it on. 
-                            </p>
-                            <h4>Follow the instructions</h4>
-                            <ul>
-                                <li>Dont just worry about the things you cannot help.</li>
-                                <li>Eat Healthy, work better, do gardening.</li>
-                                <li>Some relationships can kill you. Avoid them at the most.</li>
-                                <li>Focus on the good things that you like</li>
-                            </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <!-- End Single Item -->
