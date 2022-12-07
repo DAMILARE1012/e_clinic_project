@@ -12,9 +12,9 @@
                         <div class="content double-items">
 
                             <div class="col-md-7 col-sm-6">
-                                <h1 data-animation="animated slideInRight">Best care from the comfort of your home</h1>
+                                <h1 data-animation="animated slideInRight">Quality Health care from the comfort of your home</h1>
                                 
-                                <a data-animation="animated slideInUp" class="btn btn-light effect btn-md" href="{{ route('register') }}">Register</a>
+                                <!-- <a data-animation="animated slideInUp" class="btn btn-light effect btn-md" href="{{ route('register') }}">Register</a> -->
                             </div>
 
                             <div class="col-md-5 col-sm-6 thumb">
@@ -32,11 +32,11 @@
 
 <!-- Start Services
 ============================================= -->
-<div class="services-area inc-icon less-info default-padding bottom-less">
+ <!-- <div class="services-area inc-icon less-info default-padding bottom-less">
     <div class="container">
-        <div class="row">
+       <div class="row">
             <div class="services-items text-center">
-                <!-- Single Item -->
+               
                 <div class="col-md-3 col-sm-6 equal-height">
                     <div class="item">
                         <a href="#">
@@ -45,8 +45,7 @@
                         </a>
                     </div>
                 </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
+            
                 <div class="col-md-3 col-sm-6 equal-height">
                     <div class="item">
                         <a href="#">
@@ -55,8 +54,7 @@
                         </a>
                     </div>
                 </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
+       
                 <div class="col-md-3 col-sm-6 equal-height">
                     <div class="item">
                         <a href="#">
@@ -65,8 +63,7 @@
                         </a>
                     </div>
                 </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
+      
                 <div class="col-md-3 col-sm-6 equal-height">
                     <div class="item">
                         <a href="#">
@@ -75,8 +72,134 @@
                         </a>
                     </div>
                 </div>
-                <!-- End Single Item -->
+               
             </div>  
+        </div> 
+    </div>
+</div>-->
+<div class="services-area inc-icon carousel-shadow default-padding bottom-less">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="site-heading text-center">
+                    <h2>Centres of <span>Excellence</span></h2>
+                    <p>
+                        While mirth large of on front. Ye he greater related adapted proceed entered an. Through it examine express promise no. Past add size game cold girl off how old
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="services-items text-center">
+                <!-- Single Item -->
+                <div class="col-md-4 col-sm-6 equal-height">
+                    <div class="item">
+                        <div class="info">
+                            <h4>
+                                <a href="#">General Medicine</a>
+                            </h4>
+                            <div class="overlay">
+                                <i class="flaticon-medical"></i>
+                            </div>
+                            <p>
+                                Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth.
+                            </p>
+                            <!-- <a class="btn btn-theme border circle btn-md" href="#">Read More</a> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <div class="col-md-4 col-sm-6 equal-height">
+                    <div class="item">
+                        <div class="info">
+                            <h4>
+                                <a href="#">Psychological Support</a>
+                            </h4>
+                            <div class="overlay">
+                                <i class="flaticon-anesthesia"></i>
+                            </div>
+                            <p>
+                                Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth.
+                            </p>
+                            <!-- <a class="btn btn-theme border circle btn-md" href="#">Read More</a> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <div class="col-md-4 col-sm-6 equal-height">
+                    <div class="item">
+                        <div class="info">
+                            <h4>
+                                <a href="#">Laboratory Serivces</a>
+                            </h4>
+                            <div class="overlay">
+                                <i class="flaticon-anatomy"></i>
+                            </div>
+                            <p>
+                                Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth.
+                            </p>
+                            <!-- <a class="btn btn-theme border circle btn-md" href="#">Read More</a> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <div class="col-md-4 col-sm-6 equal-height">
+                    <div class="item">
+                        <div class="info">
+                            <h4>
+                                <a href="#">Refferal Services</a>
+                            </h4>
+                            <div class="overlay">
+                                <i class="flaticon-lung-cancer"></i>
+                            </div>
+                            <p>
+                                Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth.
+                            </p>
+                            <!-- <a class="btn btn-theme border circle btn-md" href="#">Read More</a> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <div class="col-md-4 col-sm-6 equal-height">
+                    <div class="item">
+                        <div class="info">
+                            <h4>
+                                <a href="#">Nutritionist</a>
+                            </h4>
+                            <div class="overlay">
+                                <i class="flaticon-thinking"></i>
+                            </div>
+                            <p>
+                                Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth.
+                            </p>
+                            <!-- <a class="btn btn-theme border circle btn-md" href="#">Read More</a> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <!-- <div class="col-md-4 col-sm-6 equal-height">
+                    <div class="item">
+                        <div class="info">
+                            <h4>
+                                <a href="#">Traumatology</a>
+                            </h4>
+                            <div class="overlay">
+                                <i class="flaticon-medicine"></i>
+                            </div>
+                            <p>
+                                Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth.
+                            </p>
+                            <a class="btn btn-theme border circle btn-md" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- End Single Item -->
+            </div>
         </div>
     </div>
 </div>
@@ -140,132 +263,7 @@
 
 <!-- Start Services 
 ============================================= -->
-<div class="services-area inc-icon carousel-shadow default-padding bottom-less">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="site-heading text-center">
-                    <h2>Centres of <span>Excellence</span></h2>
-                    <p>
-                        While mirth large of on front. Ye he greater related adapted proceed entered an. Through it examine express promise no. Past add size game cold girl off how old
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="services-items text-center">
-                <!-- Single Item -->
-                <div class="col-md-4 col-sm-6 equal-height">
-                    <div class="item">
-                        <div class="info">
-                            <h4>
-                                <a href="#">Body Surgery</a>
-                            </h4>
-                            <div class="overlay">
-                                <i class="flaticon-medical"></i>
-                            </div>
-                            <p>
-                                Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth.
-                            </p>
-                            <a class="btn btn-theme border circle btn-md" href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
-                <div class="col-md-4 col-sm-6 equal-height">
-                    <div class="item">
-                        <div class="info">
-                            <h4>
-                                <a href="#">Dental Care</a>
-                            </h4>
-                            <div class="overlay">
-                                <i class="flaticon-anesthesia"></i>
-                            </div>
-                            <p>
-                                Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth.
-                            </p>
-                            <a class="btn btn-theme border circle btn-md" href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
-                <div class="col-md-4 col-sm-6 equal-height">
-                    <div class="item">
-                        <div class="info">
-                            <h4>
-                                <a href="#">Eye Care</a>
-                            </h4>
-                            <div class="overlay">
-                                <i class="flaticon-anatomy"></i>
-                            </div>
-                            <p>
-                                Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth.
-                            </p>
-                            <a class="btn btn-theme border circle btn-md" href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
-                <div class="col-md-4 col-sm-6 equal-height">
-                    <div class="item">
-                        <div class="info">
-                            <h4>
-                                <a href="#">Blood Cancer</a>
-                            </h4>
-                            <div class="overlay">
-                                <i class="flaticon-lung-cancer"></i>
-                            </div>
-                            <p>
-                                Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth.
-                            </p>
-                            <a class="btn btn-theme border circle btn-md" href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
-                <div class="col-md-4 col-sm-6 equal-height">
-                    <div class="item">
-                        <div class="info">
-                            <h4>
-                                <a href="#">Neurology Sargery</a>
-                            </h4>
-                            <div class="overlay">
-                                <i class="flaticon-thinking"></i>
-                            </div>
-                            <p>
-                                Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth.
-                            </p>
-                            <a class="btn btn-theme border circle btn-md" href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
-                <div class="col-md-4 col-sm-6 equal-height">
-                    <div class="item">
-                        <div class="info">
-                            <h4>
-                                <a href="#">Traumatology</a>
-                            </h4>
-                            <div class="overlay">
-                                <i class="flaticon-medicine"></i>
-                            </div>
-                            <p>
-                                Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth.
-                            </p>
-                            <a class="btn btn-theme border circle btn-md" href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- End Services -->
 
 <!-- Start Doctors Tips 
