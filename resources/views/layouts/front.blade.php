@@ -55,7 +55,8 @@
                         <div class="f-item">
                             <h4>About</h4>
                             <p>
-                                Excellence decisively nay man yet impression for contrasted remarkably. There spoke happy for you are out. Fertile how old address.
+                                This project tagged VIMONET was developed by the team of researchers at the Federal University of Technology Minna at the onset of the outbreak of the coronavirus disease  (COVID-19) in 2019.
+                                <a class="btn btn-theme border circle btn-md" href="{{ route('about_us') }} ">Read More</a>
                             </p>
                             <div class="opening-info">
                                 <h5>Opening Hours</h5>
@@ -80,7 +81,7 @@
                             <h4>Our Depeartment</h4>
                             <ul>
                                 <li>
-                                    <a href="#"><i class="fas fa-arrow-right"></i> Medecine and Health</a>
+                                    <a href="#"><i class="fas fa-arrow-right"></i>General Medecine</a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="fas fa-arrow-right"></i> Dental Care and Surgery</a>
