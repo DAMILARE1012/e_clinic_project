@@ -1,40 +1,6 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<div class="row">
-    <div class="col-md-3 col-sm-6">
-        <div class="widget stats-widget">
-            <div class="widget-body clearfix">
-                <div class="pull-left">
-                    <h3 class="widget-title text-primary"><span class="counter" data-plugin="counterUp">66.136</span>k</h3>
-                    <small class="text-color">My visits</small>
-                </div>
-                <span class="pull-right big-icon watermark"><i class="fa fa-paperclip"></i></span>
-            </div>
-            <footer class="widget-footer bg-primary">
-                <small>% charge</small>
-                <span class="small-chart pull-right" data-plugin="sparkline" data-options="[4,3,5,2,1], { type: 'bar', barColor: '#ffffff', barWidth: 5, barSpacing: 2 }"></span>
-            </footer>
-        </div><!-- .widget -->
-    </div>
-
-    <div class="col-md-3 col-sm-6">
-        <div class="widget stats-widget">
-            <div class="widget-body clearfix">
-                <div class="pull-left">
-                    <h3 class="widget-title text-danger"><span class="counter" data-plugin="counterUp">3.490</span>k</h3>
-                    <small class="text-color">My Requests</small>
-                </div>
-                <span class="pull-right big-icon watermark"><i class="fa fa-ban"></i></span>
-            </div>
-            <footer class="widget-footer bg-danger">
-                <small>% charge</small>
-                <span class="small-chart pull-right" data-plugin="sparkline" data-options="[1,2,3,5,4], { type: 'bar', barColor: '#ffffff', barWidth: 5, barSpacing: 2 }"></span>
-            </footer>
-        </div><!-- .widget -->
-    </div>
-
-</div><!-- .row -->
 
 <div class="row">
     <div class="col-md-12">
@@ -54,7 +20,8 @@
                         </div>  
                     @endif
                     <div>
-                        <a href="{{ route('user.make.complaint') }}" class="btn btn-primary">Make A New Request</a>
+                        <a href="{{ route('user.make.complaint') }}" class="btn btn-primary btn-xs">Make A New Request</a>
+                        <a href="{{ route('user.make.complaint') }}" class="btn btn-info btn-xs">Past Requests</a>
                     </div>
                 </div>
             </div>

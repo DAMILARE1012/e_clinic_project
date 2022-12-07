@@ -34,7 +34,7 @@ class CreateUsersSeeder extends Seeder
                'password'=> bcrypt('123456'),
             ],
             [
-               'firstname'=>'Reception',
+               'firstname'=>'Triage',
                'lastname'=>'User',
                'email'=>'reception@example.com',
                'role_id'=> 3,

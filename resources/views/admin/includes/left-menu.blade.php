@@ -56,21 +56,14 @@
         <li class="has-submenu">
           <a href="javascript:void(0)" class="submenu-toggle">
             <i class="menu-icon fa fa-users zmdi-hc-lg"></i>
-            <span class="menu-text">Manage Users</span>
+            <span class="menu-text">Manage Accounts</span>
             <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
           </a>
           <ul class="submenu">
-            <li><a href="#"><span class="menu-text">Administrators</span></a></li>
-            <li><a href="#"><span class="menu-text">Receptionists</span></a></li>
-            <li><a href="#"><span class="menu-text">Specialists</span></a></li>
+            <li><a href="{{ route('admin.admins') }}"><span class="menu-text">Administrators</span></a></li>
+            <li><a href="{{ route('admin.specialists') }}"><span class="menu-text">Specialists</span></a></li>
+            <li><a href="{{ route('admin.users') }}"><span class="menu-text">Users</span></a></li>
           </ul>
-        </li>
-
-        <li>
-          <a href="documentation.html">
-            <i class="menu-icon zmdi zmdi-file-text zmdi-hc-lg"></i>
-            <span class="menu-text">Requests</span>
-          </a>
         </li>
 
         <li class="menu-separator"><hr></li>

@@ -64,6 +64,17 @@ Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'User', 'middl
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () 
 {
     Route::get('dashboard', [AdminController::class, 'index'])->name('dashboard');
+
+    // Account routes
+    Route::get('users', [AdminController::class, 'users'])->name('users');
+    Route::get('specialists', [AdminController::class, 'specialists'])->name('specialists');
+    Route::get('admins', [AdminController::class, 'admins'])->name('admins');
+    Route::get('add-account', [AdminController::class, 'createNewAccount'])->name('add.account');
+    Route::post('add-account', [AdminController::class, 'addAccount'])->name('store.account');
+    Route::get('edit-account/{id}', [AdminController::class, 'editAccount'])->name('edit.account');
+    Route::post('update-account/{id}', [AdminController::class, 'updateAccount'])->name('update.account');
+
+
 });
 
 Route::group(['as' => 'reception.', 'prefix' => 'reception', 'namespace' => 'Reception', 'middleware' => ['auth', 'reception']], function () 
