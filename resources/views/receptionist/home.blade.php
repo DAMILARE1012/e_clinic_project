@@ -4,15 +4,6 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div class="widget row no-gutter p-lg">						
-            <div class="col-md-5 col-sm-5">
-                <div>
-                    <h3 class="widget-title fz-lg text-primary m-b-lg">Welcome Back!</h3>
-                    <p class="m-b-lg"></p>
-                    <p class="fs-italic"></p>
-                </div>
-            </div>
-        </div><!-- .widget -->	
 
         <div class="row">
 			<div class="col-md-3 col-sm-6">

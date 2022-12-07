@@ -41,7 +41,7 @@
                     <div class="item">
                         <a href="#">
                             <i class="flaticon-doctor-1"></i>
-                            <h4>Advanced Care</h4>
+                            <h4>General Medicine</h4>
                         </a>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                     <div class="item">
                         <a href="#">
                             <i class="flaticon-medicine"></i>
-                            <h4>Respite Care</h4>
+                            <h4>Psychological Support</h4>
                         </a>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                     <div class="item">
                         <a href="#">
                             <i class="flaticon-checkup"></i>
-                            <h4>Daily Care</h4>
+                            <h4>Laboratory Serivces</h4>
                         </a>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                     <div class="item">
                         <a href="#">
                             <i class="flaticon-neurology"></i>
-                            <h4>Neuorology Care</h4>
+                            <h4>Refferal Services</h4>
                         </a>
                     </div>
                 </div>

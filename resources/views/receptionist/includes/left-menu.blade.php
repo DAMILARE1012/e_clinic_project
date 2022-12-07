@@ -52,19 +52,13 @@
   <div class="menubar-scroll">
     <div class="menubar-scroll-inner">
       <ul class="app-menu">
-
-        <li class="has-submenu">
-          <a href="javascript:void(0)" class="submenu-toggle">
-            <i class="menu-icon fa fa-users zmdi-hc-lg"></i>
+        
+        <li>
+          <a href="{{ route('reception.complaints') }}">
+            <i class="zmdi zmdi-receipt zmdi-hc-lg"></i>
             <span class="menu-text">Requests</span>
-            <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
           </a>
-          <ul class="submenu">
-            <li><a href="{{ route('reception.complaints') }}"><span class="menu-text">All </span></a></li>
-          </ul>
         </li>
-
-        <li class="menu-separator"><hr></li>
 
         <li>
           <a href="{{ route ('reception.doctor') }} ">
