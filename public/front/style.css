@@ -72,6 +72,8 @@ body {
   overflow-x: hidden;
   background-color: #ffffff;
   color: #666666;
+  
+  
 }
 
 html, body, .wrapper {
@@ -5972,4 +5974,29 @@ footer .footer-bottom .social li a:hover {
   z-index: 999999;
   background: url(assets/img/preloader.gif) center no-repeat #fff;
   text-align: center;
+}
+@keyframes scroll{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    trandform: translateX(calc(-250px * 7));
+  }
+}
+.pslider{
+  display: flex;
+  height: 100px;
+  margin:auto;
+  overflow:hidden;
+  position: relative;
+  width: auto;
+}
+.pslider .pslide-track{
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px *14);
+}
+.pslider .pslide{
+  height: 100px;
+  width: 250px;
 }
