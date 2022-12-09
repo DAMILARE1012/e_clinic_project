@@ -14,7 +14,7 @@
                             <div class="col-md-7 col-sm-6">
                                 <h1 data-animation="animated slideInRight">Quality Health care from the comfort of your home</h1>
                                 
-                                <!-- <a data-animation="animated slideInUp" class="btn btn-light effect btn-md" href="{{ route('register') }}">Register</a> -->
+                                <a data-animation="animated slideInUp" class="btn btn-light effect btn-md" href="{{ route('register') }}">Register</a>
                             </div>
 
                             <div class="col-md-5 col-sm-6 thumb">
@@ -32,7 +32,7 @@
 
 <!-- Start Services
 ============================================= -->
- <!-- <div class="services-area inc-icon less-info default-padding bottom-less">
+  <div class="services-area inc-icon less-info default-padding bottom-less">
     <div class="container">
        <div class="row">
             <div class="services-items text-center">
@@ -76,7 +76,7 @@
             </div>  
         </div> 
     </div>
-</div>-->
+</div>
 <div class="services-area inc-icon carousel-shadow default-padding bottom-less">
     <div class="container">
         <div class="row">
@@ -117,7 +117,7 @@
                                 <a href="#">Psychological Support</a>
                             </h4>
                             <div class="overlay">
-                                <i class="flaticon-anesthesia"></i>
+                                <i class="flaticon-thinking"></i>
                             </div>
                             <p>
                                 Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth.
@@ -135,7 +135,7 @@
                                 <a href="#">Laboratory Serivces</a>
                             </h4>
                             <div class="overlay">
-                                <i class="flaticon-anatomy"></i>
+                                <i class="fa fa-flask"></i>
                             </div>
                             <p>
                                 Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth.
@@ -153,7 +153,7 @@
                                 <a href="#">Refferal Services</a>
                             </h4>
                             <div class="overlay">
-                                <i class="flaticon-lung-cancer"></i>
+                                <i class="fa fa-globe"></i>
                             </div>
                             <p>
                                 Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth.
@@ -171,7 +171,7 @@
                                 <a href="#">Nutritionist</a>
                             </h4>
                             <div class="overlay">
-                                <i class="flaticon-thinking"></i>
+                                <i class="fa fa-leaf"></i>
                             </div>
                             <p>
                                 Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth.
@@ -396,7 +396,7 @@
                             <div class="overlay">
                                 <a href="#"><i class="fas fa-plus"></i></a>
                             </div>
-                            <div class="social">
+                            <!-- <div class="social">
                                 <ul>
                                     <li class="facebook">
                                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -411,13 +411,13 @@
                                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="info">
-                            <h4>Jessica Jones</h4>
-                            <h5>Cardiologist</h5>
+                            <h4>Dr. Agatha Aduro</h4>
+                            <h5>Doctor</h5>
                             <div class="appoinment-btn">
-                                <a href="#">Make appoinment</a>
+                                <!-- <a href="#">Make appoinment</a> -->
                             </div>
                         </div>
                     </div>
@@ -431,7 +431,7 @@
                             <div class="overlay">
                                 <a href="#"><i class="fas fa-plus"></i></a>
                             </div>
-                            <div class="social">
+                            <!-- <div class="social">
                                 <ul>
                                     <li class="facebook">
                                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -446,13 +446,13 @@
                                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="info">
-                            <h4>Ahel Natasha</h4>
-                            <h5>Dental surgeon</h5>
+                            <h4>Eucharia U. Ezenwadiugwu (PhD)</h4>
+                            <h5>Psychologist</h5>
                             <div class="appoinment-btn">
-                                <a href="#">Make appoinment</a>
+                                <!-- <a href="#">Make appoinment</a> -->
                             </div>
                         </div>
                     </div>
@@ -466,7 +466,7 @@
                             <div class="overlay">
                                 <a href="#"><i class="fas fa-plus"></i></a>
                             </div>
-                            <div class="social">
+                            <!-- <div class="social">
                                 <ul>
                                     <li class="facebook">
                                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -481,13 +481,13 @@
                                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="info">
-                            <h4>Gabriela Beckett</h4>
-                            <h5>Cosmetic Surgeon</h5>
+                            <h4>Dr Salami</h4>
+                            <h5>Psychologist</h5>
                             <div class="appoinment-btn">
-                                <a href="#">Make appoinment</a>
+                                <!-- <a href="#">Make appoinment</a> -->
                             </div>
                         </div>
                     </div>
@@ -501,7 +501,7 @@
 
 <!-- Start Fun Factor
 ============================================= -->
-<div class="fun-fact-area default-padding shadow light text-center bg-fixed text-light" style="background-image: url({{ asset('front/assets/img/2440x1578.png') }})">
+<!-- <div class="fun-fact-area default-padding shadow light text-center bg-fixed text-light" style="background-image: url({{ asset('front/assets/img/2440x1578.png') }})">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-6 item">
@@ -534,7 +534,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- End Fun Factor -->
 
 <!-- Start Testimonials 
@@ -613,11 +613,41 @@
         </div>
     </div>
 </div>
+
+    <br>
+    <div class="site-heading text-center">
+        <h2>Our <span>Partners</span></h2>
+    </div>
+    <div class="pcontainer">
+        <div class="row">
+            <div class="col-sm-4">
+
+            </div>
+            <div class="col-sm-4" style="margin-left: 70px;">
+                <div class="pslider">
+            <div class="pslide-track">
+                <div class="pslide">
+                <img src="{{ asset('front/assets/img/tetfund_logo.png') }}" alt="logo">
+                </div>
+                
+            </div>
+        </div>  
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+        </div>
+         
+        
+    </div>
+
+    
+    
 <!-- End Testimonials -->
 
 <!-- Start Blog 
 ============================================= -->
-<div class="blog-area default-padding">
+<!-- <div class="blog-area default-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -631,7 +661,7 @@
         </div>
         <div class="row">
             <div class="blog-items">
-                <!-- Single Item -->
+                
                 <div class="col-md-4 single-item">
                     <div class="item">
                         <div class="thumb">
@@ -659,8 +689,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
+                
                 <div class="col-md-4 single-item">
                     <div class="item">
                         <div class="thumb">
@@ -688,8 +717,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
+                
                 <div class="col-md-4 single-item">
                     <div class="item">
                         <div class="thumb">
@@ -717,10 +745,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- End Single Item -->
+                
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- End Blog -->
 @endsection
