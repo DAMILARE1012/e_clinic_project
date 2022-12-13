@@ -31,7 +31,7 @@ class ComplaintController extends Controller
             'description' => 'required',
         ]);
 
-        Complaint::create([
+        $complaints = Complaint::create([
             'patient_id' => Auth::id(),
             'description' =>  $request->description,
             'chronic_illness' => $request->chronic_illness,
@@ -45,6 +45,8 @@ class ComplaintController extends Controller
             'no_children' => $request->no_children,
 
         ]);
+
+        \Mail::to('zhiriezra@gmail.com')->send(new \App\Mail\ComplaintRequestMail($complaints));
 
     }
 

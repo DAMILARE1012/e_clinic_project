@@ -12,7 +12,7 @@
     <title>MediHub - Medical & Health Template</title>
 
     <!-- ========== Favicon Icon ========== -->
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
     <!-- ========== Start Stylesheet ========== -->
         @include('roots.front._css')
