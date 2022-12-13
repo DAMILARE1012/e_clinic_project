@@ -17,8 +17,8 @@
       <span class="zmdi zmdi-hc-lg zmdi-search"></span>
     </button>
 
-    <a href="/" class="navbar-brand">
-      <span class="brand-icon"><i class="fa fa-gg"></i></span>
+    <a href="{{ route(auth()->user()->role->name.'.dashboard') }}" class="navbar-brand">
+      <span class="brand-icon"><img src="{{ asset('icon_old.png') }}"></span>
       <span class="brand-name">VIMONET</span>
     </a>
   </div><!-- .navbar-header -->
