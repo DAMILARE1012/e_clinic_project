@@ -40,6 +40,7 @@
                                 <label for="exampleInputtext1">History of Chronic Illnesses</label>
                                 <select name="chronic_illness" class="form-control">
                                 <option value="">--Choose--</option>
+                                    <option value="Null" {{ $history->chronic_illness == 'Null' ? 'selected': ''}}>Null</option>
                                     <option value="Hypertension" {{ $history->chronic_illness == 'Hypertension' ? 'selected': ''}}>Hypertension</option>
                                     <option value="Diabetes Mellitus" {{ $history->chronic_illness == 'Diabetes Mellitus' ? 'selected': ''}}>Diabetes Mellitus</option>
                                     <option value="Peptic Ulcer Disease" {{ $history->chronic_illness == 'Peptic Ulcer Disease' ? 'selected': ''}}>Peptic Ulcer Disease</option>
