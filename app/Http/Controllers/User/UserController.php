@@ -17,9 +17,8 @@ class UserController extends Controller
 
     public function index() 
     {
-        // dd(Auth::id());
         $todayRequests = Complaint::where('user_id', Auth::id())->whereDate('created_at', Carbon::today())->first();
-
+    
         return view('user.home', compact('todayRequests'));
     }
 }

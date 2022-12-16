@@ -37,7 +37,8 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                    @foreach($complaints as $key => $complaint)
+                    @if($complaints->count() > 0)
+                        @foreach($complaints as $key => $complaint)
                         <tr>
                             <td>{{ $key+1 }}</td>
                             <td>{{ $complaint->description }}</td>
@@ -54,6 +55,11 @@
                             </td>
                         </tr>
                         @endforeach
+                    @else
+                        <tr class="text-center text-danger">
+                            <td colspan="5">There are currently no complaints records.</td>
+                        </tr>
+                    @endif
                         
                     </tbody>
                 </table>

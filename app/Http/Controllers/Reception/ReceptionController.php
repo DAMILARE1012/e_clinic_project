@@ -8,12 +8,16 @@ use App\Models\Complaint;
 use App\Models\User;
 use App\Models\Specialization;
 use App\Models\PatientSpecialist;
+use \Carbon\Carbon;
 
 class ReceptionController extends Controller
 {
     public function index()
     {
-        return view('receptionist.home');
+        $complaints = Complaint::all();
+        $todayComplaints = Complaint::whereDate('created_at', Carbon::today())->get();
+        $pendingComplaints = Complaint::where('assigned',0)->get();
+        return view('receptionist.home', compact('complaints','todayComplaints','pendingComplaints'));
     }
 
     public function specialist()

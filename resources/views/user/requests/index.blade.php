@@ -54,11 +54,13 @@
                                 <span class="text-warning">Pending </span>
                                 @endif
                             </td>
-                            <td>{{ $complaint->created_at->diffForHumans() }}</td>
+                            <td>{{ $complaint->created_at }}</td>
                             <td>
-                                
-                                @if(!$complaint->appointments->where('selected', 1)->first())
+                              
+                                @if(!$complaint->appointments->where('selected', 1)->first() && $complaint->assigned)
                                     <a href="{{ route('user.choose.appointment', ['id' => $complaint->id]) }}">View details</a>
+                                @elseif(!$complaint->assigned)
+                                    Awaiting to be assigned
                                 @else
 
                                 @php

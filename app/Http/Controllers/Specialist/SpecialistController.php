@@ -15,7 +15,12 @@ class SpecialistController extends Controller
 {
     public function index()
     {
-        return view('specialist.home');
+        $thisMonth = Carbon::now();
+        $assignedPatients = PatientSpecialist::where('specialist_id', auth()->id())->whereMonth('created_at', $thisMonth->month)->get();
+        $auth_id = auth()->id();
+        $appointments = $this->getAppointments($auth_id);
+        $totalAssigned = PatientSpecialist::where('specialist_id', auth()->id())->get();
+        return view('specialist.home', compact('assignedPatients', 'appointments', 'totalAssigned'));
     }
 
     public function getAssignedPatients()
@@ -84,7 +89,19 @@ class SpecialistController extends Controller
 
     public function myAppointments()
     {
-        $assigned = PatientSpecialist::where('specialist_id', auth()->id())->get();
+
+        $auth_id = auth()->id();
+        $appointments = $this->getAppointments($auth_id);
+        $thisMonth = Carbon::now();
+       
+        $thisMonth->format('F'); // Return month string
+
+        return view('specialist.assigned.appointments', compact('appointments', 'thisMonth'));
+    }
+
+    public function getAppointments($auth_id)
+    {
+        $assigned = PatientSpecialist::where('specialist_id', $auth_id)->get();
         $complaints = [];
         foreach($assigned as $complaint){
             $complaints[] = $complaint->complaints->id;
@@ -94,7 +111,7 @@ class SpecialistController extends Controller
        
         $thisMonth->format('F'); // Return month string
         $appointments = Appointment::whereIn('complaint_id', $complaints)->whereMonth('date', $thisMonth->month)->where('selected', 1)->get();
+        return $appointments;
 
-        return view('specialist.assigned.appointments', compact('appointments', 'thisMonth'));
     }
 }

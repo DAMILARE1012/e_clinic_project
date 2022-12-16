@@ -17,7 +17,8 @@
 	<div class="simple-page-wrap">
 		<div class="simple-page-logo animated swing">
 			<a href="/">
-				<span><i class="fa fa-gg"></i></span>
+				<img src="{{ asset('icon-small.png') }}">
+				<!-- <span><i class="fa fa-gg"></i></span> -->
 				<span>VIMONET</span>
 			</a>
 		</div><!-- logo -->
