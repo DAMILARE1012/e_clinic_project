@@ -13,7 +13,7 @@
 							<h3 class="widget-title text-primary"><span class="counter" data-plugin="counterUp">{{ $complaints->count() }}</h3>
 							<small class="text-color">Total Requests</small>
 						</div>
-						<span class="pull-right big-icon watermark"><i class="fa fa-paperclip"></i></span>
+						<span class="pull-right big-icon watermark"><i class="fa fa-file-text-o"></i></span>
 					</div>
 					<footer class="widget-footer bg-primary">
 						

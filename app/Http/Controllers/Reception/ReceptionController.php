@@ -65,6 +65,9 @@ class ReceptionController extends Controller
                 $complaint->assigned = 1;
                 $complaint->save();
 
+                \Mail::to($assigned->specialist->email)->queue(new \App\Mail\NotifyAssignedSpecialist($complaint, $assigned));
+                \Mail::to($complaint->user->email)->queue(new \App\Mail\NotifyAssignedPatient($complaint, $assigned));
+
                 return redirect()->route('reception.complaints')->with('message', 'Patient assigned successfully');
             } else {
                 dd('not-created');

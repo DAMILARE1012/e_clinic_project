@@ -34,6 +34,7 @@ class SpecialistController extends Controller
     {
       
         $complaint = Complaint::find($id);
+        // dd($complaint);
         return view('specialist.assigned.show', compact('complaint'));
     }
 
