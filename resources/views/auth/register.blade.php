@@ -16,8 +16,9 @@
 	</div>
 	<div class="simple-page-wrap">
 		<div class="simple-page-logo animated swing">
-			<a href="/">
-				<span><i class="fa fa-gg"></i></span>
+            <a href="/">
+				<img src="{{ asset('icon-small.png') }}">
+				<!-- <span><i class="fa fa-gg"></i></span> -->
 				<span>VIMONET</span>
 			</a>
 		</div><!-- logo -->
@@ -74,21 +75,16 @@
 
         
 
-        <div class="form-group m-b-xl">
-            <div class="checkbox checkbox-primary">
-                <input type="checkbox" id="keep_me_logged_in"/>
-                <label for="keep_me_logged_in">Keep me signed in</label>
-            </div>
-        </div>
-        <input type="submit" class="btn btn-primary" value="SIGN IN">
+    
+        <input type="submit" class="btn btn-primary" value="CREATE AN ACCOUNT">
 	</form>
 </div><!-- #login-form -->
 
 <div class="simple-page-footer">
-	<p><a href="password-forget.html">FORGOT YOUR PASSWORD ?</a></p>
+	<p><a href="#">FORGOT YOUR PASSWORD ?</a></p>
 	<p>
 		<small>Don't have an account ?</small>
-		<a href="{{ route('register') }}">CREATE AN ACCOUNT</a>
+		<a href="{{ route('login') }}">LOGIN</a>
 	</p>
 </div><!-- .simple-page-footer -->
 

@@ -24,6 +24,14 @@
                     <h4>Suggest Session</h4>
                     <p>Please suggest possible time slot for session with patient</p>
 
+                    @if($errors->any())
+                        <div class="alert alert-danger"> 
+                            @foreach ($errors->all() as $error)
+                                <li class="">{{$error}}</li>
+                            @endforeach
+                        </div>
+                    @endif
+
                     <form class="form" method="POST" action="{{ route('specialist.suggest.appointment') }}">
                         @csrf
                         <input type="hidden" name="complaint_id" value="{{ $complaint->id }}">
@@ -81,13 +89,7 @@
                         <div class="form-group">
                         <input  type="submit" value="Send Suggestion" class="btn btn-sm btn-primary">
                         </div> 
-                        @if($errors->any())
-                            <div class="alert alert-danger"> 
-                                @foreach ($errors->all() as $error)
-                                    <li class="">{{$error}}</li>
-                                @endforeach
-                            </div>
-                        @endif
+                        
                     </form>
                 </div>
             </div>

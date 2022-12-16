@@ -18,7 +18,7 @@
     </button>
 
     <a href="{{ route(auth()->user()->role->name.'.dashboard') }}" class="navbar-brand">
-      <span class="brand-icon"><img src="{{ asset('icon_old.png') }}"></span>
+      <span class="brand-icon"><img src="{{ asset('icon-small.png') }}"></span>
       <span class="brand-name">VIMONET</span>
     </a>
   </div><!-- .navbar-header -->
