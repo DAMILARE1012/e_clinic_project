@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>ItsolutionStuff.com</title>
-</head>
-<body>
-    <p>hello, this is a request</p>
-   
-    <p>Thank you</p>
-</body>
-</html>
+<h6>Complain Recieved</h6>
+
+<p>This is to inform you that your request/complain has been received and it is being processed.</p>

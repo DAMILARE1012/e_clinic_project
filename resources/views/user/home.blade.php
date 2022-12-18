@@ -16,9 +16,14 @@
 
                     @if($todayRequests && !$todayRequests->assigned)
                         <div class="alert alert-info">
-                            You have a pending request, You will be assigned to a specialist shortly. <a href="#" class="text-bold">view request detail</a>
+                            You have a pending request, You will be assigned to a specialist shortly. 
                         </div>  
-                    @elseif(!$todayRequests->appointments->where('selected', 1)->first() && $todayRequests->assigned)
+                    @elseif($todayRequests && $todayRequests->assigned && $todayRequests->appointments->count() < 1)
+                        <div class="alert alert-info">
+                            Your complaint has been assigned, please wait for session time allocation.
+                            {{$todayRequests->appointments->count()}}
+                        </div> 
+                    @elseif($todayRequests->appointments->count() > 0 && $todayRequests->assigned)
                         <div class="alert alert-success">
                             Your complaint has been assigned and a session has been suggested. Please confirm a convenient session.<br> <a href="{{ route('user.choose.appointment', ['id' => $todayRequests->id]) }}" class="text-bold">Confirm Session</a>
                         </div> 
