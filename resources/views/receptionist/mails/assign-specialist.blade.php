@@ -1,4 +1,4 @@
-<h6>Aggine</h6>
+<h6>Case Assigned</h6>
 
 <p>This is to inform you that you have been assigned to a case</p>
 
