@@ -93,7 +93,7 @@ class ComplaintController extends Controller
                 $questionnaire->save();
             }
 
-            \Mail::to('zhiriezra@gmail.com')->queue(new \App\Mail\ComplaintRequestMail($complaints));
+            \Mail::to(auth()->user()->email)->queue(new \App\Mail\ComplaintRequestMail($complaints));
 
             return response("data-saved", 201);
         }else{
