@@ -19,7 +19,7 @@ class CreateVitalsTable extends Migration
             $table->string('device_id');
             $table->string('temperature')->nullable();
             $table->string('blood_pressure')->nullable();
-            $table->string('heart_rate');
+            $table->string('heart_rate')->nullable();
             $table->string('battery_level')->nullable();
             $table->timestamps();
         });
