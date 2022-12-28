@@ -48,9 +48,19 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputtext1">Date Of Birth</label>
-                            <input name="date_of_birth" value="{{ auth()->user()->profile->date_of_birth }}" type="date" class="form-control" id="exampleInputtext1" placeholder="text">
-                            @error('date_of_birth')
+                            <label for="exampleInputtext1">Weight (kg)</label>
+                            <input type="text" value="{{ auth()->user()->profile->weight }}" class="form-control" id="exampleInputtext1" placeholder="70kg" name="weight">
+                            @error('weight')
+                                <span class="text-danger">
+                                    {{ $message }}
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputtext1">Height (cm)</label>
+                            <input type="text" value="{{ auth()->user()->profile->height }}" class="form-control" id="exampleInputtext1" placeholder="1.35cm" name="height">
+                            @error('height')
                                 <span class="text-danger">
                                     {{ $message }}
                                 </span>
@@ -80,15 +90,12 @@
                                 <option value="islam" {{ auth()->user()->profile->religion == 'islam' ? 'selected': ''}}>Islam</option>
                                 <option value="others" {{ auth()->user()->profile->religion == 'others' ? 'selected': ''}}>Others</option>
                             </select>
-                            @error('gender')
+                            @error('religion')
                                 <span class="text-danger">
                                     {{ $message }}
                                 </span>
                             @enderror
                         </div>
-
-                        
-
                     </div>
                     
                     <div class="col-sm-6">
@@ -97,6 +104,16 @@
                             <label for="exampleInputtext1">Last Name</label>
                             <input type="text" value="{{ auth()->user()->lastname }}" class="form-control" id="exampleInputtext1" placeholder="Last Name" name="lastname">
                             @error('lastname')
+                                <span class="text-danger">
+                                    {{ $message }}
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputtext1">Date Of Birth</label>
+                            <input name="date_of_birth" value="{{ auth()->user()->profile->date_of_birth }}" type="date" class="form-control" id="exampleInputtext1" placeholder="text">
+                            @error('date_of_birth')
                                 <span class="text-danger">
                                     {{ $message }}
                                 </span>
@@ -121,6 +138,16 @@
                                     {{ $message }}
                                 </span>
                             @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputtext1">Emergency contacts</label>
+                            <input type="text" value="{{ auth()->user()->profile->contacts }}" class="form-control" id="exampleInputtext1" placeholder="080********" name="contacts">
+                            @error('contacts')
+                            <span class="text-danger">
+                                {{ $message }}
+                            </span>
+                        @enderror
                         </div>
 
                         <div class="form-group">
