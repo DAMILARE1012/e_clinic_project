@@ -23,11 +23,11 @@
                             Your complaint has been assigned, please wait for session time allocation.
                             {{$todayRequests->appointments->count()}}
                         </div> 
-                    @elseif($todayRequests->appointments->count() > 0 && $todayRequests->assigned)
+                    @elseif($todayRequests && $todayRequests->appointments->count() > 0 && $todayRequests->assigned)
                         <div class="alert alert-success">
                             Your complaint has been assigned and a session has been suggested. Please confirm a convenient session.<br> <a href="{{ route('user.choose.appointment', ['id' => $todayRequests->id]) }}" class="text-bold">Confirm Session</a>
                         </div> 
-                    @elseif($todayRequests->appointments->where('selected', 1)->first())
+                    @elseif($todayRequests && $todayRequests->appointments->where('selected', 1)->first())
                         <div class="alert alert-success">
                             You have an appointment for: <br>
                             <span class="bg-dark">{{ $todayRequests->appointments->where('selected', 1)->first()->start_time->toDayDateTimeString() }} - {{ $todayRequests->appointments->where('selected', 1)->first()->finish_time->toDayDateTimeString() }}</span>

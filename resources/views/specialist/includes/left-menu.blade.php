@@ -5,7 +5,7 @@
         <div class="foldable">
           <h5><a href="javascript:void(0)" class="username">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</a></h5>
           <ul>
-            <li class="dropdown">
+            <!-- <li class="dropdown">
               <a href="javascript:void(0)" class="dropdown-toggle usertitle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <small>{{ Auth::user()->role->name }}</small>
                 <span class="caret"></span>
@@ -37,7 +37,7 @@
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div><!-- .media-body -->
@@ -47,6 +47,13 @@
   <div class="menubar-scroll">
     <div class="menubar-scroll-inner">
       <ul class="app-menu">
+
+        <li>
+          <a href="{{ route('specialist.dashboard') }}">
+            <i class="menu-icon fa fa-bars zmdi-hc-lg"></i>
+            <span class="menu-text">Dashboard</span>
+          </a>
+        </li>
 
         <li>
           <a href="{{ route('specialist.assigned.patients') }}">

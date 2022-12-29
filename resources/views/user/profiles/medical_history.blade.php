@@ -11,7 +11,7 @@
         <hr class="widget-separator">
         
         <div class="widget-body">
-            @if($history->last_menst_period ==1)
+
             <p class="m-b-lg docs"> <strong>Medical and Surgical History</strong> </p>
 
 
@@ -78,14 +78,6 @@
             </div>
 				
 		</div>
-        @else 
-            
-            <div id="back-to-home">
-                Update Profile <a href="{{ route(auth()->user()->role->name.'.dashboard') }}" class="btn btn-outline btn-default"><i class="fa fa-home animated zoomIn"></i></a>
-            </div>
-
-            @endif
-
         <!-- END column -->
           
         </div><!-- .widget-body -->

@@ -23,7 +23,7 @@
             
             </div>
 
-            @if(auth()->user()->profile->completed ==1)
+            
 
             <form action="{{ route(auth()->user()->role->name.'.'.'update.profileA') }}" method="post">
                 @csrf
@@ -201,13 +201,6 @@
 
                 <button type="submit" class="btn btn-primary btn-md">Submit</button>
             </form>
-            @else 
-            
-            <div id="back-to-home">
-                Update Profile <a href="{{ route(auth()->user()->role->name.'.dashboard') }}" class="btn btn-outline btn-default"><i class="fa fa-home animated zoomIn"></i></a>
-            </div>
-
-            @endif
         </div><!-- .widget-body -->
     </div><!-- .widget -->	
     </div>
