@@ -4,7 +4,7 @@
       <div class="media-body">
         <div class="foldable">
           <h5><a href="javascript:void(0)" class="username">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</a></h5>
-          <ul>
+          <!-- <ul>
             <li class="dropdown">
               <a href="javascript:void(0)" class="dropdown-toggle usertitle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <small>{{ Auth::user()->role->name }}</small>
@@ -12,13 +12,13 @@
               </a>
               <ul class="dropdown-menu animated flipInY">
                 <li>
-                  <a class="text-color" href="/index.html">
+                  <a class="text-color" href="/">
                     <span class="m-r-xs"><i class="fa fa-home"></i></span>
-                    <span>Home</span>
+                    <span>Dashboard</span>
                   </a>
                 </li>
                 <li>
-                  <a class="text-color" href="profile.html">
+                  <a class="text-color" href="{{ route('reception.edit.profileA') }}">
                     <span class="m-r-xs"><i class="fa fa-user"></i></span>
                     <span>Profile</span>
                   </a>
@@ -29,16 +29,11 @@
                     <span>Settings</span>
                   </a>
                 </li>
-                <li role="separator" class="divider"></li>
-                <li>
-                  <a class="text-color" href="logout.html">
-                    <span class="m-r-xs"><i class="fa fa-power-off"></i></span>
-                    <span>Home</span>
-                  </a>
-                </li>
+                
+                
               </ul>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div><!-- .media-body -->
     </div><!-- .media -->
@@ -47,6 +42,13 @@
   <div class="menubar-scroll">
     <div class="menubar-scroll-inner">
       <ul class="app-menu">
+
+        <li>
+          <a href="{{ route('reception.dashboard') }} ">
+            <i class="fa fa-bars"></i>
+            <span class="menu-text">Dashboard</span>
+          </a>
+        </li>
         
         <li>
           <a href="{{ route('reception.complaints') }}">
@@ -59,7 +61,7 @@
 
         <li class="has-submenu">
           <a href="javascript:void(0)" class="submenu-toggle">
-            <i class="menu-icon fa fa-cogs zmdi-hc-lg"></i>
+            <i class="fa fa-user"></i>
             <span class="menu-text">Profile</span>
             <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
           </a>
@@ -68,6 +70,16 @@
             
           </ul>
         </li>
+        <li class="menu-separator"><hr></li>
+
+        <li>
+          <a href="/">
+            <i class="fa fa-home"></i>
+            <span class="menu-text">Home</span>
+          </a>
+        </li>
+
+
 
       </ul><!-- .app-menu -->
     </div><!-- .menubar-scroll-inner -->

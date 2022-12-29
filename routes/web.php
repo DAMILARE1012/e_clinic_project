@@ -9,9 +9,9 @@ use App\Http\Controllers\Specialist\SpecialistController;
 use App\Http\Controllers\User\ComplaintController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AppointmentController;
-
+use App\Http\Middleware\CheckMedicalHistoryUpdated;
+use App\Http\Middleware\CheckProfileUpdated;
 use App\Events\NewChatRoomMessage;
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,16 +52,28 @@ Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'User', 'middl
     Route::get('dashboard', [UserController::class, 'index'])->name('dashboard');
     
     // Request routes
-    Route::get('make-request', [ComplaintController::class, 'createNewComplaint'])->name('make.complaint');
-    Route::post('make-request', [ComplaintController::class, 'storeNewComplaint'])->name('make.complaint');
-    Route::get('all-complaints', [ComplaintController::class, 'allComplaints'])->name('complaints');
+    Route::middleware( [CheckProfileUpdated::class])->group(function(){
+        Route::middleware( [CheckMedicalHistoryUpdated::class])->group(function(){
+        
+            Route::get('make-request', [ComplaintController::class, 'createNewComplaint'])->name('make.complaint');
+            Route::post('make-request', [ComplaintController::class, 'storeNewComplaint'])->name('make.complaint');
+            Route::get('all-complaints', [ComplaintController::class, 'allComplaints'])->name('complaints');
+        });
+    });
     
-    // profile update and medical history
+    // Profile Update
     Route::get('profile-update', [ProfileController::class, 'editProfile'])->name('edit.profile');
     Route::post('profile-update', [ProfileController::class, 'updateProfile'])->name('update.profile');
-    Route::get('profile', [ProfileController::class, 'editProfileA'])->name('edit.profileA');
-    Route::post('update-profile', [ProfileController::class, 'updateProfileA'])->name('update.profileA');
-    Route::get('medical-history', [ProfileController::class, 'MedicalHistory'])->name('medical.history');
+    Route::middleware( [CheckProfileUpdated::class])->group(function(){
+        Route::middleware( [CheckMedicalHistoryUpdated::class])->group(function(){
+            //view Profile
+            Route::get('profile', [ProfileController::class, 'editProfileA'])->name('edit.profileA');
+            Route::post('update-profile', [ProfileController::class, 'updateProfileA'])->name('update.profileA');
+            // View Medical History
+            Route::get('medical-history', [ProfileController::class, 'MedicalHistory'])->name('medical.history');
+        });
+    });
+    //Medical History
     Route::get('check-medical-history', [ProfileController::class, 'editMedicalHistory'])->name('check.medical.history');
     Route::post('check-medical-history', [ProfileController::class, 'storeMedicalHistory'])->name('check.medical.history');
 
