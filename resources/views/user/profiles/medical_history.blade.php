@@ -9,7 +9,9 @@
             <h4 class="widget-title">Medical History</h4>
         </header><!-- .widget-header -->
         <hr class="widget-separator">
+        
         <div class="widget-body">
+
             <p class="m-b-lg docs"> <strong>Medical and Surgical History</strong> </p>
 
 
@@ -75,7 +77,8 @@
                 </div>                          
             </div>
 				
-		</div><!-- END column -->
+		</div>
+        <!-- END column -->
           
         </div><!-- .widget-body -->
     </div><!-- .widget -->	

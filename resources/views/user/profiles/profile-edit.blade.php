@@ -23,6 +23,8 @@
             
             </div>
 
+            
+
             <form action="{{ route(auth()->user()->role->name.'.'.'update.profileA') }}" method="post">
                 @csrf
                 <div class="row">

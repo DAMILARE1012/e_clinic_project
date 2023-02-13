@@ -68,7 +68,7 @@ class AdminController extends Controller
             
             if(!$request->specialization == null){
                 $user->specialization()->create([
-                'user_id' => $user_id,
+                'user_id' => $user->id,
                 'name' => $request->specialization,
                 ]);
             }
