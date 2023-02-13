@@ -101,6 +101,13 @@ class ComplaintController extends Controller
             }else{
                 return response("Error creating complain", 400);
             }
+<<<<<<< HEAD
+=======
+
+            \Mail::to(auth()->user()->email)->queue(new \App\Mail\ComplaintRequestMail($complaints));
+
+            return response("data-saved", 201);
+>>>>>>> 843c5fa7acefff488de925198a2d5360509fcaa9
         }else{
             $response = [
                 'message' => 'User already has a pending complaint',
