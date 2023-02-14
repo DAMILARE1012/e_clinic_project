@@ -58,7 +58,7 @@
 </div><!-- #login-form -->
 
 <div class="simple-page-footer">
-	<p><a href="password-forget.html">FORGOT YOUR PASSWORD ?</a></p>
+	<p><a href="{{ route('password.request') }}">FORGOT YOUR PASSWORD ?</a></p>
 	<p>
 		<small>Don't have an account ?</small>
 		<a href="{{ route('register') }}">CREATE AN ACCOUNT</a>
