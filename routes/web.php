@@ -33,18 +33,6 @@ Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/about_us', [PagesController::class, 'about_us'])->name('about_us');
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 
-Route::get('send-mail', function () {
-   
-    $details = [
-        'title' => 'Mail from ItSolutionStuff.com',
-        'body' => 'This is for testing email using smtp'
-    ];
-   
-    \Mail::to('zhiriezra@gmail.com')->send(new \App\Mail\ComplaintRequestMail($details));
-   
-    dd("Email is Sent.");
-});
-
 Auth::routes();
 
 Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'User', 'middleware' => ['auth', 'user']], function () 
@@ -136,6 +124,9 @@ Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'S
     
 });
 
+// General Password Change
+Route::get('change-password', [ProfileController::class, 'changePassword'])->middleware('auth')->name('change.password');
+Route::post('change-password', [ProfileController::class, 'updatePassword'])->middleware('auth')->name('update.password');
 // ChatRoom 
 Route::get('chat/{roomId}', [AppointmentController::class, 'chat'])->middleware('auth')->name('chat.room');
 
