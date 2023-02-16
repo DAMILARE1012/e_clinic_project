@@ -82,7 +82,8 @@
 
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-md">Update</button>
+                <button type="submit" class="btn btn-primary btn-md">Update Password</button>
+                <a class="btn btn-info btn-md" href="{{ route(auth()->user()->role->name.'.'.'dashboard') }}">Back to dashboard</a>
             </form>
         </div><!-- .widget-body -->
     </div><!-- .widget -->	

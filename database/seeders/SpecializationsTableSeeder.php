@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Specialization;
+use App\Models\Specialist;
 
 class SpecializationsTableSeeder extends Seeder
 {
@@ -17,19 +17,21 @@ class SpecializationsTableSeeder extends Seeder
         $names = [
 
             [
-                'user_id' => 5,
                 'name' => 'Doctor',
             ],
 
             [
-                'user_id' => 4,
                 'name' => 'Psychiatrist'
+            ],
+
+            [
+                'name' => 'Physiotherapist'
             ],
             
         ];
 
         foreach($names as $key => $name){
-            Specialization::create($name);
+            Specialist::create($name);
         }
     }
 }

@@ -50,7 +50,7 @@
                     <div>
                         <ul class="list-group">
                         <li class="list-group-item primary">Complaints</li>
-                            <li class="list-group-item">Patients wants to see a <b>{{ $complaint->specialization->name }}</b></li>
+                            <li class="list-group-item">Patients wants to see a <b>{{ $complaint->specialist->name }}</b></li>
                             <li class="list-group-item">Description: {{ $complaint->description }}</li>
                             <li class="list-group-item">Date logged: {{ $complaint->created_at->toDayDateTimeString() }}</li>
                         </ul>
@@ -89,8 +89,8 @@
                         <div class="form-group">
                             <select class="form-control" name="specialist">
                                 <option>--Select Specialist--</option>
-                                @foreach($specializations as $specialist)
-                                    <option value="{{ $specialist->user->id }}">{{ $specialist->user->firstname }} {{ $specialist->user->lastname }} - {{ $specialist->user->specialization->name }}</option>
+                                @foreach($specialists as $specialist)
+                                    <option value="{{ $specialist->id }}">{{ $specialist->firstname }} {{ $specialist->lastname }} - {{ $specialist->specialization->name }}</option>
                                 @endforeach
                             </select>
                         </div>

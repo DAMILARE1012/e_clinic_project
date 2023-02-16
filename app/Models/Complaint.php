@@ -21,9 +21,9 @@ class Complaint extends Model
         return $this->hasMany(ComplaintQuestionnaire::class);
     }
 
-    public function specialization()
+    public function specialist()
     {
-        return $this->belongsTo(Specialization::class);
+        return $this->belongsTo(Specialist::class);
     }
 
     function appointments()

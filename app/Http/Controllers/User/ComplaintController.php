@@ -8,7 +8,7 @@ use App\Models\Complaint;
 use Auth;
 use App\Models\Questionnaire;
 use App\Models\ComplaintQuestionnaire;
-use App\Models\Specialization;
+use App\Models\Specialist;
 use Carbon\Carbon;
 use App\Models\Appointment;
 use App\Models\ChatRoom;
@@ -20,7 +20,7 @@ class ComplaintController extends Controller
     public function createNewComplaint()
     {
         $todayRequests = Complaint::where('user_id', Auth::id())->whereDate('created_at', Carbon::today())->first();
-        $specializations = Specialization::all();
+        $specializations = Specialist::all();
         if($todayRequests){
             return redirect()->back()->with('message', "You already have a pending request");
         }
