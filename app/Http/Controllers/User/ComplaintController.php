@@ -69,36 +69,47 @@ class ComplaintController extends Controller
 
     public function submitRequest(Request $request)
     {
-
-
+        
         $validates = $this->validate($request, [
             'questionnaires' => 'required',
             'specialist' => 'required',
             'description' => 'required',
         ]);
 
-        $complaint = new Complaint;
-        $complaint->user_id = $request->user_id;
-        $complaint->specialization_id = $request->specialist;
-        $complaint->description = $request->description;
-        $complaint->save();
+        $todayRequests = Complaint::where('user_id', Auth::id())->whereDate('created_at', Carbon::today())->first();
+        
+        if (!$todayRequests) {
+            $complaint = new Complaint;
+            $complaint->user_id = $request->user_id;
+            $complaint->specialization_id = $request->specialist;
+            $complaint->description = $request->description;
+            $complaint->save();
 
-        if($complaint){
-            foreach($request->questionnaires as $question){
-                $questionnaire = ComplaintQuestionnaire::create([
-                    'complaint_id' => $complaint->id,
-                    'questionnaire_id' => $question,
-                ]);
-    
-                $questionnaire->save();
+            if($complaint){
+                foreach($request->questionnaires as $question){
+                    $questionnaire = ComplaintQuestionnaire::create([
+                        'complaint_id' => $complaint->id,
+                        'questionnaire_id' => $question,
+                    ]);
+        
+                    $questionnaire->save();
+                }
+
+                \Mail::to(auth()->user()->email)->queue(new \App\Mail\ComplaintRequestMail($complaints));
+
+                return response("data-saved", 201);
+            }else{
+                return response("Error creating complain", 400);
             }
-
-            \Mail::to(auth()->user()->email)->queue(new \App\Mail\ComplaintRequestMail($complaints));
-
-            return response("data-saved", 201);
         }else{
-            return response("Error creating complain", 400);
-        }
+            $response = [
+                'message' => 'User already has a pending complaint',
+                'status' => 500,
+            ];
+            
+            return response($response);
+        }  
+        
     }
 
     public function selectAppointment($id)
