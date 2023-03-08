@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
-use App\Models\Specialization;
+use App\Models\Specialist;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -41,7 +41,7 @@ class AdminController extends Controller
     public function createNewAccount()
     {
         $roles = Role::all();
-        $specializations = specialization::all();
+        $specializations = Specialist::all();
         return view('admin.accounts.new', compact('roles','specializations'));
     }
 
@@ -60,24 +60,27 @@ class AdminController extends Controller
         $user->lastname = $request->lastname;
         $user->email = $request->email;
         $user->role_id = $request->role;
+        $user->specialist_id = $request->specialization;
         $user->password = Hash::make('password123');
         $user->save();
 
         if($user){
-            $user->profile()->create(['user_id' => $user->id]); 
-            
-            if(!$request->specialization == null){
-                $user->specialization()->create([
-                'user_id' => $user_id,
-                'name' => $request->specialization,
-                ]);
-            }
+            $user->profile()->create(['user_id' => $user->id]);    
            
         }else{
-            $message = "User Not Created, Try again";
+
+            return redirect()->back()->with([
+                'alert' => 'danger',
+                'message' => 'User Not Created, Try again',
+    
+            ]);
         }
         
-        return redirect()->back();
+        return redirect()->back()->with([
+            'alert' => 'success',
+            'message' => 'User account created successfully',
+
+        ]);
 
     }
 }

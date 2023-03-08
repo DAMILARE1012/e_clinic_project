@@ -8,50 +8,35 @@ use App\Models\Complaint;
 use Auth;
 use App\Models\Questionnaire;
 use App\Models\ComplaintQuestionnaire;
-use App\Models\Specialization;
+use App\Models\Specialist;
 use Carbon\Carbon;
 use App\Models\Appointment;
 use App\Models\ChatRoom;
+use Session;
+use App\Models\User;
 
 class ComplaintController extends Controller
 {
     public function createNewComplaint()
     {
         $todayRequests = Complaint::where('user_id', Auth::id())->whereDate('created_at', Carbon::today())->first();
-        $specializations = Specialization::all();
+        $specializations = Specialist::all();
         if($todayRequests){
             return redirect()->back()->with('message', "You already have a pending request");
         }
         return view('user.requests.create', compact('specializations'));
     }
 
-    // public function storeNewComplaint(Request $request)
-    // {
-    //     $this->validate($request, [
-    //         'description' => 'required',
-    //     ]);
-
-    //     Complaint::create([
-    //         'patient_id' => Auth::id(),
-    //         'description' =>  $request->description,
-    //         'chronic_illness' => $request->chronic_illness,
-    //         'past_hospital' => $request->past_hospital,
-    //         'past_surgry' =>  $request->past_surgry,
-    //         'past_B_transfusion' => $request->past_B_transfusion,
-    //         'drug_history' => $request->drug_history,
-    //         'last_menst_period' =>  $request->last_menst_period,
-    //         'no_pregnacy' => $request->no_pregnacy,
-    //         'no_delivery' => $request->no_delivery,
-    //         'no_children' => $request->no_children,
-
-    //     ]);
-
-    // }
-
     public function allComplaints()
     {
-        $complaints = Complaint::where('user_id', auth()->id())->orderBy('created_at', 'DESC')->get();
-        return view('user.requests.index', compact('complaints'));
+        $complaints = Complaint::where('user_id', auth()->id())->orderBy('created_at', 'desc')->get();
+        if($complaints->count() > 0){
+            return view('user.requests.index', compact('complaints'));
+        }else{
+            Session::flash('message', 'You have never made a request, please make a request.');
+            return redirect()->back();
+        }
+        
     }
 
     public function getPsyQuestions()
@@ -69,7 +54,8 @@ class ComplaintController extends Controller
 
     public function submitRequest(Request $request)
     {
-        
+        $user = User::where('id', $request->user_id)->first();
+
         $validates = $this->validate($request, [
             'questionnaires' => 'required',
             'specialist' => 'required',
@@ -95,7 +81,7 @@ class ComplaintController extends Controller
                     $questionnaire->save();
                 }
 
-                \Mail::to(auth()->user()->email)->queue(new \App\Mail\ComplaintRequestMail($complaints));
+                \Mail::to($user->email)->queue(new \App\Mail\ComplaintRequestMail($complaint));
 
                 return response("data-saved", 201);
             }else{

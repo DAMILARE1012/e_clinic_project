@@ -33,18 +33,6 @@ Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/about_us', [PagesController::class, 'about_us'])->name('about_us');
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 
-Route::get('send-mail', function () {
-   
-    $details = [
-        'title' => 'Mail from ItSolutionStuff.com',
-        'body' => 'This is for testing email using smtp'
-    ];
-   
-    \Mail::to('zhiriezra@gmail.com')->send(new \App\Mail\ComplaintRequestMail($details));
-   
-    dd("Email is Sent.");
-});
-
 Auth::routes();
 
 Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'User', 'middleware' => ['auth', 'user']], function () 
@@ -64,11 +52,10 @@ Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'User', 'middl
     // Profile Update
     Route::get('profile-update', [ProfileController::class, 'editProfile'])->name('edit.profile');
     Route::post('profile-update', [ProfileController::class, 'updateProfile'])->name('update.profile');
+    
     Route::middleware( [CheckProfileUpdated::class])->group(function(){
         Route::middleware( [CheckMedicalHistoryUpdated::class])->group(function(){
-            //view Profile
-            Route::get('profile', [ProfileController::class, 'editProfileA'])->name('edit.profileA');
-            Route::post('update-profile', [ProfileController::class, 'updateProfileA'])->name('update.profileA');
+    
             // View Medical History
             Route::get('medical-history', [ProfileController::class, 'MedicalHistory'])->name('medical.history');
         });
@@ -108,10 +95,8 @@ Route::group(['as' => 'reception.', 'prefix' => 'reception', 'namespace' => 'Rec
     Route::get('complaint/{id}', [ReceptionController::class, 'complaintDetail'])->name('complaints.detail');
 
     Route::post('assign', [ReceptionController::class, 'assignSpecialist'])->name('assign.specialist');
-    //profile
-    Route::get('profile', [ProfileController::class, 'editProfileA'])->name('edit.profileA');
-    Route::post('update-profile', [ProfileController::class, 'updateProfileA'])->name('update.profileA');
-
+    
+    // Profile update
     Route::get('profile-update', [ProfileController::class, 'editProfile'])->name('edit.profile');
     Route::post('profile-update', [ProfileController::class, 'updateProfile'])->name('update.profile');
 });
@@ -136,6 +121,9 @@ Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'S
     
 });
 
+// General Password Change
+Route::get('change-password', [ProfileController::class, 'changePassword'])->middleware('auth')->name('change.password');
+Route::post('change-password', [ProfileController::class, 'updatePassword'])->middleware('auth')->name('update.password');
 // ChatRoom 
 Route::get('chat/{roomId}', [AppointmentController::class, 'chat'])->middleware('auth')->name('chat.room');
 
