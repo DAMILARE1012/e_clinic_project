@@ -52,11 +52,10 @@ Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'User', 'middl
     // Profile Update
     Route::get('profile-update', [ProfileController::class, 'editProfile'])->name('edit.profile');
     Route::post('profile-update', [ProfileController::class, 'updateProfile'])->name('update.profile');
+    
     Route::middleware( [CheckProfileUpdated::class])->group(function(){
         Route::middleware( [CheckMedicalHistoryUpdated::class])->group(function(){
-            //view Profile
-            Route::get('profile', [ProfileController::class, 'editProfileA'])->name('edit.profileA');
-            Route::post('update-profile', [ProfileController::class, 'updateProfileA'])->name('update.profileA');
+    
             // View Medical History
             Route::get('medical-history', [ProfileController::class, 'MedicalHistory'])->name('medical.history');
         });
@@ -96,10 +95,8 @@ Route::group(['as' => 'reception.', 'prefix' => 'reception', 'namespace' => 'Rec
     Route::get('complaint/{id}', [ReceptionController::class, 'complaintDetail'])->name('complaints.detail');
 
     Route::post('assign', [ReceptionController::class, 'assignSpecialist'])->name('assign.specialist');
-    //profile
-    Route::get('profile', [ProfileController::class, 'editProfileA'])->name('edit.profileA');
-    Route::post('update-profile', [ProfileController::class, 'updateProfileA'])->name('update.profileA');
-
+    
+    // Profile update
     Route::get('profile-update', [ProfileController::class, 'editProfile'])->name('edit.profile');
     Route::post('profile-update', [ProfileController::class, 'updateProfile'])->name('update.profile');
 });

@@ -66,6 +66,6 @@ class User extends Authenticatable
 
     public function specialization()
     {
-        return $this->hasOne(Specialization::class);
+        return $this->belongsTo(Specialist::class, 'specialist_id');
     }
 }

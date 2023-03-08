@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Complaint;
 use App\Models\User;
-use App\Models\Specialization;
+use App\Models\Specialist;
 use App\Models\PatientSpecialist;
 use \Carbon\Carbon;
 
@@ -37,9 +37,8 @@ class ReceptionController extends Controller
     {
         $existAssign = PatientSpecialist::where('complaint_id', $id)->first();
         $complaint = Complaint::find($id);
-        // $specialists = User::where('role_id', 4)->get();
-        $specializations = Specialization::all();
-        return view('receptionist.requests.show', compact('complaint','specializations','existAssign'));
+        $specialists = User::where('role_id',4)->get();
+        return view('receptionist.requests.show', compact('complaint','existAssign', 'specialists'));
     }
 
     public function assignSpecialist(Request $request)
@@ -49,6 +48,7 @@ class ReceptionController extends Controller
             'specialist' => 'required',
             'complaint' => 'required'
         ]);
+        
 
         $existAssign = PatientSpecialist::where('complaint_id', $request->complaint)->first();
         
