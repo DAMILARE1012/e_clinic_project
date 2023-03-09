@@ -78,7 +78,8 @@
             <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
           </a>
           <ul class="submenu">
-            <li><a href="{{ route('specialist.edit.profileA') }}"><span class="menu-text">My Profile</span></a></li>
+            <li><a href="{{ route('specialist.edit.profile') }}"><span class="menu-text">My Profile</span></a></li>
+            <li><a href="{{ route('change.password') }}"><span class="menu-text">Change Password</span></a></li>
             
           </ul>
         </li>

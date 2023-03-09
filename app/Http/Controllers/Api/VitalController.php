@@ -89,11 +89,11 @@ class VitalController extends Controller
             $vitals->battery_level = $request->battery_level;
 
             $vitals->save();
-            $response = [
-                'status' => 201,
-                'message' => 'record updated'
-            ];
-            return response($response);
+            // $response = [
+            //     'status' => 201,
+            //     'message' => 'record updated'
+            // ];
+            return response('AckOk');
             
         } else {
 
