@@ -40,6 +40,11 @@
                         <div class="form-group">
                             <label for="exampleInputtext1">Weight (kg)</label>
                             <input type="number" value="{{ auth()->user()->profile->weight }}" class="form-control" id="exampleInputtext1" placeholder="70kg" name="weight">
+                            @error('weight')
+                                <span class="text-danger">
+                                    {{ $message }}
+                                </span>
+                            @enderror
                         </div>
 
                         <div class="form-group">
@@ -60,7 +65,7 @@
                                 <option value="islam" {{ auth()->user()->profile->religion == 'islam' ? 'selected': ''}}>Islam</option>
                                 <option value="others" {{ auth()->user()->profile->religion == 'others' ? 'selected': ''}}>Others</option>
                             </select>
-                            @error('gender')
+                            @error('religion')
                                 <span class="text-danger">
                                     {{ $message }}
                                 </span>
@@ -100,6 +105,11 @@
                         <div class="form-group">
                             <label for="exampleInputtext1">Height (cm)</label>
                             <input type="number" value="{{ auth()->user()->profile->height }}" class="form-control" id="exampleInputtext1" placeholder="1.35cm" name="height">
+                            @error('height')
+                                <span class="text-danger">
+                                    {{ $message }}
+                                </span>
+                            @enderror
                         </div>
 
                         <div class="form-group">
@@ -115,7 +125,11 @@
                         <div class="form-group">
                             <label for="exampleInputtext1">Emergency contacts <i class="fa fa-exclamation-circle text-danger"></i></label>
                             <input type="text" value="{{ auth()->user()->profile->contacts }}" class="form-control" id="exampleInputtext1" placeholder="+23480********" name="contacts">
-                           
+                            @error('contacts')
+                                <span class="text-danger">
+                                    {{ $message }}
+                                </span>
+                            @enderror
                         </div>
 
                         

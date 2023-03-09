@@ -29,6 +29,7 @@ class ProfileController extends Controller
 
     public function updateProfile(Request $request)
     {
+    
         $dt = new Carbon\Carbon();
         $before = $dt->subYears(13)->format('Y-m-d');
         $before = Carbon\Carbon::parse($before);
@@ -41,8 +42,8 @@ class ProfileController extends Controller
             'specialization' => 'string',
             'city' => 'required|string',
             'contacts'=>'required|string',
-            'height' => 'required|string',
-            'weight' => 'required',
+            'height' => 'integer',
+            'weight' => 'integer',
             'state' => 'required|string',
             'about' => 'string',
         ]);

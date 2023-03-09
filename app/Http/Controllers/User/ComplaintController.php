@@ -67,7 +67,7 @@ class ComplaintController extends Controller
         if (!$todayRequests) {
             $complaint = new Complaint;
             $complaint->user_id = $request->user_id;
-            $complaint->specialization_id = $request->specialist;
+            $complaint->specialist_id = $request->specialist;
             $complaint->description = $request->description;
             $complaint->save();
 
