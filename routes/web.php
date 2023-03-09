@@ -121,6 +121,7 @@ Route::group(['as' => 'specialist.', 'prefix' => 'specialist', 'namespace' => 'S
 // General Password Change
 Route::get('change-password', [ProfileController::class, 'changePassword'])->middleware('auth')->name('change.password');
 Route::post('change-password', [ProfileController::class, 'updatePassword'])->middleware('auth')->name('update.password');
+
 // ChatRoom 
 Route::get('chat/{roomId}', [AppointmentController::class, 'chat'])->middleware('auth')->name('chat.room');
 
