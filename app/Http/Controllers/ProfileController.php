@@ -42,10 +42,10 @@ class ProfileController extends Controller
             'specialization' => 'string',
             'city' => 'required|string',
             'contacts'=>'required|string',
-            'height' => 'integer',
-            'weight' => 'integer',
+            'height' => 'nullable|integer',
+            'weight' => 'nullable|integer',
             'state' => 'required|string',
-            'about' => 'string',
+            'about' => 'required',
         ]);
 
         $profile = Profile::where('user_id', auth()->user()->profile->user_id)->first();
