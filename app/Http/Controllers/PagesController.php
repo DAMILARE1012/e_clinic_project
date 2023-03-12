@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HealthTip;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     public function home()
     {
-        return view('welcome');
+        $tips = HealthTip::where('status', 1)->get();
+        return view('welcome', compact('tips'));
     }
 
     public function about_us()
