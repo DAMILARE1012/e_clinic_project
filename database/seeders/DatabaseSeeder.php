@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             RolesTableSeeder::class,
             SpecializationsTableSeeder::class,
             QuestionnaireTableSeeder::class,
+            HealthTipSeeder::class,
             // ChatRoomSeeder::class,
             // ComplaintsSeeder::class,
         ]);

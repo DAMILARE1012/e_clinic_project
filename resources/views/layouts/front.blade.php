@@ -51,12 +51,12 @@
                 <div class="f-items default-padding">
 
                     <!-- Single Item -->
-                    <div class="col-md-3 col-sm-6 equal-height item">
+                    <div class="col-md-4 col-sm-6 equal-height item">
                         <div class="f-item">
                             <h4>About</h4>
                             <p>
                                 This project tagged VIMONET was developed by the team of researchers at the Federal University of Technology Minna at the onset of the outbreak of the coronavirus disease  (COVID-19) in 2019.
-                                <a class="btn btn-theme border circle btn-md" href="{{ route('about_us') }} ">Read More</a>
+                                <a class="btn btn-info circle border btn-md" href="{{ route('about_us') }} ">Read More</a>
                             </p>
                             <div class="opening-info">
                                 <h5>Opening Hours</h5>
@@ -76,7 +76,7 @@
                     </div>
                     <!-- End Single Item -->
                     <!-- Single Item -->
-                    <div class="col-md-3 col-sm-6 equal-height item">
+                    <div class="col-md-4 col-sm-6 equal-height item">
                         <div class="f-item link">
                             <h4>Our Depeartment</h4>
                             <ul>
@@ -105,49 +105,23 @@
                         </div>
                     </div>
                     <!-- End Single Item -->
+        
                     <!-- Single Item -->
-                    <div class="col-md-3 col-sm-6 equal-height item">
-                        <div class="f-item twitter-widget">
-                            <h4>Latest tweets</h4>
-                            <div class="twitter-item">
-                                <div class="twitter-content">
-                                    <p>
-                                        <a href="#">@Becare</a> Looking for an awesome CREATIVE WordPress Theme? Find it here: <a target="_blank" href="http://t.co/0WWEMQEQ48">http://t.co/0WWEMQEQ48</a>
-                                    </p>
-                                </div>
-                                <div class="twitter-context">
-                                    <i class="fab fa-twitter"></i><span class="twitter-date"> 01 day ago</span>
-                                </div>
-                            </div>
-                            <div class="twitter-item">
-                                <div class="twitter-content">
-                                    <p>
-                                        <a href="#">@Jisham</a> It is a long established fact that a reader will be distracted by the readable . Find it here: <a target="_blank" href="http://t.co/0WWEMQEQ48">http://t.co/0WWEMQEQ48</a>
-                                    </p>
-                                </div>
-                                <div class="twitter-context">
-                                    <i class="fab fa-twitter"></i><span class="twitter-date"> 02 days ago</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Item -->
-                    <!-- Single Item -->
-                    <div class="col-md-3 col-sm-6 equal-height item">
+                    <div class="col-md-4 col-sm-6 equal-height item">
                         <div class="f-item contact">
                             <h4>Contact</h4>
                             <ul>
                                 <li>
                                     <i class="fas fa-phone"></i> 
-                                    <p>Phone <span>+123 456 7890</span></p>
+                                    <p>Phone <span>+234 803 501 5984</span></p>
                                 </li>
                                 <li>
                                     <i class="fas fa-envelope"></i> 
-                                    <p>Email <span><a href="mailto:support@validtheme.com">support@validtheme.com</a></span></p>
+                                    <p>Email <span><a href="mailto:contact@vimonet.health">contact@vimonet.health</a></span></p>
                                 </li>
                                 <li>
                                     <i class="fas fa-map"></i> 
-                                    <p>Office <span>123 6th St. Melbourne, FL 32904</span></p>
+                                    <p>Office <span>Federal University of Technology Minna, Gidan Kwano Campus, Minna, Niger state, Nigeria.</span></p>
                                 </li>
                             </ul>
                             <h5>Subscribe Newsletter</h5>
@@ -170,7 +144,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <p>&copy; Copyright 2019. All Rights Reserved by <a href="#">validthemes</a></p>
+                        <p>&copy; Copyright {{ date('Y') }}. All Rights Reserved by <a href="#">vimonet</a></p>
                     </div>
                     <div class="col-md-6 text-right link">
                         <ul>
