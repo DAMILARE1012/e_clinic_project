@@ -392,7 +392,7 @@
                 <div class="col-md-4 equal-height">
                     <div class="item">
                         <div class="thumb">
-                            <img src="{{ asset('front/assets/img/800x600.png') }}" alt="Thumb">
+                            <img src="{{ asset('front/assets/img/agatha.jpg') }}" alt="Thumb">
                             <div class="overlay">
                                 <a href="#"><i class="fas fa-plus"></i></a>
                             </div>
@@ -427,7 +427,7 @@
                 <div class="col-md-4 equal-height">
                     <div class="item">
                         <div class="thumb">
-                            <img src="{{ asset('front/assets/img/800x600.png') }}" alt="Thumb">
+                            <img src="{{ asset('front/assets/img/Eucharia.jpg') }}" alt="Thumb">
                             <div class="overlay">
                                 <a href="#"><i class="fas fa-plus"></i></a>
                             </div>
@@ -450,7 +450,7 @@
                         </div>
                         <div class="info">
                             <h4>Eucharia U. Ezenwadiugwu (PhD)</h4>
-                            <h5>Psychologist</h5>
+                            <h5>Psychotherapist</h5>
                             <div class="appoinment-btn">
                                 <!-- <a href="#">Make appoinment</a> -->
                             </div>
@@ -485,7 +485,7 @@
                         </div>
                         <div class="info">
                             <h4>Dr Salami</h4>
-                            <h5>Psychologist</h5>
+                            <h5>Psychotherapist</h5>
                             <div class="appoinment-btn">
                                 <!-- <a href="#">Make appoinment</a> -->
                             </div>
