@@ -35,6 +35,7 @@ class ReceptionController extends Controller
 
     public function complaintDetail($id)
     {
+
         $existAssign = PatientSpecialist::where('complaint_id', $id)->first();
         $complaint = Complaint::find($id);
         $specialists = User::where('role_id',4)->get();

@@ -115,7 +115,13 @@
                         <div class="form-group">
                             <label for="exampleInputtext1">Emergency contacts <i class="fa fa-exclamation-circle text-danger"></i></label>
                             <input type="text" value="{{ auth()->user()->profile->contacts }}" class="form-control" id="exampleInputtext1" placeholder="+23480********" name="contacts">
-                           
+
+                            @error('contacts')
+                                <span class="text-danger">
+                                    {{ $message }}
+                                </span>
+                            @enderror
+
                         </div>
 
                         
