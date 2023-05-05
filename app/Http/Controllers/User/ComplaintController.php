@@ -118,6 +118,10 @@ class ComplaintController extends Controller
             $chatRoom->appointment_id = $appointment->id;
             $chatRoom->name = $appointment->complaint->user->id.'.'.now()->day.'.'.now()->month.'.'.now()->year;
             $chatRoom->save();
+
+            $specialist = $appointment->complaint->patientSpecialist->specialist; 
+            $patient = $appointment->complaint->patientSpecialist->patients; 
+            \Mail::to($specialist->email)->queue(new \App\Mail\NotifyAppointmentConfirmation($appointment, $patient, $specialist));
         }
         
 

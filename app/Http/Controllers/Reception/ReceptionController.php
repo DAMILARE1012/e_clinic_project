@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Complaint;
 use App\Models\User;
-use App\Models\Specialist;
 use App\Models\PatientSpecialist;
 use \Carbon\Carbon;
 

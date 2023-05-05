@@ -76,13 +76,20 @@ class SpecialistController extends Controller
             ],
         ];
 
-       
+        $complaint = Complaint::where('id', $request->complaint_id)->first();
+        $patient = $complaint->user;
+        $specialist = $complaint->patientSpecialist->specialist;
 
-        # send email to users
-        
         #add request to database
         $appointments = Appointment::insert($slots);
+        $appointments = Appointment::where('complaint_id', $complaint->id)->get();
 
+        if($appointments->count() > 3){
+            return redirect()->back()->withErrors(['errors' => 'A session suggestion has been sent for this complaint.']);
+        }
+        # send email to users
+        \Mail::to($complaint->user->email)->queue(new \App\Mail\NotifyAppointmentSuggestion($appointments, $patient, $specialist));
+        
         #return redirect back
         return redirect()->route('specialist.assigned.patients')->with('message', 'Time slot suggestion sent to patient');
         
@@ -116,3 +123,4 @@ class SpecialistController extends Controller
 
     }
 }
+
