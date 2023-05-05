@@ -44,7 +44,7 @@
                     @foreach($complaints as $key => $complaint)
                         <tr>
                             <td>{{ $key+1 }}</td>
-                            <td>{{ $complaint->description }}</td>
+                            <td>{{ Illuminate\Support\Str::limit($complaint->description, 30) }}</td>
                             <td>
                                 @if($complaint->assigned && !$complaint->appointments->count() > 0)
                                     <span class="text-success">Assigned</span>
@@ -66,7 +66,10 @@
                                 @php
                                     $appointment = $complaint->appointments->where('selected', 1)->first();
                                 @endphp
-                                    <a href="{{ route('chat.room', ['roomId' => $appointment->chatRoom->id]) }}" class="btn btn-primary btn-xs"> Start Session</a>
+                                   Start Time: {{ $appointment->start_time->format('g:i A') }}<br>
+                                   Finish Time: {{ $appointment->finish_time->format('g:i A') }}<br>
+                                   
+                                   <a href="{{ route('chat.room', ['roomId' => $appointment->chatRoom->id]) }}" class="btn btn-primary btn-xs"> Start Session</a>
                                 @endif
                             </td>
                         </tr>

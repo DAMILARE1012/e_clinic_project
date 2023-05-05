@@ -41,7 +41,7 @@
                         @foreach($complaints as $key => $complaint)
                         <tr>
                             <td>{{ $key+1 }}</td>
-                            <td>{{ $complaint->description }}</td>
+                            <td>{{ Illuminate\Support\Str::limit($complaint->description, 70) }}</td>
                             <td>
                                 @if($complaint->assigned)
                                     <span class="text-success">Assigned</span>

@@ -36,7 +36,7 @@
                         <tr>
                             <td>{{ $key+1 }}</td>
                             <td>{{ $complaint->patients->firstname }} {{ $complaint->patients->lastname }}</td>
-                            <td>{{ $complaint->complaints->description }}</td>
+                            <td>{{ Illuminate\Support\Str::limit($complaint->complaints->description, 70) }}</td>
                             
                             <td>{{ $complaint->complaints->created_at->toFormattedDateString() }}</td>
                             

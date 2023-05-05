@@ -31,4 +31,8 @@ class Complaint extends Model
         return $this->hasMany(Appointment::class);
     }
 
+    public function patientSpecialist()
+    {
+        return $this->hasOne(patientSpecialist::class);
+    }
 }
