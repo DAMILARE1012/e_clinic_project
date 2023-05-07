@@ -76,9 +76,9 @@
                     <div class="col-md-8 col-md-offset-2 contact-form">
                         <div class="site-heading text-center">
                             <h2>Contact <span>Us</span></h2>
-                            <p>
+                            <!-- <p>
                                 While mirth large of on front. Ye he greater related adapted proceed entered an. Through it examine express promise no. Past add size game cold girl off how old
-                            </p>
+                            </p> -->
                         </div>
                         <form action="assets/mail/contact.php" method="POST" class="contact-form">
                             <div class="col-md-12">

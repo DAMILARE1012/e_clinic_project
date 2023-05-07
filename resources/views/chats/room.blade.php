@@ -16,8 +16,19 @@
                     <container :chatroom="{{ $chatRoom }}"/>
                 </div>
 
-                <div class="col-md-2">
-                    <h5>Do a video Session</h5>
+                <div class="col-md-4">
+                
+                    @if(Auth::user()->role_id == 4)
+                        <div style="margin-bottom: 4px;"> 
+                            <a href="https://meet.google.com" class="btn btn btn-info btn-xs" target="_blank">Start a video Session</a>
+                        </div>
+                        <div style="margin-bottom: 4px;">
+                            <a href="#" class="btn btn btn-warning btn-xs">Check Medical History</a>
+                        </div>
+                        <div style="margin-bottom: 4px;">
+                            <a href="#" class="btn btn btn-danger btn-xs">End Session</a>
+                        </div>
+                    @endif
                 </div>
             </div>
                 

@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="MediHub - Medical & Health Template">
+    <meta name="description" content="VIMONET - Medical & Health">
 
     <!-- ========== Page Title ========== -->
-    <title>MediHub - Medical & Health Template</title>
+    <title>VIMONET - Medical & Health</title>
 
     <!-- ========== Favicon Icon ========== -->
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
