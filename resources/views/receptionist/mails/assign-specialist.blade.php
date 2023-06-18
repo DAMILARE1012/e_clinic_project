@@ -8,3 +8,7 @@
     <li>Patient First Name: {{ $complaint->user->firstname }}</li>
     <li>Patient Last Name: {{ $complaint->user->lastname }}</li>
 </ol>
+
+<a class="btn btn-primary" href="{{ route('login') }}">
+    Click here to login
+</a>

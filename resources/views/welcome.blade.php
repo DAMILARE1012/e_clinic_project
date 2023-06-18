@@ -197,7 +197,7 @@
                         </div>
                         <div class="info">
                             <h4>Dr. Agatha Aduro</h4>
-                            <h5>Doctor</h5>
+                            <h5>Medical Doctor</h5>
                             <div class="appoinment-btn">
                                 <!-- <a href="#">Make appoinment</a> -->
                             </div>
