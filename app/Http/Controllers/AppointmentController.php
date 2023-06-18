@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ChatRoom;
 use App\Models\Message;
+use App\Models\Vital;
 use App\Events\NewChatMessage;
 
 class AppointmentController extends Controller
@@ -12,7 +13,12 @@ class AppointmentController extends Controller
     public function chat($roomId)
     {
         $chatRoom = ChatRoom::find($roomId);
-        return view('chats.room', compact('chatRoom'));
+        $patient = $chatRoom->appointment->complaint->user;
+        $medicalHistory = $patient->medicalHistory;
+        $vitals = Vital::where('user_id', $patient->id)->first();
+        
+        
+        return view('chats.room', compact('chatRoom','medicalHistory', 'vitals'));
 
     }
 
