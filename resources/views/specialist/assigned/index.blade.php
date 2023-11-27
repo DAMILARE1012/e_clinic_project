@@ -61,7 +61,7 @@
                                 @if($complaint->complaints->appointments->count() > 0 && !$complaint->complaints->status)
                                 <i class="fa fa-calendar"></i>
                                 @else
-                                    <a href="{{ route('specialist.assigned.detail', ['id' => $complaint->id]) }}"><i class="fa fa-eye"></i> Create a session</a>
+                                    <a href="{{ route('specialist.assigned.detail', ['id' => $complaint->complaints->id]) }}"><i class="fa fa-eye"></i> Create a session</a>
                                 @endif
                             </td>
                         </tr>

@@ -9,6 +9,6 @@
     <li>Patient Last Name: {{ $complaint->user->lastname }}</li>
 </ol>
 
-<a class="btn btn-primary" href="{{ route('login') }}">
+<a class="btn btn-primary" href="https://vimonet.health/login">
     Click here to login
 </a>
