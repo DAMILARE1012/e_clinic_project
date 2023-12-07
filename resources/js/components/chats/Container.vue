@@ -1,6 +1,6 @@
 <template>
     <div class="message-container">
-        <MessageContainer :messages="messages" />
+        <MessageContainer :messages="messages" :user="user" />
         <InputMessage :room="currentRoom" v-on:messageSent="getMessages()" />
     </div>
 </template>
@@ -11,8 +11,11 @@ import InputMessage from "./InputMessage.vue";
 import axios from "axios";
 import ChatRoomSelection from "./ChatRoomSelection.vue";
     export default {
-    
-    props: ['chatroom'],
+
+    props: [
+        'chatroom',
+        'user'
+    ],
 
     components: {
     MessageContainer,

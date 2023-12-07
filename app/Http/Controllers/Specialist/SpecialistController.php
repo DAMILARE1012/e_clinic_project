@@ -32,7 +32,7 @@ class SpecialistController extends Controller
 
     public function assignedDetail($id)
     {
-      
+
         $complaint = Complaint::find($id);
         // dd($complaint);
         return view('specialist.assigned.show', compact('complaint'));
@@ -57,21 +57,21 @@ class SpecialistController extends Controller
             [
                 "complaint_id" => $request->complaint_id,
                 "date" => $request->date_1,
-                "start_time" => $request->start_time_1, 
+                "start_time" => $request->start_time_1,
                 "finish_time" => $request->finish_time_1
             ],
 
             [
                 "complaint_id" => $request->complaint_id,
                 "date" => $request->date_2,
-                "start_time" => $request->start_time_2, 
+                "start_time" => $request->start_time_2,
                 "finish_time" => $request->finish_time_2
             ],
 
             [
                 "complaint_id" => $request->complaint_id,
                 "date" => $request->date_3,
-                "start_time" => $request->start_time_3, 
+                "start_time" => $request->start_time_3,
                 "finish_time" => $request->finish_time_3
             ],
         ];
@@ -89,10 +89,10 @@ class SpecialistController extends Controller
         }
         # send email to users
         \Mail::to($complaint->user->email)->queue(new \App\Mail\NotifyAppointmentSuggestion($appointments, $patient, $specialist));
-        
+
         #return redirect back
         return redirect()->route('specialist.assigned.patients')->with('message', 'Time slot suggestion sent to patient');
-        
+
     }
 
     public function myAppointments()
@@ -101,7 +101,7 @@ class SpecialistController extends Controller
         $auth_id = auth()->id();
         $appointments = $this->getAppointments($auth_id);
         $thisMonth = Carbon::now();
-       
+
         $thisMonth->format('F'); // Return month string
 
         return view('specialist.assigned.appointments', compact('appointments', 'thisMonth'));
@@ -116,7 +116,7 @@ class SpecialistController extends Controller
         }
 
         $thisMonth = Carbon::now();
-       
+
         $thisMonth->format('F'); // Return month string
         $appointments = Appointment::whereIn('complaint_id', $complaints)->whereMonth('date', $thisMonth->month)->where('selected', 1)->get();
         return $appointments;

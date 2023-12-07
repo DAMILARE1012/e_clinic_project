@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('content')
-<!-- Start Banner 
+<!-- Start Banner
 ============================================= -->
 <div class="banner-area top-pad-50p bg-gradient border-shape responsive-auto-height text-small">
     <div class="item">
@@ -13,7 +13,7 @@
 
                             <div class="col-md-7 col-sm-6">
                                 <h1 data-animation="animated slideInRight">Quality Health care from the comfort of your home</h1>
-                                
+
                                 <a data-animation="animated slideInUp" class="btn btn-light effect btn-md" href="{{ route('register') }}">Register</a>
                             </div>
 
@@ -36,7 +36,7 @@
     <div class="container">
        <div class="row">
             <div class="services-items text-center">
-               
+
                 <div class="col-md-3 col-sm-6 equal-height">
                     <div class="item">
                         <a href="#">
@@ -45,7 +45,7 @@
                         </a>
                     </div>
                 </div>
-            
+
                 <div class="col-md-3 col-sm-6 equal-height">
                     <div class="item">
                         <a href="#">
@@ -54,7 +54,7 @@
                         </a>
                     </div>
                 </div>
-       
+
                 <div class="col-md-3 col-sm-6 equal-height">
                     <div class="item">
                         <a href="#">
@@ -63,7 +63,7 @@
                         </a>
                     </div>
                 </div>
-      
+
                 <div class="col-md-3 col-sm-6 equal-height">
                     <div class="item">
                         <a href="#">
@@ -72,9 +72,9 @@
                         </a>
                     </div>
                 </div>
-               
-            </div>  
-        </div> 
+
+            </div>
+        </div>
     </div>
 </div>
 
@@ -103,7 +103,7 @@
                     <div class="item">
                         <i class="flaticon-24-hours"></i>
                         <h4>Opening Hours</h4>
-                        
+
                         <ul>
                             <li> <span> Mon - Tues :  </span>
                                 <div class="pull-right"> 6.00 am - 10.00 pm </div>
@@ -136,12 +136,12 @@
 </div>
 <!-- End Top Entry -->
 
-<!-- Start Services 
+<!-- Start Services
 ============================================= -->
 
 <!-- End Services -->
 
-<!-- Start Doctors Tips 
+<!-- Start Doctors Tips
 ============================================= -->
 <div class="doctor-tips-area bg-gray default-padding">
     <div class="container">
@@ -172,7 +172,7 @@
 </div>
 <!-- End Doctors Tips -->
 
-<!-- Start Doctors 
+<!-- Start Doctors
 ============================================= -->
 <div class="doctor-area default-padding bottom-less">
     <div class="container">
@@ -251,7 +251,7 @@
 <!-- End Doctors -->
 
 
-<!-- Start Testimonials 
+<!-- Start Testimonials
 ============================================= -->
 <div class="testimonials-area carousel-shadow bg-gray default-padding">
     <div class="container">
@@ -269,7 +269,7 @@
                     <div class="item">
                         <div class="content">
                             <p>
-                                Departure so attention pronounce satisfied daughters am. But shy tedious pressed studied opinion entered windows off. Advantage dependent suspicion convinced provision him yet. Mr immediate remaining conveying allowance do or. 
+                                Departure so attention pronounce satisfied daughters am. But shy tedious pressed studied opinion entered windows off. Advantage dependent suspicion convinced provision him yet. Mr immediate remaining conveying allowance do or.
                             </p>
                         </div>
                         <div class="provider">
@@ -303,18 +303,18 @@
                 <div class="pslide">
                 <img src="{{ asset('front/assets/img/tetfund_logo.png') }}" alt="logo">
                 </div>
-                
+
             </div>
-        </div>  
+        </div>
             </div>
             <div class="col-sm-4">
 
             </div>
         </div>
-         
-        
+
+
     </div>
-    
+
 <!-- End Testimonials -->
 
 @endsection

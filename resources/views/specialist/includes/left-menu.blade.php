@@ -65,7 +65,7 @@
         <li>
           <a href="{{ route('specialist.appointments') }}">
             <i class="menu-icon fa fa-calendar zmdi-hc-lg"></i>
-            <span class="menu-text">My Appointments</span>
+            <span class="menu-text">Appointments</span>
           </a>
         </li>
 
@@ -80,7 +80,7 @@
           <ul class="submenu">
             <li><a href="{{ route('specialist.edit.profile') }}"><span class="menu-text">My Profile</span></a></li>
             <li><a href="{{ route('change.password') }}"><span class="menu-text">Change Password</span></a></li>
-            
+
           </ul>
         </li>
 

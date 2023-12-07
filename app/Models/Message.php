@@ -9,6 +9,13 @@ class Message extends Model
 {
     use HasFactory;
 
+    protected $appends = ['created_date'];
+
+    public function getCreatedDateAttribute()
+    {
+        return $this->created_at->diffForHumans();
+    }
+
     public function room()
     {
         return $this->hasOne(ChatRoom::class);

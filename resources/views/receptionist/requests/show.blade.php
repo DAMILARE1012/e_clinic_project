@@ -10,13 +10,13 @@
         <hr class="widget-separator">
         <div class="widget-body">
             <div class="row">
-                
+
                 @if(Session::has('message'))
                     <div class="alert alert-info">
                         {{ Session::get('message') }}
                     </div>
                 @endif
-                
+
                 <div class="col-md-6">
                     <div>
                         <div class="list-group">
@@ -31,7 +31,7 @@
                         </div>
 
                         <div>
-                        
+
                         <ol>
                             <li class="list-group-item primary">Questionnaire/Preferences</li>
                             @foreach($complaint->questionnaire as $questionnaire)
@@ -44,7 +44,7 @@
                     </div>
                     </div>
                 </div>
-            
+
 
                 <div class="col-md-6">
                     <div>
@@ -73,7 +73,7 @@
                             @endif
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -97,7 +97,7 @@
 
                         <input type="hidden" value="{{ $complaint->user_id }}" name="patient">
                         <input type="hidden" value="{{ $complaint->id }}" name="complaint">
-                        
+
                         <div>
                             <button type="submit" class="btn btn-primary">Assign</button>
                         </div>
@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    
+
                 </div>
             </div>
         </div><!-- .widget-body -->

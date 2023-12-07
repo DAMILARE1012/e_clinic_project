@@ -28,7 +28,7 @@ class ReceptionController extends Controller
     public function complaints()
     {
         $complaints = Complaint::orderBy('created_at', 'DESC')->get();
-        
+
         return view('receptionist.requests.index', compact('complaints'));
     }
 
@@ -48,10 +48,10 @@ class ReceptionController extends Controller
             'specialist' => 'required',
             'complaint' => 'required'
         ]);
-        
+
 
         $existAssign = PatientSpecialist::where('complaint_id', $request->complaint)->first();
-        
+
         if(!$existAssign){
             $assigned = PatientSpecialist::create([
                 'patient_id' => $request->patient,
@@ -60,7 +60,7 @@ class ReceptionController extends Controller
             ]);
 
             if ($assigned) {
-                
+
                 $complaint = Complaint::where('id', $assigned->complaint_id)->first();
                 $complaint->assigned = 1;
                 $complaint->save();
@@ -70,12 +70,12 @@ class ReceptionController extends Controller
 
                 return redirect()->route('reception.complaints')->with('message', 'Patient assigned successfully');
             } else {
-                dd('not-created');
+                return redirect()->back()->with('message', 'Unable to assign specialist to case, please try again');
             }
         }else{
 
             return redirect()->back()->with('message', 'Patient already assigned to a specialist!');
         }
-        
+
     }
 }

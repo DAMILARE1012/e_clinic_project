@@ -1,16 +1,19 @@
 <template>
-    <div class="self">
-        <strong class="user">{{message.user.firstname}}</strong>
+    <div>
+        <!-- <strong class="user">{{message.user.firstname}} </strong> -->
         <p class="body">{{message.message}}</p>
+        <span style="font-size: 10px;">{{ message.created_date }}</span>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['message'],
+        props: ['message', "user"],
 
         mounted() {
+            console.log(this.currentUser);
         }
+
     }
 </script>
 
@@ -25,12 +28,5 @@
         font-weight: 800;
     }
 
-    .self {
-        background-color: #f0f0f0;
-        padding: 10px;
-        padding-top: 2px;
-        padding-bottom: 2px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
+
 </style>

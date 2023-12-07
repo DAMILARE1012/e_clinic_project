@@ -9,7 +9,7 @@
             <li>START TIME: {{ $appointment->start_time->format('g:i A')  }}</li>
             <li>END TIME: {{ $appointment->finish_time->format('g:i A')  }}</li>
             
-            <a class="btn btn-primary" href="{{ route('login') }}">
+            <a class="btn btn-primary" href="https://vimonet.health/login">
                 Click here to login
             </a>
 

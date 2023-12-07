@@ -9,17 +9,17 @@
         </header><!-- .widget-header -->
         <hr class="widget-separator">
         <div class="widget-body">
-            
+
 
             <div class="row">
                 <div class="col-md-8">
-                    <container :chatroom="{{ $chatRoom }}"/>
+                    <container :chatroom="{{ $chatRoom }}" :user="{{ auth()->user() }}"/>
                 </div>
 
                 <div class="col-md-4">
-                
+
                     @if(Auth::user()->role_id == 4)
-                        <div style="margin-bottom: 4px;"> 
+                        <div style="margin-bottom: 4px;">
                             <a href="https://meet.google.com" class="btn btn btn-info btn-xs" target="_blank">Start a video Session</a>
                         </div>
                         <!-- <div style="margin-bottom: 4px;">
@@ -30,7 +30,7 @@
                         </div>
                         <hr>
 
-                        <div>
+                        {{-- <div>
                             <h5>Patient Vitals</h5>
                             <ul>
                                 <li>Temperature: {{ $vitals->temperature }}</li>
@@ -39,8 +39,8 @@
                                 <li>Device ID: {{ $vitals->device_id }}</li>
                                 <li>Device Battery: {{ $vitals->battery_level }}%</li>
                             </ul>
-                            
-                        </div>
+
+                        </div> --}}
                     @endif
                 </div>
             </div>
@@ -74,7 +74,7 @@
                     </tbody>
                 </table>
             </div>
-                
+
         </div><!-- .widget-body -->
     </div><!-- .widget -->
 </div><!-- END column -->
