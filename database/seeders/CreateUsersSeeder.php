@@ -17,7 +17,7 @@ class CreateUsersSeeder extends Seeder
     public function run()
     {
         $users = [
-            
+
             [
                 'firstname'=>'User',
                 'lastname'=>'User',
@@ -37,11 +37,11 @@ class CreateUsersSeeder extends Seeder
             [
                'firstname'=>'Triage',
                'lastname'=>'User',
-               'email'=>'reception@example.com',
+               'email'=>'ezra.kolo@futminna.edu.ng',
                'role_id'=> 3,
                'password'=> bcrypt('123456'),
             ],
-            
+
             [
                 'firstname'=>'Specialist',
                 'lastname'=>'Psychiatrist',
@@ -58,7 +58,7 @@ class CreateUsersSeeder extends Seeder
                 'password'=> bcrypt('123456'),
              ],
         ];
-    
+
         foreach ($users as $key => $user) {
             User::create($user);
         }

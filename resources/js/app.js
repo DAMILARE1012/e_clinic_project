@@ -19,7 +19,6 @@ window.Vue = require('vue').default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('complaint-form', require('./components/users/ComplaintForm.vue').default);
 Vue.component('message-container', require('./components/chats/MessageContainer.vue').default);
 Vue.component('message-item', require('./components/chats/MessageItem.vue').default);

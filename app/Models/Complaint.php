@@ -10,7 +10,7 @@ class Complaint extends Model
     use HasFactory;
 
     protected $guarded = [''];
-    
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -33,6 +33,6 @@ class Complaint extends Model
 
     public function patientSpecialist()
     {
-        return $this->hasOne(patientSpecialist::class);
+        return $this->hasOne(PatientSpecialist::class);
     }
 }
