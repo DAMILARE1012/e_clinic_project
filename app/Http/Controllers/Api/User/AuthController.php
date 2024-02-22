@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\User;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -26,6 +26,7 @@ class AuthController extends Controller
             'password' => bcrypt($fields['password'])
 
         ]);
+        $user->profile()->create(['user_id' => $user->id]);
 
         $token = $user->createToken('myapptoken')->plainTextToken; 
 
@@ -50,17 +51,24 @@ class AuthController extends Controller
         //check password
         if(!$user ||  !Hash::check($fields['password'], $user->password))
             return response([
-                'message' => 'Bad Creds'
+                'message' => 'Invalid login, please try again'
             ], 401);
+        //check if a Patient 
+        if($user->role_id != 1)
+        return response([
+            'message' => 'Invalid login, This is the Patient App',
+            'status' => false,
+        ], 401);
 
         $token = $user->createToken('myapptoken')->plainTextToken; 
 
         $response = [
+            'status' => true,
             'user' => $user,
             'token' => $token
         ];
 
-        return response ($response, 201);
+        return response ($response, 200);
     }
 
     public function logout(Request $request)
@@ -68,7 +76,8 @@ class AuthController extends Controller
         auth()->user()->tokens()->delete();
 
         return [
-            'message' => 'Logged out'
+            'message' => 'Logged out',
+            'status' => true,
         ];
     }
 
