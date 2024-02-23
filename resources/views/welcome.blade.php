@@ -217,7 +217,7 @@
 
                         <div class="info">
                             <h4>Eucharia U. Ezenwadiugwu (PhD)</h4>
-                            <h5>Psychologist</h5>
+                            <h5>Psychotherapist</h5>
                             <div class="appoinment-btn">
                                 <!-- <a href="#">Make appoinment</a> -->
                             </div>
