@@ -11,18 +11,18 @@
             <li>DATE 1: {{ $appointment->date->toFormattedDateString() }}</li>
             <li>START TIME: {{ $appointment->start_time->format('g:i A')  }}</li>
             <li>END TIME: {{ $appointment->finish_time->format('g:i A')  }}</li>
-            
-            <a class="btn btn-primary" href="{{ route('user.confirm.appointment',['id' => $appointment->id]) }}">
+
+            <a class="btn btn-primary" href="https://confirm-appointment/{{ $appointment->id }}">
                 Confirm Appointment
             </a>
 
             <hr>
-            
+
         @endforeach
 
     </ul>
 
 
 
-    
+
 

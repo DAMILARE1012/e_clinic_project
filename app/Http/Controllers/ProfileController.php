@@ -7,17 +7,17 @@ use Illuminate\Http\Request;
 use App\Models\Specialist;
 use App\Models\Profile;
 use App\Models\User;
-use App\Models\MedicalHistory;
+use App\Models\MedicalCheck;
 use Auth;
 use Carbon;
-use Hash; 
+use Hash;
 
 class ProfileController extends Controller
 {
     public function editProfile()
     {
         $role = auth()->user()->role_id;
-        
+
         if ($role === 1) {
             return view('user.profiles.edit');
         }elseif($role === 3){
@@ -29,7 +29,7 @@ class ProfileController extends Controller
 
     public function updateProfile(Request $request)
     {
-    
+
         $dt = new Carbon\Carbon();
         $before = $dt->subYears(13)->format('Y-m-d');
         $before = Carbon\Carbon::parse($before);
@@ -62,21 +62,17 @@ class ProfileController extends Controller
         $profile->completed = true;
         $profile->Save();
 
-        $medicalHistory = new MedicalHistory;
-        $medicalHistory->user_id = auth()->id();
-        $medicalHistory->save();
-
         if($profile){
             return redirect()->back()->with('message', 'Profile update successful!');
         }
     }
 
     // Medical History
-    public function MedicalHistory()
+    public function MedicalCheck()
     {
-        
+
         $profile = Profile::where('user_id', auth()->user()->profile->user_id)->first();
-        $history = MedicalHistory::where('user_id', auth()->id())->firstOrFail();
+        $history = MedicalCheck::where('user_id', auth()->id())->firstOrFail();
         return view('user.profiles.medical_history', compact ('history', 'profile'));
     }
 
@@ -84,7 +80,7 @@ class ProfileController extends Controller
     public function editMedicalHistory()
     {
         $profile = Profile::where('user_id', auth()->user()->profile->user_id)->first();
-        $history = MedicalHistory::where('user_id', auth()->id())->firstOrFail();
+        $history = MedicalCheck::where('user_id', auth()->id())->firstOrFail();
         return view('user.profiles.edit-medical-history', compact ('history', 'profile'));
     }
 
@@ -107,11 +103,11 @@ class ProfileController extends Controller
             'organ_donor' => 'required',
             'allergies' => 'required',
             'blood_type' => 'required',
-        
+
 
         ]);
 
-        $history = MedicalHistory::where('user_id', auth()->id())->first();
+        $history = MedicalCheck::where('user_id', auth()->id())->first();
         $history->chronic_illness = $request->chronic_illness;
         $history->no_children = $request->no_children;
         $history->no_delivery = $request->no_delivery;
@@ -142,8 +138,8 @@ class ProfileController extends Controller
         $this->validate($request, [
             'current_password' => 'required',
         ]);
-        
-        $user = Auth::user();   
+
+        $user = Auth::user();
 
 
         if (!Hash::check($request->current_password, $user->password)) {
@@ -160,7 +156,7 @@ class ProfileController extends Controller
         $user->save();
 
         return redirect()->back()->with('message', 'Password updated succesfully');
-    
-            
+
+
     }
 }

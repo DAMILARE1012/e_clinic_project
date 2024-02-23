@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class CheckMedicalHistoryUpdated
+class CheckMedicalCheckUpdated
 {
     /**
      * Handle an incoming request.
@@ -16,8 +16,8 @@ class CheckMedicalHistoryUpdated
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!auth()->user()->medicalHistory->completed) {
-            return redirect()->route('user.check.medical.history'); 
+        if (!auth()->user()->medicalCheck->completed) {
+            return redirect()->route('user.check.medical.checks');
         }
         return $next($request);
     }

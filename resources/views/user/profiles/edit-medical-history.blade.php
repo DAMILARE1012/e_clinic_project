@@ -22,12 +22,12 @@
                 @endif
             </div>
 
-            <form action="{{ route('user.check.medical.history') }}" method="post">
+            <form action="{{ route('user.check.medical.checks') }}" method="post">
                 @csrf
 
                 <div class="row">
                     <div class="col-sm-6">
-                                
+
                         <div class="form-group">
                             <label for="exampleInputtext1">History of Chronic Illnesses <i class="fa fa-exclamation-circle text-danger"></i></label>
                             <select name="chronic_illness" class="form-control">
@@ -96,7 +96,7 @@
                         </div>
 
                     </div>
-                    
+
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputtext1">Previously Hospitalized? <i class="fa fa-exclamation-circle text-danger"></i></label>
@@ -104,7 +104,7 @@
                             <option value="">--Choose--</option>
                                 <option value="Yes" {{ $history->past_hospital == 'Yes' ? 'selected': ''}}>Yes</option>
                                 <option value="No" {{ $history->past_hospital == 'No' ? 'selected': ''}}>No</option>
-                                
+
                             </select>
 
                             @error('past_hospital')
@@ -120,7 +120,7 @@
                             <option value="">--Choose--</option>
                                 <option value="Yes" {{ $history->past_B_transfusion == 'Yes' ? 'selected': ''}}>Yes</option>
                                 <option value="No" {{ $history->past_B_transfusion == 'No' ? 'selected': ''}}>No</option>
-                                
+
                             </select>
 
                             @error('past_B_transfusion')
@@ -136,7 +136,7 @@
                             <option value="">--Choose--</option>
                                 <option value="Yes" {{ $history->organ_donor == 'Yes' ? 'selected': ''}}>Yes</option>
                                 <option value="No" {{ $history->organ_donor == 'No' ? 'selected': ''}}>No</option>
-                                
+
                             </select>
 
                             @error('organ_donor')
@@ -160,9 +160,9 @@
 
                     </div>
                 </div>
-                
+
                 @if($profile->gender == 'Female')
-        
+
                     <h4 class="widget-title">Obstetric and Gynaecological History</h4>
                     <br>
                     <div class="row">
@@ -200,7 +200,7 @@
                                     </span>
                                 @enderror
                             </div>
-                            
+
 
                         </div>
                         <div class="col-sm-6">
@@ -250,7 +250,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div> 
+                        </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="exampleInputtext1">Number of Miscarrage <i class="fa fa-exclamation-circle text-danger"></i></label>
@@ -275,21 +275,21 @@
                                     </span>
                                 @enderror
                             </div>
-                            
-                        </div>  
+
+                        </div>
 
                     </div>
-                
+
                 @endif
 
                 <button type="submit" class="btn btn-primary btn-md">Submit</button>
-                
-                @if(auth()->user()->medicalHistory->completed)
+
+                @if(auth()->user()->medicalCheck->completed)
                     <a class="btn btn-info btn-md" href="{{ route(auth()->user()->role->name.'.'.'dashboard') }}">Proceed to dashboard</a>
                 @endif
             </form>
         </div><!-- .widget-body -->
-    </div><!-- .widget -->	
+    </div><!-- .widget -->
     </div>
 </div><!-- .row -->
 

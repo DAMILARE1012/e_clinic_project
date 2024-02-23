@@ -37,7 +37,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            
+
         ],
 
         'api' => [
@@ -69,6 +69,6 @@ class Kernel extends HttpKernel
         'specialist' => \App\Http\Middleware\Specialist::class,
         'user' => \App\Http\Middleware\User::class,
         'profile.updated' => \App\Http\Middleware\CheckProfileUpdated::class,
-        'check.medical.history' => \App\Http\Middleware\CheckMedicalHistoryUpdated::class,
+        'check.medical.history' => \App\Http\Middleware\CheckMedicalCheckUpdated::class,
     ];
 }
