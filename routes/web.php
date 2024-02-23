@@ -13,6 +13,8 @@ use App\Http\Middleware\CheckMedicalHistoryUpdated;
 use App\Http\Middleware\CheckProfileUpdated;
 use App\Events\NewChatRoomMessage;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,8 +36,25 @@ Route::get('/about_us', [PagesController::class, 'about_us'])->name('about_us');
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 
 Auth::routes();
+// Email Verification Handler
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+    return redirect('user.dashboard');
+})->middleware(['auth', 'signed'])->name('verification.verify');
 
-Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'User', 'middleware' => ['auth', 'user']], function () 
+//sending email verification
+Route::get('/email/verify', function () {
+    return view('auth.verify');
+})->middleware('auth')->name('verification.notice');
+
+//resending the verification email 
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+ 
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'User', 'middleware' => ['verified', 'auth', 'user']], function () 
 {
     Route::get('dashboard', [UserController::class, 'index'])->name('dashboard');
     
