@@ -37,7 +37,7 @@ class CreateUsersSeeder extends Seeder
             [
                'firstname'=>'Triage',
                'lastname'=>'User',
-               'email'=>'ezra.kolo@futminna.edu.ng',
+               'email'=>'ezra.kolo1@futminna.edu.ng',
                'role_id'=> 3,
                'password'=> bcrypt('123456'),
             ],
