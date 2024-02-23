@@ -17,16 +17,6 @@ use App\Models\User;
 
 class ComplaintController extends Controller
 {
-    public function createNewComplaint()
-    {
-        $todayRequests = Complaint::where('user_id', Auth::id())->whereDate('created_at', Carbon::today())->first();
-        $specializations = Specialist::all();
-        if($todayRequests){
-            return redirect()->back()->with('message', "You already have a pending request");
-        }
-        return view('user.requests.create', compact('specializations'));
-    }
-
     public function allComplaints()
     {
         $complaints = Complaint::where('user_id', auth()->id())->orderBy('created_at', 'desc')->get();
@@ -36,7 +26,7 @@ class ComplaintController extends Controller
             Session::flash('message', 'You have never made a request, please make a request.');
             return redirect()->back();
         }
-        
+
     }
 
     public function getPsyQuestions()
@@ -52,6 +42,16 @@ class ComplaintController extends Controller
         return response($questions, 200);
     }
 
+    public function createNewComplaint()
+    {
+        $todayRequests = Complaint::where('user_id', Auth::id())->whereDate('created_at', Carbon::today())->first();
+        $specializations = Specialist::all();
+        if($todayRequests){
+            return redirect()->back()->with('message', "You already have a pending request");
+        }
+        return view('user.requests.create', compact('specializations'));
+    }
+
     public function submitRequest(Request $request)
     {
         $user = User::where('id', $request->user_id)->first();
@@ -63,7 +63,7 @@ class ComplaintController extends Controller
         ]);
 
         $todayRequests = Complaint::where('user_id', Auth::id())->whereDate('created_at', Carbon::today())->first();
-        
+
         if (!$todayRequests) {
             $complaint = new Complaint;
             $complaint->user_id = $request->user_id;
@@ -77,7 +77,7 @@ class ComplaintController extends Controller
                         'complaint_id' => $complaint->id,
                         'questionnaire_id' => $question,
                     ]);
-        
+
                     $questionnaire->save();
                 }
 
@@ -92,10 +92,10 @@ class ComplaintController extends Controller
                 'message' => 'User already has a pending complaint',
                 'status' => 500,
             ];
-            
+
             return response($response);
-        }  
-        
+        }
+
     }
 
     public function selectAppointment($id)
@@ -113,17 +113,17 @@ class ComplaintController extends Controller
         $appointment->save();
 
         if($appointment){
-            
+
             $chatRoom = new ChatRoom;
             $chatRoom->appointment_id = $appointment->id;
             $chatRoom->name = $appointment->complaint->user->id.'.'.now()->day.'.'.now()->month.'.'.now()->year;
             $chatRoom->save();
 
-            $specialist = $appointment->complaint->patientSpecialist->specialist; 
-            $patient = $appointment->complaint->patientSpecialist->patients; 
+            $specialist = $appointment->complaint->patientSpecialist->specialist;
+            $patient = $appointment->complaint->patientSpecialist->patients;
             \Mail::to($specialist->email)->queue(new \App\Mail\NotifyAppointmentConfirmation($appointment, $patient, $specialist));
         }
-        
+
 
         return redirect()->route('user.complaints')->with([
             'message' => 'Appointment time confirmed, please make sure to be online that time, A specialist will attend to you',
@@ -132,5 +132,49 @@ class ComplaintController extends Controller
     }
 
 
-    
+    // Assign Specialist Automatically Controller
+
+    public function assignSpecialist(Request $request)
+    {
+        $validated = $this->validate($request, [
+            'patient' => 'required',
+            'specialist' => 'required',
+            'complaint' => 'required'
+        ]);
+
+
+        $existAssign = PatientSpecialist::where('complaint_id', $request->complaint)->first();
+
+        if(!$existAssign){
+            $assigned = PatientSpecialist::create([
+                'patient_id' => $request->patient,
+                'specialist_id' => $request->specialist,
+                'complaint_id' => $request->complaint
+            ]);
+
+            if ($assigned) {
+
+                $complaint = Complaint::where('id', $assigned->complaint_id)->first();
+                $complaint->assigned = 1;
+                $complaint->save();
+
+                \Mail::to($assigned->specialist->email)->queue(new \App\Mail\NotifyAssignedSpecialist($complaint, $assigned));
+                \Mail::to($complaint->user->email)->queue(new \App\Mail\NotifyAssignedPatient($complaint, $assigned));
+
+                return redirect()->route('reception.complaints')->with('message', 'Patient assigned successfully');
+            } else {
+                return redirect()->back()->with('message', 'Unable to assign specialist to case, please try again');
+            }
+        }else{
+
+            return redirect()->back()->with('message', 'Patient already assigned to a specialist!');
+        }
+
+    }
+
+    function nefucn() : Returntype {
+
+    }
+
+
 }

@@ -5,7 +5,7 @@
         <div class="foldable">
           <h5><a href="javascript:void(0)" class="username">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</a></h5>
           <ul>
-            
+
           </ul>
         </div>
       </div><!-- .media-body -->
@@ -44,7 +44,7 @@
           </a>
           <ul class="submenu">
             <li><a href="{{ route('user.edit.profile') }}"><span class="menu-text">My Profile</span></a></li>
-            <li><a href="{{ route('user.medical.history') }} "><span class="menu-text">Medical History </span></a></li>
+            <li><a href="{{ route('user.medical.checks') }} "><span class="menu-text">Medical History </span></a></li>
             <hr>
 
             <li><a href="{{ route('change.password') }}"><span class="menu-text">Change Password</span></a></li>

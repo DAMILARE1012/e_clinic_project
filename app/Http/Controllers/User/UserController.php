@@ -15,10 +15,10 @@ class UserController extends Controller
         $this->middleware(['profile.updated', 'check.medical.history']);
     }
 
-    public function index() 
+    public function index()
     {
         $todayRequests = Complaint::where('user_id', Auth::id())->whereDate('created_at', Carbon::today())->first();
-    
+
         return view('user.home', compact('todayRequests'));
     }
 }

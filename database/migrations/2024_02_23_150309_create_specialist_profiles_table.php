@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSpecializationsTable extends Migration
+class CreateSpecialistProfilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateSpecializationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('specializations', function (Blueprint $table) {
+        Schema::create('specialist_profiles', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('user_id');
-            $table->string('name');
-            $table->boolean('active')->default(0);
+            $table->integer('user_id');
+            $table->string('gender')->nullable();
+            $table->string('country')->nullable();
+            $table->string('phone')->nullable();
+            $table->boolean('availability')->default(0);
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateSpecializationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('specializations');
+        Schema::dropIfExists('specialist_profiles');
     }
 }

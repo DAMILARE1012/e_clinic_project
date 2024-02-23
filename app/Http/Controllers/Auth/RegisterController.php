@@ -34,7 +34,7 @@ class RegisterController extends Controller
 
     protected $redirectTo = '/user/dashboard';
 
-       
+
     public function __construct()
     {
         $this->middleware('guest');
@@ -72,7 +72,7 @@ class RegisterController extends Controller
         ]);
 
         $user->profile()->create(['user_id' => $user->id]);
-        
+        $user->medicalCheck()->create(['user_id' => $user->id]);
         return $user;
     }
 }
