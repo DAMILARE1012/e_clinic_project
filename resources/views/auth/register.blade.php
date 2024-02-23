@@ -57,9 +57,9 @@
 </div><!-- #login-form -->
 
 <div class="simple-page-footer">
-    <p><a href="#">FORGOT YOUR PASSWORD ?</a></p>
+    <p><a href="#">FORGOT YOUR PASSWORD?</a></p>
     <p>
-        <small>Don't have an account ?</small>
+        <small>Already have an account?</small>
         <a href="{{ route('login') }}">LOGIN</a>
     </p>
 </div><!-- .simple-page-footer -->
